@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.env
+venv/
+.venv/
+
+# Docker
+.docker/
+
+# OS
+.DS_Store
