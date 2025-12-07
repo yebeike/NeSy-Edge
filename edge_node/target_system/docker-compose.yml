@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  # 模拟的前端 Web 服务
+  web_server:
+    image: nginx:latest
+    container_name: web_server_target
+    ports:
+      - "8080:80"
+    volumes:
+      # 我们挂载日志目录，方便 Python 脚本监控
+      - ./logs/nginx:/var/log/nginx
+    depends_on:
+      - database
+    # 模拟业务逻辑：尝试连接数据库
+    # 这里我们只是简单的启动 Nginx，故障将通过 Python 脚本手动触发(关闭数据库)来实现
+    
+  # 模拟的后端数据库
+  database:
+    image: mysql:5.7
+    container_name: db_target
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: myproject_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./logs/mysql:/var/log/mysql
+
+  # (可选) 这是一个自动产生日志的脚本，模拟正常流量
+  # 在 MVP 阶段我们可以先省略，手动访问 localhost:8080 产生日志即可
