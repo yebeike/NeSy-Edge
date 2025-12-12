@@ -12,3 +12,16 @@ venv/
 
 # OS
 .DS_Store
+
+
+# --- NuSy-Edge Specific ---
+# 忽略 ChromaDB 的本地存储文件
+**/chroma_db/
+chroma_db/
+
+# 忽略日志文件
+*.log
+**/logs/
+
+# 忽略临时测试数据
+sample_logs.txt
