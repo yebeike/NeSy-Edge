@@ -42,16 +42,33 @@ class LogHandler(FileSystemEventHandler):
         except Exception as e:
             logger.error(f"Network Error: {e}")
 
+# 容器名称映射 (对应 docker-compose.yml)
+CONTAINER_MAP = {
+    "web_server": "web_server_target",
+    "database": "db_target"
+}
+
 def execute_command(cmd):
+    logger.info(f"⚡ Received Action: {cmd}")
+    
+    target = None
     if cmd == "RESTART_NGINX":
+        target = CONTAINER_MAP["web_server"]
+    elif cmd == "RESTART_DB":
+        target = CONTAINER_MAP["database"]
+    
+    if target:
         try:
             client = docker.from_env()
-            container = client.containers.get(TARGET_CONTAINER)
-            logger.info(f"🔧 Executing: Restarting {TARGET_CONTAINER}...")
+            container = client.containers.get(target)
+            logger.info(f"🔧 Executing: Restarting container [{target}]...")
             container.restart()
-            logger.info(f"✅ Restart Complete.")
+            logger.info(f"✅ Restart Complete: [{target}] is up.")
         except Exception as e:
-            logger.error(f"Docker Error: {e}")
+            logger.error(f"❌ Docker Error: {e}")
+    else:
+        logger.warning(f"❓ Unknown Command: {cmd}")
+
 
 def poll_server():
     try:
