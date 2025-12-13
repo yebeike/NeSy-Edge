@@ -63,11 +63,14 @@ class CausalEngine:
         logger.info(f"running DYNOTEARS on {len(df)} rows...")
         
         # === 修复 1: 强制转换为 float 类型 ===
-        # DYNOTEARS 是基于连续优化的，整数类型会导致计算错误
         df = df.astype(float)
+        
+        # === 修复 2 (新): 重置索引为整数 ===
+        # DYNOTEARS 要求索引必须是整数 (0, 1, 2...)，不能是时间戳
+        df_for_causal = df.reset_index(drop=True)
         # ==================================
 
-        # 1. 获取约束
+        # 1. 获取约束 (注意：这里我们用原 df 的列名，没问题)
         tabu_edges = []
         if use_llm_constraints:
             if len(df.columns) <= 5:
@@ -78,7 +81,7 @@ class CausalEngine:
         # 2. 运行 DYNOTEARS
         try:
             sm = from_pandas_dynamic(
-                df, 
+                df_for_causal, # 使用重置索引后的数据
                 p=1, 
                 lambda_w=0.1, 
                 lambda_a=0.1, 
@@ -88,12 +91,12 @@ class CausalEngine:
             self.structure_model = sm
             return sm
         except Exception as e:
-            # 打印更详细的错误堆栈，方便调试
             import traceback
             logger.error(f"Structure Learning Failed: {e}")
             logger.error(traceback.format_exc())
             return None
-
+        
+        
     def find_root_cause(self, target_node, observed_data):
         """
         基于学习到的图进行简单的根因推断
