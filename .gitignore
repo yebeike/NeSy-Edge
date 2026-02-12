@@ -23,5 +23,20 @@ chroma_db/
 *.log
 **/logs/
 
+# 忽略实验生成的数据文件
+data/
+loghub/
+raw/
+processed/
+knowledge_base/
+knowledge/
+synthetic/
+
+
+
+# 忽略模型文件
+models/
+results/
+
 # 忽略临时测试数据
 sample_logs.txt

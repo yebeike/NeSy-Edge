@@ -1,0 +1,27 @@
+# Data Handling
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.10.0
+scikit-learn>=1.2.0
+
+# LLM & AI
+openai>=1.0.0
+tiktoken>=0.5.0
+torch>=2.0.0
+transformers>=4.30.0  # 若需要本地模型
+sentence-transformers>=2.2.2 # 用于 Embedding
+
+# Vector DB (for RAG)
+chromadb>=0.4.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+networkx>=3.1  # 用于画因果图
+
+# Baselines (Log Parsing)
+drain3>=0.9.11
+
+# Utils
+tqdm
+python-dotenv
