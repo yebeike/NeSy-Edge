@@ -1,3 +1,7 @@
+# ================================================================================
+# --- 文件: src/utils/metrics.py ---
+# ================================================================================
+
 import pandas as pd
 import re
 from sklearn.metrics import adjusted_rand_score
@@ -6,19 +10,33 @@ class MetricsCalculator:
     @staticmethod
     def normalize_template(text):
         """
-        标准化模板：转小写，合并空格，统一变量符。
+        [关键修复] 鲁棒性标准化
+        忽略标点符号、大小写和空格差异，只关注 单词序列 和 变量位置。
+        这能解决 "status: 200" vs "status=200" 导致的 PA=0 问题。
         """
         if not isinstance(text, str): return ""
+        
+        # 1. 转小写
         text = text.lower().strip()
-        text = re.sub(r'\s+', ' ', text) # 合并多余空格
-        text = re.sub(r'<\*?>', '<*>', text) # 统一占位符
+        
+        # 2. 统一变量占位符 (防止 <*>, <String>, <Num> 的差异)
+        # 将所有 <...> 替换为统一的内部 Token，例如 __VAR__
+        text = re.sub(r'<\*?>', ' __VAR__ ', text)
+        text = re.sub(r'<[^>]+>', ' __VAR__ ', text) # 匹配 <String> 等其他写法
+        
+        # 3. [核心] 移除标点符号 (只保留字母、数字、下划线和我们的占位符)
+        # 将非单词字符替换为空格
+        text = re.sub(r'[^\w\s]', ' ', text)
+        
+        # 4. 合并空格
+        text = re.sub(r'\s+', ' ', text).strip()
+        
         return text
 
     @staticmethod
     def calculate_pa(pred_templates, gt_templates):
         """
-        Standard Robust PA: 忽略大小写和空格差异的 Exact Match。
-        修复了之前过于激进(删除所有标点)的问题，因为输入修复后不需要那么激进。
+        Parsing Accuracy (Exact Match with Robust Normalization)
         """
         correct = 0
         total = 0
@@ -26,6 +44,10 @@ class MetricsCalculator:
         for pred, gt in zip(pred_templates, gt_templates):
             p_norm = MetricsCalculator.normalize_template(pred)
             g_norm = MetricsCalculator.normalize_template(gt)
+            
+            # Debug: 如果你想看具体为什么对不上，可以在这里 print
+            # if p_norm != g_norm and total < 5:
+            #     print(f"Mismatch:\n  P: {p_norm}\n  G: {g_norm}")
             
             if p_norm == g_norm:
                 correct += 1
@@ -47,9 +69,6 @@ class MetricsCalculator:
     
     @staticmethod
     def calculate_token_f1(pred_templates, gt_templates):
-        """
-        Token-level F1 Score: 衡量语义保留程度
-        """
         if not pred_templates or not gt_templates: return 0.0
         
         scores = []

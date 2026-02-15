@@ -22,16 +22,15 @@ SOURCE_FILES_TO_COMBINE = [
     # '../experiments/debug_rq2_intra_focus.py',
     # '../experiments/run_rq2_debug_comprehensive_check.py'
     # 你可以继续在这里添加其他文件的路径...
-    # 'run_rq1_benchmark.py',
-    # 'src/utils/helpers.py',
+
+    # RQ1 相关文件
+    # './experiments/run_rq1_benchmark.py',
     # '../src/utils/noise_injector.py',
     # '../src/utils/metrics.py',
     # '../src/utils/data_loader.py',
-
-
     '../src/perception/drain_parser.py',
     '../src/system/edge_node.py',
-    '../experiments/run_rq1_benchmark.py',
+    '../src/utils/llm_client.py',
     
     # 不仅仅是Python文件，其他文本文件也可以
     # 'requirements.txt',

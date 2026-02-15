@@ -23,7 +23,7 @@ from src.utils.noise_injector import NoiseInjector
 from src.utils.metrics import MetricsCalculator
 
 # ================= ⚡️ 快速测试配置 ⚡️ =============== ==
-SAMPLE_SIZE = 10
+SAMPLE_SIZE = 30
 NOISE_LEVELS = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
 DATASETS = ["HDFS", "OpenStack"]
 # ======================================================
@@ -53,10 +53,23 @@ def run_grand_benchmark():
             logs, gt_df = loader.get_openstack_test_data()
         
         gt_templates = gt_df['EventTemplate'].tolist()
+
+
+        # [关键修正] 仅使用后 50% 数据作为测试集 (Test Set)
+        # 前 50% 已经在 build_knowledge_base.py 里用来构建知识库了
+        split_idx = int(len(logs) * 0.5)
         
+        # 强制切分
+        test_logs = logs[split_idx:]
+        test_gt = gt_templates[split_idx:]
+        
+        # 应用 Sample Size (从后半部分取 N 条)
         if SAMPLE_SIZE:
-            logs = logs[:SAMPLE_SIZE]
-            gt_templates = gt_templates[:SAMPLE_SIZE]
+            logs = test_logs[:SAMPLE_SIZE]
+            gt_templates = test_gt[:SAMPLE_SIZE]
+        else:
+            logs = test_logs
+            gt_templates = test_gt
         
         # tqdm 放在外层，显示总进度
         for noise_rate in NOISE_LEVELS:
