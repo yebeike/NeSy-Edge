@@ -1,8 +1,0 @@
-{
-  "run_tag": "rq3_hadoop_rm_reanchor_v2_highnoise_open_20260319",
-  "completed_steps": 6,
-  "total_steps": 6,
-  "llm_calls": 4,
-  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_hadoop_rm_reanchor_v2_highnoise_20260319/rq3_hadoop_rm_reanchor_v2_highnoise_open_20260319_progress.jsonl",
-  "summary_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_hadoop_rm_reanchor_v2_highnoise_20260319/rq3_hadoop_rm_reanchor_v2_highnoise_open_20260319_summary.json"
-}

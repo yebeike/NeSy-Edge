@@ -1,8 +1,0 @@
-{
-  "run_tag": "rq3_triad_proof_slice_v3_hdfs_strict_v2_highnoise_open_20260318",
-  "completed_steps": 16,
-  "total_steps": 16,
-  "llm_calls": 16,
-  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_triad_v3_hdfs_strict_v2_highnoise_20260318/rq3_triad_proof_slice_v3_hdfs_strict_v2_highnoise_open_20260318_progress.jsonl",
-  "summary_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_triad_v3_hdfs_strict_v2_highnoise_20260318/rq3_triad_proof_slice_v3_hdfs_strict_v2_highnoise_open_20260318_summary.json"
-}

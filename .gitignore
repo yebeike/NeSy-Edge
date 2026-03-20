@@ -1,4 +1,4 @@
-# Python
+
 __pycache__/
 *.py[cod]
 *.class
@@ -7,24 +7,24 @@ __pycache__/
 venv/
 .venv/
 
-# Docker
 .docker/
 
-# OS
 .DS_Store
 
+.vscode/
 
-# --- NuSy-Edge Specific ---
-# 忽略 ChromaDB 的本地存储文件
+.cursor/
+
+loghub/
+
 **/chroma_db/
 chroma_db/
 
-# 忽略日志文件
 *.log
 **/logs/
 
-# 忽略实验生成的数据文件
 data/
+doc/
 loghub/
 raw/
 processed/
@@ -33,10 +33,76 @@ knowledge/
 synthetic/
 
 
-
-# 忽略模型文件
 models/
 results/
 
-# 忽略临时测试数据
 sample_logs.txt
+
+
+
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.env
+venv/
+.venv/
+
+
+.docker/
+
+
+.DS_Store
+
+
+
+**/chroma_db/
+chroma_db/
+
+
+*.log
+**/logs/
+
+data/
+loghub/
+raw/
+processed/
+knowledge_base/
+knowledge/
+synthetic/
+
+doc/
+
+
+shared/
+
+tmp/
+
+thesis/
+
+reports/
+
+results/
+
+figures/
+
+docs/
+
+manifests/
+
+analysis/
+
+config/
+
+configs/
+
+artifacts/
+
+specs/
+
+models/
+results/
+
+sample_logs.txt
+
+

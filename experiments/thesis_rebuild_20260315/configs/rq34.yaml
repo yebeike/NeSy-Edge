@@ -1,5 +1,0 @@
-seed: 2026
-status: rerun_after_rq1
-initial_cases_per_dataset: 15
-noise_levels: [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
-note: API budget is available, but only scale after a stable upstream protocol.

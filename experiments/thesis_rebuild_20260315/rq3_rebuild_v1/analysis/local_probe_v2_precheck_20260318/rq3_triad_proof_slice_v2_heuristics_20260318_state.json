@@ -1,8 +1,0 @@
-{
-  "run_tag": "rq3_triad_proof_slice_v2_heuristics_20260318",
-  "completed_steps": 52,
-  "total_steps": 52,
-  "llm_calls": 0,
-  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_v2_precheck_20260318/rq3_triad_proof_slice_v2_heuristics_20260318_progress.jsonl",
-  "summary_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_v2_precheck_20260318/rq3_triad_proof_slice_v2_heuristics_20260318_summary.json"
-}
