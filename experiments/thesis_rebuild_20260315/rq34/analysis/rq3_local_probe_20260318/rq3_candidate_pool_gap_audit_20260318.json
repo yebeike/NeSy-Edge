@@ -1,0 +1,77 @@
+{
+  "benchmark_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/analysis/rq3_small_v2_20260318/rq3_small_v2_benchmark_package_20260318.json",
+  "candidate_audit_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/results/rq3_candidate_audit_enriched_20260318_rows.json",
+  "datasets": {
+    "HDFS": {
+      "benchmark_actions": {
+        "HDFS_CHECK_LINK_AND_LIMIT_RETRANSMISSION": 3,
+        "HDFS_CHECK_STORAGE_AND_DELETE_STALE_BLOCK": 1,
+        "HDFS_REBUILD_WRITE_PIPELINE": 3,
+        "HDFS_RETRY_ALLOCATION_AFTER_CAPACITY_CHECK": 1,
+        "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE": 1
+      },
+      "candidate_pool_actions": {
+        "HDFS_CHECK_LINK_AND_LIMIT_RETRANSMISSION": 10,
+        "HDFS_CHECK_STORAGE_AND_DELETE_STALE_BLOCK": 7,
+        "HDFS_ISOLATE_RECEIVER_AND_REBUILD_PIPELINE": 4,
+        "HDFS_REBUILD_WRITE_PIPELINE": 36,
+        "HDFS_REPAIR_CLIENT_LINK_AND_REREPLICATE": 50,
+        "HDFS_RETRY_ALLOCATION_AFTER_CAPACITY_CHECK": 11,
+        "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE": 4
+      },
+      "candidate_only_actions": [
+        "HDFS_ISOLATE_RECEIVER_AND_REBUILD_PIPELINE",
+        "HDFS_REPAIR_CLIENT_LINK_AND_REREPLICATE"
+      ],
+      "benchmark_only_actions": []
+    },
+    "Hadoop": {
+      "benchmark_actions": {
+        "HADOOP_CLEAN_OUTPUT_PATH_AND_RESCHEDULE": 2,
+        "HADOOP_ISOLATE_NODE_AND_RESCHEDULE": 1,
+        "HADOOP_REDUCE_SHUFFLE_PRESSURE_AND_RETRY": 3,
+        "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY": 1,
+        "HADOOP_RESTORE_WORKER_RPC_AND_RETRY": 2
+      },
+      "candidate_pool_actions": {
+        "HADOOP_FREE_DISK_AND_RETRY": 9,
+        "HADOOP_ISOLATE_NODE_AND_RESCHEDULE": 28,
+        "HADOOP_RESTORE_NETWORK_AND_RETRY": 7
+      },
+      "candidate_only_actions": [
+        "HADOOP_FREE_DISK_AND_RETRY",
+        "HADOOP_RESTORE_NETWORK_AND_RETRY"
+      ],
+      "benchmark_only_actions": [
+        "HADOOP_CLEAN_OUTPUT_PATH_AND_RESCHEDULE",
+        "HADOOP_REDUCE_SHUFFLE_PRESSURE_AND_RETRY",
+        "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY",
+        "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+      ]
+    },
+    "OpenStack": {
+      "benchmark_actions": {
+        "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY": 2,
+        "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN": 2,
+        "OPENSTACK_RESYNC_INSTANCE_INVENTORY": 1,
+        "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD": 3,
+        "OPENSTACK_VERIFY_TERMINATION_AND_RESTORE": 1
+      },
+      "candidate_pool_actions": {
+        "OPENSTACK_REBUILD_ON_COMPATIBLE_HOST": 1,
+        "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN": 54,
+        "OPENSTACK_RESYNC_INSTANCE_INVENTORY": 2,
+        "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD": 5,
+        "OPENSTACK_SCALE_METADATA_SERVICE": 4,
+        "OPENSTACK_VERIFY_TERMINATION_AND_RESTORE": 1
+      },
+      "candidate_only_actions": [
+        "OPENSTACK_REBUILD_ON_COMPATIBLE_HOST",
+        "OPENSTACK_SCALE_METADATA_SERVICE"
+      ],
+      "benchmark_only_actions": [
+        "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+      ]
+    }
+  }
+}

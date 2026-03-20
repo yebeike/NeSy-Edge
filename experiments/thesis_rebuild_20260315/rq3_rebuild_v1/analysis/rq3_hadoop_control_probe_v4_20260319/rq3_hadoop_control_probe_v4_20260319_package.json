@@ -1,0 +1,396 @@
+{
+  "benchmark_id": "rq3_hadoop_control_probe_v4_20260319",
+  "benchmark_kind": "hadoop_control_probe",
+  "purpose": "Fast control-link probe after removing ground-truth reference filtering and expanding graph queries to full incident evidence.",
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "cases": [
+    {
+      "dataset": "Hadoop",
+      "case_id": "hadoop_application_1445076437777_0003",
+      "source": "benchmark_v2",
+      "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+      "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+      "eligibility_note": "Worker-RPC control-link case under gt-free retrieval and full-query graph evidence.",
+      "selected_alert_clean": "2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45",
+      "shared_context_clean": "2015-10-17 18:14:48,202 INFO [IPC Server handler 0 on 53665] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445076437777_0003_m_000008_0 is : 0.6207798\n2015-10-17 18:14:48,296 INFO [IPC Server handler 5 on 53665] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445076437777_0003_m_000008_1 is : 0.17326213\n2015-10-17 18:14:48,483 INFO [IPC Server handler 29 on 53665] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445076437777_0003_r_000000_0. startIndex 8 maxEvents 10000\n2015-10-17 18:14:48,592 INFO [IPC Server handler 25 on 53665] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445076437777_0003_m_000004_1 is : 0.30055612\n2015-10-17 18:14:48,655 INFO [IPC Server handler 20 on 53665] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445076437777_0003_m_000004_0 is : 0.667\n2015-10-17 18:14:49,499 INFO [IPC Server handler 19 on 53665] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445076437777_0003_r_000000_0. startIndex 8 maxEvents 10000",
+      "provenance": {
+        "ground_truth_root_cause_template": "Machine down",
+        "ground_truth_template": "Could not delete hdfs:<*>:<*><*>",
+        "reason": "Machine down"
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45",
+          "context_text": "2015-10-17 18:14:48,202 INFO [IPC Server handler 0 on 53665] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445076437777_0003_m_000008_0 is : 0.6207798\n2015-10-17 18:14:48,296 INFO [IPC Server handler 5 on 53665] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445076437777_0003_m_000008_1 is : 0.17326213\n2015-10-17 18:14:48,483 INFO [IPC Server handler 29 on 53665] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445076437777_0003_r_000000_0. startIndex 8 maxEvents 10000\n2015-10-17 18:14:48,592 INFO [IPC Server handler 25 on 53665] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445076437777_0003_m_000004_1 is : 0.30055612\n2015-10-17 18:14:48,655 INFO [IPC Server handler 20 on 53665] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445076437777_0003_m_000004_0 is : 0.667\n2015-10-17 18:14:49,499 INFO [IPC Server handler 19 on 53665] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445076437777_0003_r_000000_0. startIndex 8 maxEvents 10000",
+          "rag_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 24.3529,
+              "lexical": 24.3529,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445062781478_0012",
+              "score": 24.338,
+              "lexical": 24.338,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_NODE_UNAVAILABILITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 15:45:29,587 INFO [ContainerLauncher #1] org.apache.hadoop.ipc.Client: Retrying connect to server: 04DN8IQ.fareast.corp.microsoft.com/10.86.164.9:64484. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 15:45:29,055 INFO [IPC Server handler 16 on 49451] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0012_m_000004_1 is : 0.6208445\n2015-10-17 15:45:29,180 INFO [IPC Server handler 17 on 49451] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0012_m_000005_1 is : 0.69869125\n2015-10-17 15:45:29,305 INFO [IPC Server "
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0009",
+              "score": 23.3333,
+              "lexical": 23.3333,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:44:01,590 INFO [ContainerLauncher #7] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:55135. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 22:44:01,590 INFO [ContainerLauncher #7] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:55135. Already tried 0 time(s); maxRetries=45\n2015-10-17 22:26:41,524 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 22:44:21,591 INFO [ContainerLauncher #7] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 24.3529,
+              "lexical": 24.3529,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445062781478_0012",
+              "score": 24.338,
+              "lexical": 24.338,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_NODE_UNAVAILABILITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 15:45:29,587 INFO [ContainerLauncher #1] org.apache.hadoop.ipc.Client: Retrying connect to server: 04DN8IQ.fareast.corp.microsoft.com/10.86.164.9:64484. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 15:45:29,055 INFO [IPC Server handler 16 on 49451] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0012_m_000004_1 is : 0.6208445\n2015-10-17 15:45:29,180 INFO [IPC Server handler 17 on 49451] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0012_m_000005_1 is : 0.69869125\n2015-10-17 15:45:29,305 INFO [IPC Server "
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0009",
+              "score": 23.3333,
+              "lexical": 23.3333,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:44:01,590 INFO [ContainerLauncher #7] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:55135. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 22:44:01,590 INFO [ContainerLauncher #7] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:55135. Already tried 0 time(s); maxRetries=45\n2015-10-17 22:26:41,524 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 22:44:21,591 INFO [ContainerLauncher #7] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: minint fareast corp microsoft com main -> minint fareast corp microsoft com rmcontainerrequestor (relation=temporally_causes).",
+              "Historical causal cue: minint fareast corp microsoft com main -> ipc server taskattemptlistenerimpl minint net noroutetohostexception (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [Thread-<*>] org.apache.hadoop.mapreduce.v<*>.app.rm.RMContainerRequestor: <*> failures on node MININT-FNANLI<*>.fareast.corp.microsoft.com",
+                "relation": "temporally_causes",
+                "weight": 0.4833,
+                "score": 37.4725,
+                "query_source_overlap": 9,
+                "query_target_overlap": 9,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 9
+              },
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> [IPC Server handler <*> on <*>] org.apache.hadoop.mapred.TaskAttemptListenerImpl: <*> java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5605,
+                "score": 32.0841,
+                "query_source_overlap": 9,
+                "query_target_overlap": 10,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 6
+              }
+            ]
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying worker RPC toward node: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45",
+          "context_text": "2015-10-17 18:14:48,202 INFO [IPC Server handler 0 on 53665] org.apache.hadoop.mapred.task listener: Progress of TaskAttempt attempt_1445076437777_0003_m_000008_0 is : 0.6207798",
+          "rag_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 24.3529,
+              "lexical": 24.3529,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445062781478_0012",
+              "score": 24.338,
+              "lexical": 24.338,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_NODE_UNAVAILABILITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 15:45:29,587 INFO [ContainerLauncher #1] org.apache.hadoop.ipc.Client: Retrying connect to server: 04DN8IQ.fareast.corp.microsoft.com/10.86.164.9:64484. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 15:45:29,055 INFO [IPC Server handler 16 on 49451] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0012_m_000004_1 is : 0.6208445\n2015-10-17 15:45:29,180 INFO [IPC Server handler 17 on 49451] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0012_m_000005_1 is : 0.69869125\n2015-10-17 15:45:29,305 INFO [IPC Server "
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0009",
+              "score": 23.3333,
+              "lexical": 23.3333,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:44:01,590 INFO [ContainerLauncher #7] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:55135. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 22:44:01,590 INFO [ContainerLauncher #7] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:55135. Already tried 0 time(s); maxRetries=45\n2015-10-17 22:26:41,524 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 22:44:21,591 INFO [ContainerLauncher #7] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 24.3529,
+              "lexical": 24.3529,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445062781478_0012",
+              "score": 24.338,
+              "lexical": 24.338,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_NODE_UNAVAILABILITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 15:45:29,587 INFO [ContainerLauncher #1] org.apache.hadoop.ipc.Client: Retrying connect to server: 04DN8IQ.fareast.corp.microsoft.com/10.86.164.9:64484. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 15:45:29,055 INFO [IPC Server handler 16 on 49451] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0012_m_000004_1 is : 0.6208445\n2015-10-17 15:45:29,180 INFO [IPC Server handler 17 on 49451] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0012_m_000005_1 is : 0.69869125\n2015-10-17 15:45:29,305 INFO [IPC Server "
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0009",
+              "score": 23.3333,
+              "lexical": 23.3333,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:44:01,590 INFO [ContainerLauncher #7] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:55135. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 22:44:01,590 INFO [ContainerLauncher #7] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:55135. Already tried 0 time(s); maxRetries=45\n2015-10-17 22:26:41,524 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 22:44:21,591 INFO [ContainerLauncher #7] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: minint fareast corp microsoft com main -> minint fareast corp microsoft com rmcontainerrequestor (relation=temporally_causes).",
+              "Historical causal cue: minint fareast corp microsoft com main -> ipc server taskattemptlistenerimpl minint net noroutetohostexception (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [Thread-<*>] org.apache.hadoop.mapreduce.v<*>.app.rm.RMContainerRequestor: <*> failures on node MININT-FNANLI<*>.fareast.corp.microsoft.com",
+                "relation": "temporally_causes",
+                "weight": 0.4833,
+                "score": 37.4725,
+                "query_source_overlap": 9,
+                "query_target_overlap": 9,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 9
+              },
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> [IPC Server handler <*> on <*>] org.apache.hadoop.mapred.TaskAttemptListenerImpl: <*> java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5605,
+                "score": 32.0841,
+                "query_source_overlap": 9,
+                "query_target_overlap": 10,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 6
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "dataset": "Hadoop",
+      "case_id": "hadoop_application_1445144423722_0020",
+      "source": "benchmark_v2",
+      "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+      "gt_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY",
+      "eligibility_note": "RM-channel control-link case under gt-free retrieval and full-query graph evidence.",
+      "selected_alert_clean": "java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MININT-FNANLI5/127.0.0.1\"; destination host is: \"msra-sa-41\":8030;",
+      "shared_context_clean": "at org.apache.hadoop.ipc.Client.call(Client.java:1438)\n... 16 more\n2015-10-18 18:06:01,840 ERROR [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: ERROR IN CONTACTING RM.\nat org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:772)\nat org.apache.hadoop.ipc.Client.call(Client.java:1472)\nat org.apache.hadoop.ipc.Client.call(Client.java:1399)",
+      "provenance": {
+        "ground_truth_root_cause_template": "Network disconnection",
+        "ground_truth_template": "Could not delete hdfs:<*>:<*><*>",
+        "reason": "Network disconnection"
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MININT-FNANLI5/127.0.0.1\"; destination host is: \"msra-sa-41\":8030;",
+          "context_text": "at org.apache.hadoop.ipc.Client.call(Client.java:1438)\n... 16 more\n2015-10-18 18:06:01,840 ERROR [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: ERROR IN CONTACTING RM.\nat org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:772)\nat org.apache.hadoop.ipc.Client.call(Client.java:1472)\nat org.apache.hadoop.ipc.Client.call(Client.java:1399)",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0001",
+              "score": 19.2346,
+              "lexical": 19.2346,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:04,358 INFO [Socket Reader #1 for port 60153] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 60153: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: 2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445175094696_0001_m_000000_1 TaskAttempt Transitioned from ASSIGNED to RUNNING\n2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: ATTEMPT_START task_1445175094696_0001_m_000000\n2015-10-18 21:37:04,140 INFO [IPC Serv"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0002",
+              "score": 17.2,
+              "lexical": 17.2,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:18,951 INFO [Socket Reader #1 for port 20324] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 20324: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: Container killed on request. Exit code is 137\nContainer exited with a non-zero exit code 137\n2015-10-18 21:37:18,513 INFO [IPC Server handler 29 on 20324] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445175094696_0002_r_000000_0. startIndex 6 maxEvents 10000\njava.io.IOException: An existing connection was forcibly closed by the remote host\nat sun.nio.ch.SocketDispatcher."
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445175094696_0003",
+              "score": 15.2113,
+              "lexical": 15.2113,
+              "action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY",
+              "family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+              "text": "Historical incident snippet\nPrimary signal: at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)\nNearby context: at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)\n2015-10-18 21:33:06,288 INFO [main] org.apache.hadoop.yarn.client.RMProxy: Connecting to ResourceManager at msra-sa-41/10.190.173.170:8030\n2015-10-18 21:33:07,429 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Before Scheduling: PendingReds:1 ScheduledMaps:10 ScheduledReds:0 AssignedMaps:0 AssignedReds:0 Complete"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0001",
+              "score": 19.2346,
+              "lexical": 19.2346,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:04,358 INFO [Socket Reader #1 for port 60153] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 60153: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: 2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445175094696_0001_m_000000_1 TaskAttempt Transitioned from ASSIGNED to RUNNING\n2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: ATTEMPT_START task_1445175094696_0001_m_000000\n2015-10-18 21:37:04,140 INFO [IPC Serv"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0002",
+              "score": 17.2,
+              "lexical": 17.2,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:18,951 INFO [Socket Reader #1 for port 20324] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 20324: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: Container killed on request. Exit code is 137\nContainer exited with a non-zero exit code 137\n2015-10-18 21:37:18,513 INFO [IPC Server handler 29 on 20324] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445175094696_0002_r_000000_0. startIndex 6 maxEvents 10000\njava.io.IOException: An existing connection was forcibly closed by the remote host\nat sun.nio.ch.SocketDispatcher."
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445175094696_0003",
+              "score": 15.2113,
+              "lexical": 15.2113,
+              "action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY",
+              "family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+              "text": "Historical incident snippet\nPrimary signal: at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)\nNearby context: at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)\n2015-10-18 21:33:06,288 INFO [main] org.apache.hadoop.yarn.client.RMProxy: Connecting to ResourceManager at msra-sa-41/10.190.173.170:8030\n2015-10-18 21:33:07,429 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Before Scheduling: PendingReds:1 ScheduledMaps:10 ScheduledReds:0 AssignedMaps:0 AssignedReds:0 Complete"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: ioexception local existing connection was forcibly -> ioexception local existing connection was forcibly (relation=instantly_triggers).",
+              "Historical causal cue: socket reader ipc server readandprocess client -> ioexception local existing connection was forcibly (relation=instantly_triggers)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [communication thread] org.apache.hadoop.mapred.Task: Communication exception: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: <*> destination host is: <*>",
+                "relation": "instantly_triggers",
+                "weight": 0.3395,
+                "score": 70.4509,
+                "query_source_overlap": 20,
+                "query_target_overlap": 18,
+                "reference_source_overlap": 14,
+                "reference_target_overlap": 15
+              },
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [Socket Reader #<*> for port <*>] org.apache.hadoop.ipc.Server: Socket Reader #<*> for port <*>: readAndProcess from client <*> threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [communication thread] org.apache.hadoop.mapred.Task: Communication exception: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: <*> destination host is: <*>",
+                "relation": "instantly_triggers",
+                "weight": 0.3421,
+                "score": 70.0513,
+                "query_source_overlap": 16,
+                "query_target_overlap": 18,
+                "reference_source_overlap": 25,
+                "reference_target_overlap": 15
+              }
+            ]
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "java.io.IOException: Failed on local exception: java.io.IOException: peer interrupted the transport session mid-exchange; Host Details : local worker is: \"peer-endpoint/peer-endpoint\"; peer worker is: \"peer-endpoint\":8030;",
+          "context_text": "at org.apache.hadoop.ipc.Channel.call(Client.java:1438)",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0001",
+              "score": 19.2346,
+              "lexical": 19.2346,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:04,358 INFO [Socket Reader #1 for port 60153] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 60153: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: 2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445175094696_0001_m_000000_1 TaskAttempt Transitioned from ASSIGNED to RUNNING\n2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: ATTEMPT_START task_1445175094696_0001_m_000000\n2015-10-18 21:37:04,140 INFO [IPC Serv"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0002",
+              "score": 17.2,
+              "lexical": 17.2,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:18,951 INFO [Socket Reader #1 for port 20324] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 20324: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: Container killed on request. Exit code is 137\nContainer exited with a non-zero exit code 137\n2015-10-18 21:37:18,513 INFO [IPC Server handler 29 on 20324] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445175094696_0002_r_000000_0. startIndex 6 maxEvents 10000\njava.io.IOException: An existing connection was forcibly closed by the remote host\nat sun.nio.ch.SocketDispatcher."
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445175094696_0003",
+              "score": 15.2113,
+              "lexical": 15.2113,
+              "action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY",
+              "family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+              "text": "Historical incident snippet\nPrimary signal: at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)\nNearby context: at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)\n2015-10-18 21:33:06,288 INFO [main] org.apache.hadoop.yarn.client.RMProxy: Connecting to ResourceManager at msra-sa-41/10.190.173.170:8030\n2015-10-18 21:33:07,429 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Before Scheduling: PendingReds:1 ScheduledMaps:10 ScheduledReds:0 AssignedMaps:0 AssignedReds:0 Complete"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0001",
+              "score": 19.2346,
+              "lexical": 19.2346,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:04,358 INFO [Socket Reader #1 for port 60153] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 60153: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: 2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445175094696_0001_m_000000_1 TaskAttempt Transitioned from ASSIGNED to RUNNING\n2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: ATTEMPT_START task_1445175094696_0001_m_000000\n2015-10-18 21:37:04,140 INFO [IPC Serv"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0002",
+              "score": 17.2,
+              "lexical": 17.2,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:18,951 INFO [Socket Reader #1 for port 20324] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 20324: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: Container killed on request. Exit code is 137\nContainer exited with a non-zero exit code 137\n2015-10-18 21:37:18,513 INFO [IPC Server handler 29 on 20324] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445175094696_0002_r_000000_0. startIndex 6 maxEvents 10000\njava.io.IOException: An existing connection was forcibly closed by the remote host\nat sun.nio.ch.SocketDispatcher."
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445175094696_0003",
+              "score": 15.2113,
+              "lexical": 15.2113,
+              "action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY",
+              "family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+              "text": "Historical incident snippet\nPrimary signal: at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)\nNearby context: at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)\n2015-10-18 21:33:06,288 INFO [main] org.apache.hadoop.yarn.client.RMProxy: Connecting to ResourceManager at msra-sa-41/10.190.173.170:8030\n2015-10-18 21:33:07,429 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Before Scheduling: PendingReds:1 ScheduledMaps:10 ScheduledReds:0 AssignedMaps:0 AssignedReds:0 Complete"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: ioexception local existing connection was forcibly -> ioexception local existing connection was forcibly (relation=instantly_triggers).",
+              "Historical causal cue: socket reader ipc server readandprocess client -> ioexception local existing connection was forcibly (relation=instantly_triggers)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [communication thread] org.apache.hadoop.mapred.Task: Communication exception: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: <*> destination host is: <*>",
+                "relation": "instantly_triggers",
+                "weight": 0.3395,
+                "score": 70.4509,
+                "query_source_overlap": 20,
+                "query_target_overlap": 18,
+                "reference_source_overlap": 14,
+                "reference_target_overlap": 15
+              },
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [Socket Reader #<*> for port <*>] org.apache.hadoop.ipc.Server: Socket Reader #<*> for port <*>: readAndProcess from client <*> threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [communication thread] org.apache.hadoop.mapred.Task: Communication exception: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: <*> destination host is: <*>",
+                "relation": "instantly_triggers",
+                "weight": 0.3421,
+                "score": 70.0513,
+                "query_source_overlap": 16,
+                "query_target_overlap": 18,
+                "reference_source_overlap": 25,
+                "reference_target_overlap": 15
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

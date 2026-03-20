@@ -1,0 +1,44 @@
+{
+  "benchmark_id": "rq3_hadoop_cleanup_shuffle_reanchor_probe_v2_20260319",
+  "benchmark_kind": "hadoop_cleanup_shuffle_reanchor_probe",
+  "purpose": "Retest Hadoop cleanup and shuffle-pressure under earlier selected-alert anchors so the default raw-window baseline no longer inherits direct cleanup-failed or shuffling-to-disk clues.",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "datasets": {
+    "Hadoop": [
+      {
+        "case_id": "hadoop_application_1445062781478_0015",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_WORKER_NODE_FAILURE",
+        "gt_action_id": "HADOOP_CLEAN_OUTPUT_PATH_AND_RESCHEDULE",
+        "alert_match": "2015-10-17 15:49:04,913 INFO [ContainerLauncher #1] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Processing the event EventType: CONTAINER_REMOTE_CLEANUP for container container_1445062781478_0015_01_000016 taskAttempt attempt_1445062781478_0015_m_000002_1",
+        "eligibility_note": "Earlier cleanup anchor on the same failing attempt; should keep kill-cleanup evidence in view while pushing the direct delete-failed line outside the default raw-window."
+      },
+      {
+        "case_id": "hadoop_application_1445087491445_0001",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_WORKER_NODE_FAILURE",
+        "gt_action_id": "HADOOP_CLEAN_OUTPUT_PATH_AND_RESCHEDULE",
+        "alert_match": "2015-10-17 21:27:32,453 INFO [ContainerLauncher #6] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Processing the event EventType: CONTAINER_REMOTE_CLEANUP for container container_1445087491445_0001_01_000002 taskAttempt attempt_1445087491445_0001_m_000000_0",
+        "eligibility_note": "Second cleanup reanchor using the same failing container-cleanup event instead of the downstream TASK_ABORT."
+      },
+      {
+        "case_id": "hadoop_application_1445182159119_0001",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_STORAGE_PRESSURE",
+        "gt_action_id": "HADOOP_REDUCE_SHUFFLE_PRESSURE_AND_RETRY",
+        "alert_match": "2015-10-19 14:23:07,809 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1445182159119_0001_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events",
+        "eligibility_note": "Earlier shuffle anchor that preserves assignment and map-output discovery context while keeping the direct spill-to-disk clue outside the default raw-window."
+      },
+      {
+        "case_id": "hadoop_application_1445182159119_0014",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_STORAGE_PRESSURE",
+        "gt_action_id": "HADOOP_REDUCE_SHUFFLE_PRESSURE_AND_RETRY",
+        "alert_match": "2015-10-19 15:55:39,609 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1445182159119_0014_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events",
+        "eligibility_note": "Second shuffle reanchor using the EventFetcher start line so the default raw-window stops leaking the direct shuffle-pressure trigger."
+      }
+    ]
+  }
+}

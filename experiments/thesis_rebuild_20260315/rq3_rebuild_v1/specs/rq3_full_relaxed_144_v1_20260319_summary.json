@@ -1,0 +1,81 @@
+{
+  "benchmark_id": "rq3_full_relaxed_144_v1_20260319",
+  "dataset_case_counts": {
+    "HDFS": 50,
+    "OpenStack": 50,
+    "Hadoop": 44
+  },
+  "quality_tier_counts": {
+    "HDFS": {
+      "core_hard": 5,
+      "core_usable": 13,
+      "filler_reanchor": 32
+    },
+    "OpenStack": {
+      "core_hard": 3,
+      "core_usable": 7,
+      "filler_reanchor": 40
+    },
+    "Hadoop": {
+      "core_hard": 4,
+      "core_usable": 20,
+      "filler_reanchor": 20
+    }
+  },
+  "selection_bucket_counts": {
+    "HDFS": {
+      "shortlist": 6,
+      "provisional": 2,
+      "usable_easy": 10,
+      "filler_reanchor": 32
+    },
+    "OpenStack": {
+      "shortlist": 3,
+      "usable_easy": 7,
+      "filler_reanchor": 40
+    },
+    "Hadoop": {
+      "shortlist": 7,
+      "usable_easy": 17,
+      "filler_reanchor": 20
+    }
+  },
+  "duplicate_reanchor_counts": {
+    "HDFS": 16,
+    "OpenStack": 24,
+    "Hadoop": 14
+  },
+  "action_counts": {
+    "HDFS": {
+      "HDFS_CHECK_LINK_AND_LIMIT_RETRANSMISSION": 6,
+      "HDFS_REBUILD_WRITE_PIPELINE": 10,
+      "HDFS_REPAIR_CLIENT_LINK_AND_REREPLICATE": 10,
+      "HDFS_RETRY_ALLOCATION_AFTER_CAPACITY_CHECK": 10,
+      "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE": 9,
+      "HDFS_ISOLATE_RECEIVER_AND_REBUILD_PIPELINE": 4,
+      "HDFS_CHECK_STORAGE_AND_DELETE_STALE_BLOCK": 1
+    },
+    "OpenStack": {
+      "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD": 8,
+      "OPENSTACK_RESYNC_INSTANCE_INVENTORY": 8,
+      "OPENSTACK_SCALE_METADATA_SERVICE": 8,
+      "OPENSTACK_VERIFY_TERMINATION_AND_RESTORE": 4,
+      "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN": 19,
+      "OPENSTACK_REBUILD_ON_COMPATIBLE_HOST": 3
+    },
+    "Hadoop": {
+      "HADOOP_REDUCE_SHUFFLE_PRESSURE_AND_RETRY": 2,
+      "HADOOP_RESTORE_WORKER_RPC_AND_RETRY": 16,
+      "HADOOP_CLEAN_OUTPUT_PATH_AND_RESCHEDULE": 2,
+      "HADOOP_ISOLATE_NODE_AND_RESCHEDULE": 12,
+      "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY": 3,
+      "HADOOP_FREE_LOCAL_DISK_AND_RETRY": 9
+    }
+  },
+  "core_subset_counts": {
+    "HDFS": 16,
+    "OpenStack": 8,
+    "Hadoop": 22
+  },
+  "total_cases": 144
+}

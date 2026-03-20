@@ -1,0 +1,23 @@
+{
+  "benchmark_id": "rq3_hdfs_storage_invalidset_probe_v1_20260318",
+  "benchmark_kind": "single_case_local_probe",
+  "dataset_case_counts": {
+    "HDFS": 1
+  },
+  "family_counts": {
+    "HDFS": {
+      "HDFS_STORAGE_METADATA_PRESSURE": 1
+    }
+  },
+  "action_counts": {
+    "HDFS": {
+      "HDFS_CHECK_STORAGE_AND_DELETE_STALE_BLOCK": 1
+    }
+  },
+  "case_count": 1,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "package_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/rq3_hdfs_storage_invalidset_probe_v1_20260318/rq3_hdfs_storage_invalidset_probe_v1_20260318_package.json"
+}

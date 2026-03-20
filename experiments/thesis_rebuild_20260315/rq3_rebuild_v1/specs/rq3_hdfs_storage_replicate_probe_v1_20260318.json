@@ -1,0 +1,20 @@
+{
+  "benchmark_id": "rq3_hdfs_storage_replicate_probe_v1_20260318",
+  "benchmark_kind": "single_case_local_probe",
+  "purpose": "Probe whether a weaker NameSystem replicate-request anchor can support a thesis-grade HDFS storage/metadata slot without collapsing baseline behavior.",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "datasets": {
+    "HDFS": [
+      {
+        "case_id": "hdfs_22",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+        "gt_action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+        "alert_match": "081111 080934 19 INFO dfs.FSNamesystem: BLOCK* ask 10.250.14.38:50010 to replicate blk_-7571492020523929240 to datanode(s) 10.251.122.38:50010",
+        "eligibility_note": "Redesign candidate: weaker replicate-request anchor instead of direct allocateBlock or blockMap-updated cues."
+      }
+    ]
+  }
+}

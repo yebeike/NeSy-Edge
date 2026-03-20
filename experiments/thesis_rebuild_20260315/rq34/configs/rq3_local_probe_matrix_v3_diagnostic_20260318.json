@@ -1,0 +1,61 @@
+{
+  "benchmark_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/analysis/rq3_small_v3_diagnostic_slice_20260318/rq3_small_v3_local_diagnostic_package_20260318.json",
+  "model": "qwen3.5:9b",
+  "ollama_url": "http://127.0.0.1:11434/api/generate",
+  "temperature": 0,
+  "num_predict": 120,
+  "modes": [
+    {
+      "name": "heuristic_alert",
+      "kind": "heuristic",
+      "evidence": "alert_only",
+      "mapping": "catalog_infer"
+    },
+    {
+      "name": "heuristic_context",
+      "kind": "heuristic",
+      "evidence": "context_only",
+      "mapping": "catalog_infer"
+    },
+    {
+      "name": "desc_overlap_alert",
+      "kind": "heuristic",
+      "evidence": "alert_only",
+      "mapping": "description_overlap"
+    },
+    {
+      "name": "desc_overlap_context",
+      "kind": "heuristic",
+      "evidence": "context_only",
+      "mapping": "description_overlap"
+    },
+    {
+      "name": "vanilla_closed_ids",
+      "kind": "llm",
+      "prompt_style": "closed_ids",
+      "method": "vanilla",
+      "evidence": "alert_context"
+    },
+    {
+      "name": "open_alert_only",
+      "kind": "llm",
+      "prompt_style": "open_text",
+      "method": "vanilla",
+      "evidence": "alert_only"
+    },
+    {
+      "name": "open_context_only",
+      "kind": "llm",
+      "prompt_style": "open_text",
+      "method": "vanilla",
+      "evidence": "context_only"
+    },
+    {
+      "name": "open_alert_context",
+      "kind": "llm",
+      "prompt_style": "open_text",
+      "method": "vanilla",
+      "evidence": "alert_context"
+    }
+  ]
+}

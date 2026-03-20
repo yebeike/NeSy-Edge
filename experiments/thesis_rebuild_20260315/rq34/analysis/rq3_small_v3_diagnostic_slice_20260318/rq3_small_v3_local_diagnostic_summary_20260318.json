@@ -1,0 +1,15 @@
+{
+  "benchmark_id": "rq3_small_v3_local_diagnostic_slice_20260318",
+  "benchmark_kind": "local_diagnostic_slice",
+  "dataset_case_counts": {
+    "HDFS": 4,
+    "OpenStack": 4,
+    "Hadoop": 0
+  },
+  "case_count": 8,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "package_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/analysis/rq3_small_v3_diagnostic_slice_20260318/rq3_small_v3_local_diagnostic_package_20260318.json"
+}

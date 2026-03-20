@@ -1,0 +1,22 @@
+{
+  "run_tag": "rq3_hdfs_storage_delete_line_probe_v1_highnoise_open_20260319",
+  "benchmark_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/rq3_hdfs_storage_delete_line_probe_v1_20260319/rq3_hdfs_storage_delete_line_probe_v1_20260319_package.json",
+  "config_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/local_probe_v1_20260318.json",
+  "datasets": [
+    "HDFS"
+  ],
+  "noise_keys": [
+    "1.0"
+  ],
+  "mode_names": [
+    "heuristic_alert",
+    "heuristic_context",
+    "open_alert_only",
+    "vanilla_open",
+    "rag_open",
+    "agent_open"
+  ],
+  "case_ids": [
+    "HDFS:hdfs_blk_blk_-3544583377289625738"
+  ]
+}

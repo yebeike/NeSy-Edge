@@ -1,0 +1,15 @@
+{
+  "run_tag": "rq3_full_relaxed_144_v3_highnoise_api_20260320",
+  "completed_steps": 111,
+  "total_steps": 432,
+  "api_calls": 111,
+  "prompt_tokens": 78433,
+  "completion_tokens": 15166,
+  "total_tokens": 93599,
+  "estimated_cost_cny": 0.202364,
+  "elapsed_seconds": 544.7,
+  "estimated_remaining_seconds": 1575.22,
+  "steps_per_second": 0.2038,
+  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/api_probe_full_relaxed_144_v3_highnoise_20260320/rq3_full_relaxed_144_v3_highnoise_api_20260320_progress.jsonl",
+  "summary_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/api_probe_full_relaxed_144_v3_highnoise_20260320/rq3_full_relaxed_144_v3_highnoise_api_20260320_summary.json"
+}

@@ -1,0 +1,20 @@
+{
+  "benchmark_id": "rq3_hadoop_rm_retry_probe_v1_20260319",
+  "benchmark_kind": "single_case_local_probe",
+  "purpose": "Probe whether a ResourceManager retry anchor yields a healthier control-link action slot than the worker-side socket-reader anchor.",
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "datasets": {
+    "Hadoop": [
+      {
+        "case_id": "hadoop_application_1445087491445_0002",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY",
+        "alert_match": "2015-10-17 21:41:44,832 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying connect to server: msra-sa-41:8030. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)",
+        "eligibility_note": "RM-specific control-link anchor. Tests whether ResourceManager channel recovery becomes distinguishable from the worker-RPC line when the selected alert points at the 8030 retry loop."
+      }
+    ]
+  }
+}

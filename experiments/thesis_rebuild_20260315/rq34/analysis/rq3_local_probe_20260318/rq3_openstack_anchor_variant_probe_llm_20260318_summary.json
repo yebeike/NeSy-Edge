@@ -1,0 +1,28 @@
+{
+  "run_tag": "rq3_openstack_anchor_variant_probe_llm_20260318",
+  "model": "qwen3.5:9b",
+  "rows": 30,
+  "llm_calls": 30,
+  "budget_exhausted": false,
+  "by_mode": {
+    "open_alert_context": {
+      "rows": 10,
+      "family_accuracy": 0.5,
+      "action_accuracy": 0.4,
+      "action_text_success_rate": 0.6
+    },
+    "open_alert_only": {
+      "rows": 10,
+      "family_accuracy": 0.4,
+      "action_accuracy": 0.2,
+      "action_text_success_rate": 0.6
+    },
+    "vanilla_closed_ids": {
+      "rows": 10,
+      "family_accuracy": 0.6,
+      "action_accuracy": 0.0,
+      "action_text_success_rate": 0.5
+    }
+  },
+  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/analysis/rq3_local_probe_20260318/rq3_openstack_anchor_variant_probe_llm_20260318_progress.jsonl"
+}

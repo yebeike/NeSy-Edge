@@ -1,0 +1,322 @@
+{
+  "benchmark_id": "rq3_hdfs_action_mix_diagnostic_v1_20260319",
+  "benchmark_kind": "hdfs_local_diagnostic_slice",
+  "purpose": "Diagnostic HDFS slice spanning four action families to determine whether HDFS is globally broken or mainly blocked by the storage-metadata slot.",
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "cases": [
+    {
+      "dataset": "HDFS",
+      "case_id": "hdfs_blk_blk_-3102267849859399193",
+      "source": "benchmark_v2",
+      "gt_family_id": "HDFS_TRANSFER_LINK_FAILURE",
+      "gt_action_id": "HDFS_REPAIR_CLIENT_LINK_AND_REREPLICATE",
+      "eligibility_note": "Graph-fixed transfer-link case.",
+      "selected_alert_clean": "081109 203634 190 INFO dfs.DataNode$PacketResponder: PacketResponder blk_-3102267849859399193 2 Exception java.io.EOFException",
+      "shared_context_clean": "081109 203633 147 INFO dfs.DataNode$DataXceiver: writeBlock blk_-3102267849859399193 received exception java.net.SocketTimeoutException\n081109 203634 190 INFO dfs.DataNode$PacketResponder: PacketResponder 2 for block blk_-3102267849859399193 terminating\n081109 204731 148 INFO dfs.DataNode$BlockReceiver: Exception in receiveBlock for block blk_-3102267849859399193 java.io.IOException: Connection reset by peer\n081109 204731 148 INFO dfs.DataNode$DataXceiver: writeBlock blk_-3102267849859399193 received exception java.io.IOException: Connection reset by peer",
+      "provenance": {
+        "ground_truth_root_cause_template": "unknown",
+        "ground_truth_template": "writeBlock blk_<*> received exception java.io.IOException: Connection reset by peer",
+        "reason": ""
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "081109 203634 190 INFO dfs.DataNode$PacketResponder: PacketResponder blk_-3102267849859399193 2 Exception java.io.EOFException",
+          "context_text": "081109 203633 147 INFO dfs.DataNode$DataXceiver: writeBlock blk_-3102267849859399193 received exception java.net.SocketTimeoutException\n081109 203634 190 INFO dfs.DataNode$PacketResponder: PacketResponder 2 for block blk_-3102267849859399193 terminating\n081109 204731 148 INFO dfs.DataNode$BlockReceiver: Exception in receiveBlock for block blk_-3102267849859399193 java.io.IOException: Connection reset by peer\n081109 204731 148 INFO dfs.DataNode$DataXceiver: writeBlock blk_-3102267849859399193 received exception java.io.IOException: Connection reset by peer",
+          "rag_references": [],
+          "agent_references": [],
+          "graph_evidence": {
+            "summary_lines": [],
+            "matched_edges": []
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "081109 203634 190 INFO dfs.DataNode$ReplicaStage: ReplicaStage block-id:-3102267849859399193 2 Error java.io.stage sequence ended before completion",
+          "context_text": "081109 203633 147 INFO dfs.DataNode$DataXceiver: replicaStageStep block-id:-3102267849859399193 received exception java.net.channel wait threshold exceeded\n081109 203634 190 INFO dfs.DataNode$ReplicaStage: ReplicaStage 2 for block block-id:-3102267849859399193 closing\n081109 204731 148 INFO dfs.DataNode$BlockReceiver: Error in receiveBlock for block block-id:-3102267849859399193 java.io.IOError: operation reported an irregular interruption\n081109 204731 148 INFO dfs.DataNode$DataXceiver: replicaStageStep block-id:-3102267849859399193 received exception java.io.IOError: operation reported an irregular interruption",
+          "rag_references": [],
+          "agent_references": [],
+          "graph_evidence": {
+            "summary_lines": [],
+            "matched_edges": []
+          }
+        }
+      }
+    },
+    {
+      "dataset": "HDFS",
+      "case_id": "hdfs_37",
+      "source": "rq3_test_set_enriched",
+      "gt_family_id": "HDFS_PIPELINE_FAILURE",
+      "gt_action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+      "eligibility_note": "Weaker DataXceiver-side pipeline anchor.",
+      "selected_alert_clean": "081111 081847 24224 INFO dfs.DataNode$DataXceiver: Receiving block blk_1512136249403454074 src: /10.250.7.244:47958 dest: /10.250.7.244:50010",
+      "shared_context_clean": "081111 081640 23985 INFO dfs.DataNode$PacketResponder: Received block blk_427477290315080955 of size 67108864 from /10.251.123.132\n081111 081702 24075 INFO dfs.DataNode$PacketResponder: Received block blk_-7630699912570186723 of size 67108864 from /10.251.71.240\n081111 081938 23963 INFO dfs.DataNode$PacketResponder: Received block blk_8655748951361667770 of size 67108864 from /10.251.109.236\n081111 081954 24553 INFO dfs.DataNode$PacketResponder: PacketResponder 2 for block blk_8487226415276391460 terminating",
+      "provenance": {
+        "ground_truth_root_cause_template": "unknown",
+        "ground_truth_template": "Receiving block blk_<*> src: /<*>:<*> dest: /<*>:<*>",
+        "reason": ""
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "081111 081847 24224 INFO dfs.DataNode$DataXceiver: Receiving block blk_1512136249403454074 src: /10.250.7.244:47958 dest: /10.250.7.244:50010",
+          "context_text": "081111 081640 23985 INFO dfs.DataNode$PacketResponder: Received block blk_427477290315080955 of size 67108864 from /10.251.123.132\n081111 081702 24075 INFO dfs.DataNode$PacketResponder: Received block blk_-7630699912570186723 of size 67108864 from /10.251.71.240\n081111 081938 23963 INFO dfs.DataNode$PacketResponder: Received block blk_8655748951361667770 of size 67108864 from /10.251.109.236\n081111 081954 24553 INFO dfs.DataNode$PacketResponder: PacketResponder 2 for block blk_8487226415276391460 terminating",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_11",
+              "score": 23.2836,
+              "lexical": 19.2836,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 211038 1490 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_-5073870177832699716 terminating\nNearby context: 081109 210921 1452 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6809181994368905854 src: /10.250.17.225:51754 dest: /10.250.17.225:50010\n081109 210935 1458 INFO dfs.DataNode$PacketResponder: Received block blk_8829027411458566099 of size 67108864 from /10.251.38.214\n081109 211216 1504 INFO dfs.DataNode$PacketResponder: Received block blk_-8241093737585222406 of size 67108864 from /10.250.5.161\n081109 211353 15"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_12",
+              "score": 23.2836,
+              "lexical": 19.2836,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 211038 1490 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_-5073870177832699716 terminating\nNearby context: 081109 210921 1452 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6809181994368905854 src: /10.250.17.225:51754 dest: /10.250.17.225:50010\n081109 210935 1458 INFO dfs.DataNode$PacketResponder: Received block blk_8829027411458566099 of size 67108864 from /10.251.38.214\n081109 211216 1504 INFO dfs.DataNode$PacketResponder: Received block blk_-8241093737585222406 of size 67108864 from /10.250.5.161\n081109 211353 15"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_25",
+              "score": 20.2319,
+              "lexical": 16.2319,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081110 210837 14418 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_3940282600163903101 terminating\nNearby context: 081110 210721 14857 INFO dfs.DataNode$DataXceiver: Receiving block blk_3235988328669699941 src: /10.251.199.159:43276 dest: /10.251.199.159:50010\n081110 210832 14473 INFO dfs.DataNode$DataXceiver: Receiving block blk_-5808893254440551816 src: /10.250.11.194:53256 dest: /10.250.11.194:50010\n081110 211021 14407 INFO dfs.DataNode$DataXceiver: Receiving block blk_4233013542759682998 src: /10.251.109.209:48041 dest: /10.2"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_11",
+              "score": 23.2836,
+              "lexical": 19.2836,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 211038 1490 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_-5073870177832699716 terminating\nNearby context: 081109 210921 1452 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6809181994368905854 src: /10.250.17.225:51754 dest: /10.250.17.225:50010\n081109 210935 1458 INFO dfs.DataNode$PacketResponder: Received block blk_8829027411458566099 of size 67108864 from /10.251.38.214\n081109 211216 1504 INFO dfs.DataNode$PacketResponder: Received block blk_-8241093737585222406 of size 67108864 from /10.250.5.161\n081109 211353 15"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_12",
+              "score": 23.2836,
+              "lexical": 19.2836,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 211038 1490 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_-5073870177832699716 terminating\nNearby context: 081109 210921 1452 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6809181994368905854 src: /10.250.17.225:51754 dest: /10.250.17.225:50010\n081109 210935 1458 INFO dfs.DataNode$PacketResponder: Received block blk_8829027411458566099 of size 67108864 from /10.251.38.214\n081109 211216 1504 INFO dfs.DataNode$PacketResponder: Received block blk_-8241093737585222406 of size 67108864 from /10.250.5.161\n081109 211353 15"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_25",
+              "score": 20.2319,
+              "lexical": 16.2319,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081110 210837 14418 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_3940282600163903101 terminating\nNearby context: 081110 210721 14857 INFO dfs.DataNode$DataXceiver: Receiving block blk_3235988328669699941 src: /10.251.199.159:43276 dest: /10.251.199.159:50010\n081110 210832 14473 INFO dfs.DataNode$DataXceiver: Receiving block blk_-5808893254440551816 src: /10.250.11.194:53256 dest: /10.250.11.194:50010\n081110 211021 14407 INFO dfs.DataNode$DataXceiver: Receiving block blk_4233013542759682998 src: /10.251.109.209:48041 dest: /10.2"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: block allocateblock -> block terminating packet-responder (relation=symbolic_prior).",
+              "Historical causal cue: block receive-block -> block packet-responder interrupted (relation=symbolic_prior)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "[*]BLOCK* NameSystem[*]allocateBlock:[*]",
+                "target_template": "[*]PacketResponder[*]for block[*]terminating[*]",
+                "relation": "symbolic_prior",
+                "weight": 0.55,
+                "score": 10.2825,
+                "query_source_overlap": 1,
+                "query_target_overlap": 1,
+                "reference_source_overlap": 1,
+                "reference_target_overlap": 4
+              },
+              {
+                "source_template": "[*]Exception in receiveBlock for block[*]",
+                "target_template": "[*]PacketResponder[*]for block[*]Interrupted[*]",
+                "relation": "symbolic_prior",
+                "weight": 0.9099,
+                "score": 8.7365,
+                "query_source_overlap": 1,
+                "query_target_overlap": 1,
+                "reference_source_overlap": 2,
+                "reference_target_overlap": 3
+              }
+            ]
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "081111 081847 24224 INFO dfs.DataNode$DataXceiver: Receiving block during write-pipeline stage blk_1512136249403454074 src: /10.250.7.244:47958 dest: /10.250.7.244:50010",
+          "context_text": "081111 081640 23985 INFO dfs.DataNode$ReplicaStage: replica fragment observed block-id:427477290315080955 of len 67108864 during activity\n081111 081702 24075 INFO dfs.DataNode$ReplicaStage: replica fragment observed block-id:-7630699912570186723 of len 67108864 during activity\n081111 081938 23963 INFO dfs.DataNode$ReplicaStage: replica fragment observed block-id:8655748951361667770 of len 67108864 during activity\n081111 081954 24553 INFO dfs.DataNode$ReplicaStage: ReplicaStage 2 for block block-id:8487226415276391460 closing",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_11",
+              "score": 23.2836,
+              "lexical": 19.2836,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 211038 1490 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_-5073870177832699716 terminating\nNearby context: 081109 210921 1452 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6809181994368905854 src: /10.250.17.225:51754 dest: /10.250.17.225:50010\n081109 210935 1458 INFO dfs.DataNode$PacketResponder: Received block blk_8829027411458566099 of size 67108864 from /10.251.38.214\n081109 211216 1504 INFO dfs.DataNode$PacketResponder: Received block blk_-8241093737585222406 of size 67108864 from /10.250.5.161\n081109 211353 15"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_12",
+              "score": 23.2836,
+              "lexical": 19.2836,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 211038 1490 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_-5073870177832699716 terminating\nNearby context: 081109 210921 1452 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6809181994368905854 src: /10.250.17.225:51754 dest: /10.250.17.225:50010\n081109 210935 1458 INFO dfs.DataNode$PacketResponder: Received block blk_8829027411458566099 of size 67108864 from /10.251.38.214\n081109 211216 1504 INFO dfs.DataNode$PacketResponder: Received block blk_-8241093737585222406 of size 67108864 from /10.250.5.161\n081109 211353 15"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_25",
+              "score": 20.2319,
+              "lexical": 16.2319,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081110 210837 14418 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_3940282600163903101 terminating\nNearby context: 081110 210721 14857 INFO dfs.DataNode$DataXceiver: Receiving block blk_3235988328669699941 src: /10.251.199.159:43276 dest: /10.251.199.159:50010\n081110 210832 14473 INFO dfs.DataNode$DataXceiver: Receiving block blk_-5808893254440551816 src: /10.250.11.194:53256 dest: /10.250.11.194:50010\n081110 211021 14407 INFO dfs.DataNode$DataXceiver: Receiving block blk_4233013542759682998 src: /10.251.109.209:48041 dest: /10.2"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_11",
+              "score": 23.2836,
+              "lexical": 19.2836,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 211038 1490 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_-5073870177832699716 terminating\nNearby context: 081109 210921 1452 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6809181994368905854 src: /10.250.17.225:51754 dest: /10.250.17.225:50010\n081109 210935 1458 INFO dfs.DataNode$PacketResponder: Received block blk_8829027411458566099 of size 67108864 from /10.251.38.214\n081109 211216 1504 INFO dfs.DataNode$PacketResponder: Received block blk_-8241093737585222406 of size 67108864 from /10.250.5.161\n081109 211353 15"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_12",
+              "score": 23.2836,
+              "lexical": 19.2836,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 211038 1490 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_-5073870177832699716 terminating\nNearby context: 081109 210921 1452 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6809181994368905854 src: /10.250.17.225:51754 dest: /10.250.17.225:50010\n081109 210935 1458 INFO dfs.DataNode$PacketResponder: Received block blk_8829027411458566099 of size 67108864 from /10.251.38.214\n081109 211216 1504 INFO dfs.DataNode$PacketResponder: Received block blk_-8241093737585222406 of size 67108864 from /10.250.5.161\n081109 211353 15"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_25",
+              "score": 20.2319,
+              "lexical": 16.2319,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081110 210837 14418 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_3940282600163903101 terminating\nNearby context: 081110 210721 14857 INFO dfs.DataNode$DataXceiver: Receiving block blk_3235988328669699941 src: /10.251.199.159:43276 dest: /10.251.199.159:50010\n081110 210832 14473 INFO dfs.DataNode$DataXceiver: Receiving block blk_-5808893254440551816 src: /10.250.11.194:53256 dest: /10.250.11.194:50010\n081110 211021 14407 INFO dfs.DataNode$DataXceiver: Receiving block blk_4233013542759682998 src: /10.251.109.209:48041 dest: /10.2"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: block allocateblock -> block terminating packet-responder (relation=symbolic_prior).",
+              "Historical causal cue: block receive-block -> block packet-responder interrupted (relation=symbolic_prior)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "[*]BLOCK* NameSystem[*]allocateBlock:[*]",
+                "target_template": "[*]PacketResponder[*]for block[*]terminating[*]",
+                "relation": "symbolic_prior",
+                "weight": 0.55,
+                "score": 10.2825,
+                "query_source_overlap": 1,
+                "query_target_overlap": 1,
+                "reference_source_overlap": 1,
+                "reference_target_overlap": 4
+              },
+              {
+                "source_template": "[*]Exception in receiveBlock for block[*]",
+                "target_template": "[*]PacketResponder[*]for block[*]Interrupted[*]",
+                "relation": "symbolic_prior",
+                "weight": 0.9099,
+                "score": 8.7365,
+                "query_source_overlap": 1,
+                "query_target_overlap": 1,
+                "reference_source_overlap": 2,
+                "reference_target_overlap": 3
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "dataset": "HDFS",
+      "case_id": "hdfs_22",
+      "source": "rq3_test_set_enriched",
+      "gt_family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+      "gt_action_id": "HDFS_RETRY_ALLOCATION_AFTER_CAPACITY_CHECK",
+      "eligibility_note": "Shortcut-heavy capacity redesign candidate retained only for dataset-level diagnostics.",
+      "selected_alert_clean": "081111 082527 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand7/_temporary/_task_200811101024_0014_m_001049_0/part-01049. blk_-1533191386601391937",
+      "shared_context_clean": "081111 081617 26 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.15.240:50010 is added to blk_8512974147315737844 size 67108864\n081111 082039 28 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.66.3:50010 is added to blk_-4970213618915792510 size 67108864\n081111 082650 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.13.240:50010 is added to blk_4170936278386288557 size 67108864\n081111 083120 26 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.39.192:50010 is added to blk_-3888538223380979891 size 67108864",
+      "provenance": {
+        "ground_truth_root_cause_template": "[*]Starting thread to transfer block[*]to[*]",
+        "ground_truth_template": "BLOCK* ask <*>:<*> to replicate blk_<*> to datanode(s) <*>:<*>",
+        "reason": ""
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "081111 082527 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand7/_temporary/_task_200811101024_0014_m_001049_0/part-01049. blk_-1533191386601391937",
+          "context_text": "081111 081617 26 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.15.240:50010 is added to blk_8512974147315737844 size 67108864\n081111 082039 28 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.66.3:50010 is added to blk_-4970213618915792510 size 67108864\n081111 082650 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.13.240:50010 is added to blk_4170936278386288557 size 67108864\n081111 083120 26 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.39.192:50010 is added to blk_-3888538223380979891 size 67108864",
+          "rag_references": [],
+          "agent_references": [],
+          "graph_evidence": {
+            "summary_lines": [],
+            "matched_edges": []
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "081111 082527 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand7/_temporary/_task_200811101024_0014_m_001049_0/part-01049. block-id:-1533191386601391937",
+          "context_text": "081111 081617 26 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.15.240:50010 is added to block-id:8512974147315737844 len 67108864\n081111 082039 28 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.66.3:50010 is added to block-id:-4970213618915792510 len 67108864\n081111 082650 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.13.240:50010 is added to block-id:4170936278386288557 len 67108864\n081111 083120 26 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.39.192:50010 is added to block-id:-3888538223380979891 len 67108864",
+          "rag_references": [],
+          "agent_references": [],
+          "graph_evidence": {
+            "summary_lines": [],
+            "matched_edges": []
+          }
+        }
+      }
+    },
+    {
+      "dataset": "HDFS",
+      "case_id": "hdfs_blk_blk_-3544583377289625738",
+      "source": "benchmark_v2",
+      "gt_family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+      "gt_action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+      "eligibility_note": "Storage-metadata redesign candidate with RCA/E2E separation.",
+      "selected_alert_clean": "081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: blk_-3544583377289625738 is added to invalidSet of 10.251.39.179:50010",
+      "shared_context_clean": "081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: blk_-3544583377289625738 is added to invalidSet of 10.250.11.100:50010\n081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: blk_-3544583377289625738 is added to invalidSet of 10.251.197.226:50010\n081109 213811 19 INFO dfs.FSDataset: Deleting block blk_-3544583377289625738 file /mnt/hadoop/dfs/data/current/blk_-3544583377289625738",
+      "provenance": {
+        "ground_truth_root_cause_template": "unknown",
+        "ground_truth_template": "Unexpected error trying to delete block blk_<*>. BlockInfo not found in volumeMap.",
+        "reason": ""
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: blk_-3544583377289625738 is added to invalidSet of 10.251.39.179:50010",
+          "context_text": "081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: blk_-3544583377289625738 is added to invalidSet of 10.250.11.100:50010\n081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: blk_-3544583377289625738 is added to invalidSet of 10.251.197.226:50010\n081109 213811 19 INFO dfs.FSDataset: Deleting block blk_-3544583377289625738 file /mnt/hadoop/dfs/data/current/blk_-3544583377289625738",
+          "rag_references": [],
+          "agent_references": [],
+          "graph_evidence": {
+            "summary_lines": [],
+            "matched_edges": []
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: block-id:-3544583377289625738 is added to invalidSet of 10.251.39.179:50010",
+          "context_text": "081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: block-id:-3544583377289625738 is added to invalidSet of 10.250.11.100:50010\n081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: block-id:-3544583377289625738 is added to invalidSet of 10.251.197.226:50010\n081109 213811 19 INFO dfs.FSDataset: Deleting block block-id:-3544583377289625738 file /mnt/hadoop/dfs/data/current/block-id:-3544583377289625738",
+          "rag_references": [],
+          "agent_references": [],
+          "graph_evidence": {
+            "summary_lines": [],
+            "matched_edges": []
+          }
+        }
+      }
+    }
+  ]
+}

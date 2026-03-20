@@ -1,0 +1,20 @@
+{
+  "benchmark_id": "rq3_openstack_inventory_probe_v1_20260319",
+  "benchmark_kind": "single_case_local_probe",
+  "purpose": "Probe whether a pre-mismatch host-detail anchor can support an OpenStack inventory-drift slot without collapsing into direct taxonomy matching.",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "datasets": {
+    "OpenStack": [
+      {
+        "case_id": "openstack_win_20",
+        "source": "benchmark_v2",
+        "gt_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+        "gt_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY",
+        "alert_match": "GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.2438881",
+        "eligibility_note": "Inventory-drift probe anchored to the host-detail poll immediately before the scheduler reports an InstanceList mismatch."
+      }
+    ]
+  }
+}

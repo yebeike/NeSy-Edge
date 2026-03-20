@@ -1,0 +1,48 @@
+{
+  "benchmark_id": "rq3_hadoop_rm_reanchor_probe_v1_20260319",
+  "benchmark_kind": "hadoop_rm_reanchor_probe",
+  "purpose": "Probe RM-channel-specific Hadoop control-link anchors under the rebuilt RQ3 contract.",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "datasets": {
+    "Hadoop": [
+      {
+        "case_id": "hadoop_application_1445144423722_0020",
+        "eval_case_id": "hadoop_application_1445144423722_0020__rm01",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY",
+        "alert_match": "2015-10-18 18:06:03,856 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying connect to server: msra-sa-41:8030. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)",
+        "eligibility_note": "RM-specific reanchor probe built from :8030 / ResourceManager retry lines."
+      },
+      {
+        "case_id": "hadoop_application_1445144423722_0023",
+        "eval_case_id": "hadoop_application_1445144423722_0023__rm01",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY",
+        "alert_match": "2015-10-18 18:05:42,008 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying connect to server: msra-sa-41:8030. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)",
+        "eligibility_note": "RM-specific reanchor probe built from :8030 / ResourceManager retry lines."
+      },
+      {
+        "case_id": "hadoop_application_1445175094696_0003",
+        "eval_case_id": "hadoop_application_1445175094696_0003__rm01",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY",
+        "alert_match": "2015-10-18 21:39:41,390 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying connect to server: msra-sa-41:8030. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)",
+        "eligibility_note": "RM-specific reanchor probe built from :8030 / ResourceManager retry lines."
+      },
+      {
+        "case_id": "hadoop_application_1445087491445_0002",
+        "eval_case_id": "hadoop_application_1445087491445_0002__rm01",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY",
+        "alert_match": "2015-10-17 21:41:44,832 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying connect to server: msra-sa-41:8030. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)",
+        "eligibility_note": "RM-specific reanchor probe built from :8030 / ResourceManager retry lines."
+      }
+    ]
+  }
+}

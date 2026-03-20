@@ -1,0 +1,228 @@
+{
+  "benchmark_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/analysis/rq3_small_v2_20260318/rq3_small_v2_benchmark_package_20260318.json",
+  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/analysis/rq3_local_probe_20260318/rq3_local_probe_smoketest_20260318_progress.jsonl",
+  "structural_report": {
+    "HDFS": {
+      "cases": 9,
+      "rows": 27,
+      "same_alert_equals_context_rows": 17,
+      "context_line_count_distribution": {
+        "1": 17,
+        "2": 2,
+        "3": 2,
+        "5": 6
+      },
+      "median_context_lines": 2.1111,
+      "direct_alert_action_match_rows": 23,
+      "direct_context_action_match_rows": 23,
+      "description_overlap_alert_match_rows": 16,
+      "description_overlap_context_match_rows": 16,
+      "graph_top1_gt_rows": 21,
+      "graph_rows": 27,
+      "no_graph_hint_rows": 0,
+      "stable_reference_sets_across_noise_cases": 6,
+      "agent_reference_subset_of_rag_cases": 9
+    },
+    "OpenStack": {
+      "cases": 9,
+      "rows": 27,
+      "same_alert_equals_context_rows": 10,
+      "context_line_count_distribution": {
+        "1": 10,
+        "2": 13,
+        "3": 4
+      },
+      "median_context_lines": 1.7778,
+      "direct_alert_action_match_rows": 15,
+      "direct_context_action_match_rows": 21,
+      "description_overlap_alert_match_rows": 8,
+      "description_overlap_context_match_rows": 9,
+      "graph_top1_gt_rows": 21,
+      "graph_rows": 27,
+      "no_graph_hint_rows": 3,
+      "stable_reference_sets_across_noise_cases": 5,
+      "agent_reference_subset_of_rag_cases": 9
+    },
+    "Hadoop": {
+      "cases": 9,
+      "rows": 27,
+      "same_alert_equals_context_rows": 2,
+      "context_line_count_distribution": {
+        "1": 2,
+        "2": 5,
+        "3": 12,
+        "4": 4,
+        "5": 4
+      },
+      "median_context_lines": 3.1111,
+      "direct_alert_action_match_rows": 23,
+      "direct_context_action_match_rows": 23,
+      "description_overlap_alert_match_rows": 25,
+      "description_overlap_context_match_rows": 26,
+      "graph_top1_gt_rows": 13,
+      "graph_rows": 27,
+      "no_graph_hint_rows": 11,
+      "stable_reference_sets_across_noise_cases": 9,
+      "agent_reference_subset_of_rag_cases": 9
+    }
+  },
+  "mode_report": {
+    "by_mode": {
+      "heuristic_alert": {
+        "rows": 4,
+        "family_accuracy": 1.0,
+        "action_accuracy": 1.0,
+        "action_text_success_rate": 0.0
+      },
+      "heuristic_context": {
+        "rows": 4,
+        "family_accuracy": 1.0,
+        "action_accuracy": 1.0,
+        "action_text_success_rate": 0.0
+      },
+      "open_alert_only": {
+        "rows": 3,
+        "family_accuracy": 1.0,
+        "action_accuracy": 1.0,
+        "action_text_success_rate": 0.0
+      },
+      "vanilla_closed_desc": {
+        "rows": 3,
+        "family_accuracy": 1.0,
+        "action_accuracy": 1.0,
+        "action_text_success_rate": 1.0
+      }
+    },
+    "by_mode_dataset_noise": {
+      "heuristic_alert": {
+        "HDFS": {
+          "overall": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          },
+          "0.0": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          },
+          "0.6": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          },
+          "1.0": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          }
+        },
+        "OpenStack": {
+          "overall": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          },
+          "0.0": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          }
+        }
+      },
+      "heuristic_context": {
+        "HDFS": {
+          "overall": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          },
+          "0.0": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          },
+          "0.6": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          },
+          "1.0": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          }
+        },
+        "OpenStack": {
+          "overall": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          },
+          "0.0": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          }
+        }
+      },
+      "open_alert_only": {
+        "HDFS": {
+          "overall": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          },
+          "0.0": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          },
+          "0.6": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          },
+          "1.0": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          }
+        }
+      },
+      "vanilla_closed_desc": {
+        "HDFS": {
+          "overall": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          },
+          "0.0": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          },
+          "0.6": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          },
+          "1.0": {
+            "family_accuracy": 1.0,
+            "action_accuracy": 1.0
+          }
+        }
+      }
+    }
+  },
+  "difficulty_report": {
+    "too_easy_cases": [
+      {
+        "dataset": "HDFS",
+        "case_id": "hdfs_9",
+        "gt_action_id": "HDFS_CHECK_LINK_AND_LIMIT_RETRANSMISSION",
+        "gt_family_id": "HDFS_TRANSFER_LINK_FAILURE",
+        "shortcut_probe_family_accuracy": 1.0
+      },
+      {
+        "dataset": "OpenStack",
+        "case_id": "openstack_47",
+        "gt_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY",
+        "gt_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+        "shortcut_probe_family_accuracy": 1.0
+      }
+    ],
+    "harder_cases": []
+  },
+  "health_checks": {
+    "current_v2_vanilla_not_near_perfect": false,
+    "open_alert_only_not_high": false,
+    "open_alert_context_not_high": false,
+    "agent_vs_rag_separated": false,
+    "agent_vs_vanilla_separated": true,
+    "hdfs_direct_alert_not_dominant": false,
+    "hadoop_direct_alert_not_dominant": false,
+    "healthy_for_paid_api": false
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "run_tag": "rq3_triad_proof_slice_v2_heuristics_20260318",
+  "benchmark_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/rq3_triad_proof_slice_v2_20260318/rq3_triad_proof_slice_v2_20260318_package.json",
+  "config_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/local_probe_v1_20260318.json",
+  "datasets": [
+    "HDFS",
+    "OpenStack",
+    "Hadoop"
+  ],
+  "noise_keys": [
+    "0.0",
+    "1.0"
+  ],
+  "mode_names": [
+    "heuristic_alert",
+    "heuristic_context"
+  ],
+  "case_ids": [
+    "OpenStack:openstack_49",
+    "OpenStack:openstack_51",
+    "OpenStack:openstack_56",
+    "OpenStack:openstack_48",
+    "Hadoop:hadoop_application_1445087491445_0001",
+    "Hadoop:hadoop_application_1445087491445_0002",
+    "Hadoop:hadoop_application_1445175094696_0001",
+    "Hadoop:hadoop_application_1445175094696_0003",
+    "Hadoop:hadoop_application_1445182159119_0001",
+    "HDFS:hdfs_blk_blk_-3102267849859399193",
+    "HDFS:hdfs_19",
+    "HDFS:hdfs_37",
+    "HDFS:hdfs_38"
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "benchmark_id": "rq3_rebuild_dataset_admission_v1_20260318",
+  "shared_rules": {
+    "min_families_per_dataset": 3,
+    "min_actions_per_dataset": 4,
+    "forbid_selected_alert_equals_context_as_default": true,
+    "require_rca_e2e_decoupling": true,
+    "notes": [
+      "Diagnostic proof slices may violate final counts, but formal small/mid cannot.",
+      "If a dataset cannot satisfy these rules locally, it stays blocked from paid API use."
+    ]
+  },
+  "datasets": {
+    "HDFS": {
+      "status": "transfer_line_recovered_but_storage_and_pipeline_slots_still_blocked",
+      "blocked_risks": [
+        "Direct serving and allocation anchors dominate the current pool.",
+        "The current HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE slot is not formal-ready: under the invalidSet anchor, open-alert-only reaches only RCA while context drifts the case into transfer semantics.",
+        "The same invalidSet anchor stays equally unstable under HDFS_CHECK_STORAGE_AND_DELETE_STALE_BLOCK, so the storage incident is not blocked by taxonomy naming alone.",
+        "The delete-block anchor for HDFS_CHECK_STORAGE_AND_DELETE_STALE_BLOCK is too direct: heuristic_alert already closes to the correct family and action at high noise.",
+        "Under the strict open-text evaluator, hdfs_19 behaves like routine replica exchange rather than a repair-worthy transfer incident.",
+        "Under the strict open-text evaluator, hdfs_37 behaves like a shortcut-heavy pipeline slot: open-alert-only already reaches E2E and rag can even be pulled into the wrong family.",
+        "Under the strict open-text evaluator, terminating PacketResponder or ReplicaStage-closing anchors for HDFS_ISOLATE_RECEIVER_AND_REBUILD_PIPELINE drift into benign or transfer interpretations instead of closing the isolate action.",
+        "Under the strict open-text evaluator, the invalidSet redesign candidate hdfs_blk_blk_-3544583377289625738 is now diagnostic-only: both validate-blockmap and check-storage variants fail once context enters, while the delete-line anchor is too direct.",
+        "The rebuilt capacity-check sanitizer fixes the task definition for hdfs_22, but that direct allocateBlock anchor becomes open-alert-solvable at high noise and is therefore still not thesis-grade for formal admission.",
+        "The weaker capacity candidates hdfs_23, hdfs_24, hdfs_5, and hdfs_6 collapse into pipeline or transfer semantics under strict high-noise probing and should be rejected as storage-slot replacements.",
+        "The rebuilt HDFS reference policy fixes the pathological rag collapse, but the HDFS four-action diagnostic slice still cannot support formal admission because hdfs_37 remains shortcut-heavy and the storage slot remains unusable.",
+        "The received-block pipeline sweep produces stronger replacements than hdfs_37, but the new anchors are still heuristic-direct: hdfs_12 and hdfs_46 look open-text healthy while heuristic_alert stays 1.0, so they are only provisional until the shortcut standard is rechecked against the thesis-grade baseline policy.",
+        "The new transfer-only sweep confirms that hdfs_20 is the first stable shortlist-quality HDFS replacement under the strict contract, while hdfs_21 remains unstable: vanilla can solve one reanchor, rag regresses, and agent no longer closes the action."
+      ],
+      "priority": "Keep hdfs_20 as the current best new transfer shortlist and keep hdfs_blk_blk_-3102267849859399193 only as a provisional legacy transfer case. Retire hdfs_37 from the formal path. Treat hdfs_12 and hdfs_46 as the current best pipeline replacements, with hdfs_45 as reserve, but do not formalize any of them until the heuristic-directness question is resolved against the strict baseline policy. Stop treating hdfs_blk_blk_-3544583377289625738 as a formal storage candidate unless a different weak anchor from another incident is found. Do not promote direct allocateBlock anchors, delete-block anchors, or open-alert-solvable DataXceiver anchors into the formal mix.",
+      "validated_cases": [
+        "benchmark_v2:hdfs_blk_blk_-3102267849859399193"
+      ],
+      "shortlisted_cases": [
+        "rq3_test_set_enriched:hdfs_20"
+      ],
+      "provisional_cases": [
+        "rq3_test_set_enriched:hdfs_12",
+        "rq3_test_set_enriched:hdfs_46",
+        "rq3_test_set_enriched:hdfs_45"
+      ],
+      "blocked_cases": [
+        "benchmark_v2:hdfs_blk_blk_-3544583377289625738",
+        "rq3_test_set_enriched:hdfs_19",
+        "rq3_test_set_enriched:hdfs_17",
+        "rq3_test_set_enriched:hdfs_18",
+        "rq3_test_set_enriched:hdfs_22",
+        "rq3_test_set_enriched:hdfs_36",
+        "rq3_test_set_enriched:hdfs_40",
+        "rq3_test_set_enriched:hdfs_38",
+        "rq3_test_set_enriched:hdfs_23",
+        "rq3_test_set_enriched:hdfs_24",
+        "rq3_test_set_enriched:hdfs_5",
+        "rq3_test_set_enriched:hdfs_6",
+        "rq3_test_set_enriched:hdfs_11",
+        "rq3_test_set_enriched:hdfs_21",
+        "rq3_test_set_enriched:hdfs_37",
+        "rq3_test_set_enriched:hdfs_42",
+        "rq3_test_set_enriched:hdfs_33",
+        "rq3_test_set_enriched:hdfs_44"
+      ],
+      "disallow_patterns": [
+        "got exception while serving",
+        "allocateBlock",
+        "blockMap updated",
+        "BlockInfo not found in volumeMap"
+      ]
+    },
+    "OpenStack": {
+      "status": "healthy_proof_slice_v5",
+      "priority": "Keep openstack_48, openstack_49, openstack_51, and openstack_win_20. The v5 strict high-noise proof slice is healthy: open_alert_only and vanilla stay at 0, rag reaches 0.5 E2E, and agent reaches 1.0 E2E.",
+      "validated_cases": [
+        "rq3_test_set_enriched:openstack_48",
+        "rq3_test_set_enriched:openstack_49",
+        "rq3_test_set_enriched:openstack_51",
+        "benchmark_v2:openstack_win_20"
+      ],
+      "blocked_cases": [
+        "rq3_test_set_enriched:openstack_56"
+      ],
+      "disallow_patterns": [
+        "instance sync for host",
+        "Creating image",
+        "Unknown base file",
+        "GET /openstack/2013-10-17"
+      ]
+    },
+    "Hadoop": {
+      "status": "cleanup_and_shuffle_keepable_but_control_link_still_blocked_after_strict_bulk_sweeps",
+      "priority": "Keep the weaker cleanup kill-transition anchors and the EventFetcher-based shuffle anchors. Under the fair retrieval contract, Hadoop control-link should still stay split into worker-RPC and RM-channel slots, but neither slot is formal-ready yet: the RM exception reanchor is healthy in isolation while the current worker/RM pair still collapses at the subtype action level once ground-truth reference filtering is removed. The stricter v5 worker-RPC bulk sweep confirms that weak non-direct control-link anchors preserve family RCA for agent but still fail E2E, so do not promote any Hadoop formal pool until control-link subtype confusion is resolved with a stronger worker case or a better graph representation.",
+      "preferred_cases": [
+        "benchmark_v2:hadoop_application_1445062781478_0015",
+        "benchmark_v2:hadoop_application_1445087491445_0001",
+        "benchmark_v2:hadoop_application_1445182159119_0001",
+        "benchmark_v2:hadoop_application_1445182159119_0014",
+        "benchmark_v2:hadoop_application_1445144423722_0020"
+      ],
+      "validated_cases": [
+        "benchmark_v2:hadoop_application_1445062781478_0015",
+        "benchmark_v2:hadoop_application_1445087491445_0001",
+        "benchmark_v2:hadoop_application_1445182159119_0001",
+        "benchmark_v2:hadoop_application_1445182159119_0014"
+      ],
+      "blocked_cases": [
+        "benchmark_v2:hadoop_application_1445062781478_0014",
+        "benchmark_v2:hadoop_application_1445076437777_0003",
+        "benchmark_v2:hadoop_application_1445175094696_0001",
+        "benchmark_v2:hadoop_application_1445175094696_0003",
+        "benchmark_v2:hadoop_application_1445175094696_0004",
+        "benchmark_v2:hadoop_application_1445087491445_0002",
+        "benchmark_v2:hadoop_application_1445144423722_0020",
+        "benchmark_v2:hadoop_application_1445144423722_0022",
+        "benchmark_v2:hadoop_application_1445144423722_0023"
+      ],
+      "disallow_patterns": [
+        "Retrying connect to server",
+        "Could not delete hdfs://",
+        "Shuffling to disk since",
+        "forcibly closed by the remote host"
+      ]
+    }
+  }
+}

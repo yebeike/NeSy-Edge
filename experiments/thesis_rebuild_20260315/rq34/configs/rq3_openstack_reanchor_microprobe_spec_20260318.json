@@ -1,0 +1,51 @@
+{
+  "benchmark_id": "rq3_openstack_reanchor_microprobe_20260318",
+  "benchmark_kind": "local_reanchor_microprobe",
+  "purpose": "Test whether weaker OpenStack anchors materially reduce shortcut solvability before any wider v3 rebuild.",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "datasets": {
+    "OpenStack": [
+      {
+        "case_id": "openstack_49",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+        "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+        "alert_match": "Took 20.03 seconds to spawn the instance on the hypervisor.",
+        "alert_occurrence": 1,
+        "eligibility_note": "Manual re-anchor probe: replace 'Instance spawned successfully' with the weaker build-time line for the same instance."
+      },
+      {
+        "case_id": "openstack_51",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+        "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+        "alert_match": "Took 20.29 seconds to spawn the instance on the hypervisor.",
+        "alert_occurrence": 1,
+        "eligibility_note": "Manual re-anchor probe: replace 'Instance spawned successfully' with the weaker build-time line for the same instance."
+      },
+      {
+        "case_id": "openstack_56",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+        "gt_action_id": "OPENSTACK_VERIFY_TERMINATION_AND_RESTORE",
+        "alert_match": "Took 1.03 seconds to destroy the instance on the hypervisor.",
+        "alert_occurrence": 1,
+        "eligibility_note": "Manual re-anchor probe: replace 'Terminating instance' with the weaker destroy-time line for the same instance."
+      },
+      {
+        "case_id": "openstack_57",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+        "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+        "alert_match": "image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): in use:",
+        "alert_occurrence": 1,
+        "eligibility_note": "Keep one image-chain sentinel to see whether the taxonomy/action mismatch remains the real blocker after re-anchoring instance-state cases."
+      }
+    ]
+  }
+}

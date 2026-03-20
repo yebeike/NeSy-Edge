@@ -1,0 +1,38 @@
+{
+  "benchmark_id": "rq3_action_sharpen_probe_v1_20260318",
+  "benchmark_kind": "action_sharpen_local_probe",
+  "purpose": "Targeted local probe after tightening repair-action prompting. Focus on the remaining graph-sensitive cases where action specificity is still weak.",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "datasets": {
+    "Hadoop": [
+      {
+        "case_id": "hadoop_application_1445087491445_0002",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_WORKER_NODE_FAILURE",
+        "gt_action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+        "alert_match": "2015-10-17 21:27:08,661 INFO [ContainerLauncher #1] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Processing the event EventType: CONTAINER_REMOTE_CLEANUP for container container_1445087491445_0002_01_000002 taskAttempt attempt_1445087491445_0002_m_000003_0",
+        "eligibility_note": "Action-sharpen probe for the lost-node cleanup case."
+      }
+    ],
+    "HDFS": [
+      {
+        "case_id": "hdfs_blk_blk_-3102267849859399193",
+        "source": "benchmark_v2",
+        "gt_family_id": "HDFS_TRANSFER_LINK_FAILURE",
+        "gt_action_id": "HDFS_REPAIR_CLIENT_LINK_AND_REREPLICATE",
+        "alert_match": "081109 203634 190 INFO dfs.DataNode$PacketResponder: PacketResponder blk_-3102267849859399193 2 Exception java.io.EOFException",
+        "eligibility_note": "Action-sharpen probe for the HDFS client-link repair case."
+      },
+      {
+        "case_id": "hdfs_38",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+        "gt_action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+        "alert_match": "081111 091733 19 INFO dfs.FSNamesystem: BLOCK* ask 10.251.126.5:50010 to delete  blk_-9016567407076718172 blk_-8695715290502978219 blk_-7168328752988473716 blk_-4355192005224403537 blk_-3757501769775889193 blk_-154600013",
+        "eligibility_note": "Action-sharpen probe for the HDFS block-map validation case."
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "benchmark_id": "rq3_hdfs_storage_invalidset_probe_v1_20260318",
+  "benchmark_kind": "single_case_local_probe",
+  "purpose": "Probe whether an invalidSet/delete-intent anchor can preserve a usable HDFS stale-block action without falling back to trivial delete-failure shortcuts.",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "datasets": {
+    "HDFS": [
+      {
+        "case_id": "hdfs_blk_blk_-3544583377289625738",
+        "source": "benchmark_v2",
+        "gt_family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+        "gt_action_id": "HDFS_CHECK_STORAGE_AND_DELETE_STALE_BLOCK",
+        "alert_match": "081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: blk_-3544583377289625738 is added to invalidSet of 10.251.39.179:50010",
+        "eligibility_note": "Redesign candidate: invalidSet line keeps delete-intent visible but avoids the direct BlockInfo-not-found failure shortcut."
+      }
+    ]
+  }
+}

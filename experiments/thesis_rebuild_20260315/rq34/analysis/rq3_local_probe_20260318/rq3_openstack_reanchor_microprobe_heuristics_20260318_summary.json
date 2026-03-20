@@ -1,0 +1,34 @@
+{
+  "run_tag": "rq3_openstack_reanchor_microprobe_heuristics_20260318",
+  "model": "qwen3.5:9b",
+  "rows": 32,
+  "llm_calls": 0,
+  "budget_exhausted": false,
+  "by_mode": {
+    "desc_overlap_alert": {
+      "rows": 8,
+      "family_accuracy": 0.0,
+      "action_accuracy": 0.0,
+      "action_text_success_rate": 0.0
+    },
+    "desc_overlap_context": {
+      "rows": 8,
+      "family_accuracy": 0.625,
+      "action_accuracy": 0.25,
+      "action_text_success_rate": 0.0
+    },
+    "heuristic_alert": {
+      "rows": 8,
+      "family_accuracy": 0.25,
+      "action_accuracy": 0.0,
+      "action_text_success_rate": 0.0
+    },
+    "heuristic_context": {
+      "rows": 8,
+      "family_accuracy": 0.75,
+      "action_accuracy": 0.5,
+      "action_text_success_rate": 0.0
+    }
+  },
+  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/analysis/rq3_local_probe_20260318/rq3_openstack_reanchor_microprobe_heuristics_20260318_progress.jsonl"
+}

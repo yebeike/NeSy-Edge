@@ -1,0 +1,93 @@
+{
+  "benchmark_id": "rq3_small_v3_admissibility_20260318",
+  "purpose": "Freeze thesis-grade admissibility constraints before any rebuilt RQ3 small benchmark is accepted for paid API validation.",
+  "hard_blocks": [
+    "Do not reuse rq3_small_v2.x as a formal benchmark without passing these rules.",
+    "Do not advance to mid or full while local probes still show large-scale shortcut solvability.",
+    "Do not use closed-set action descriptions as the only evidence that separates methods.",
+    "Do not accept a benchmark where RCA and E2E collapse because the prompt itself exposes the action taxonomy."
+  ],
+  "prompt_contract_rules": {
+    "official_eval_prompt": [
+      "Root-cause family and remediation must be elicited in open text first.",
+      "If closed-set labels are shown at all, they must be anonymized or introduced only after open-text reasoning is produced.",
+      "Action descriptions must not restate the same lexical anchors that already appear in the selected alert."
+    ],
+    "probe_prompt_set": [
+      "alert_only_open_text",
+      "alert_context_open_text",
+      "vanilla_closed_desc",
+      "rag_closed_desc",
+      "agent_closed_desc"
+    ]
+  },
+  "case_structure_rules": {
+    "per_dataset_cases": 9,
+    "min_families_per_dataset": 3,
+    "min_actions_per_dataset": 4,
+    "max_same_alert_equals_context_ratio": 0.34,
+    "min_median_context_lines": 2,
+    "max_direct_alert_action_match_ratio": 0.34,
+    "max_direct_context_action_match_ratio": 0.5,
+    "disallow_direct_anchor_patterns": {
+      "HDFS": [
+        "got exception while serving",
+        "allocateBlock",
+        "blockMap updated",
+        "BlockInfo not found in volumeMap"
+      ],
+      "OpenStack": [
+        "instance sync for host",
+        "Creating image",
+        "Unknown base file",
+        "GET /openstack/2013-10-17"
+      ],
+      "Hadoop": [
+        "Retrying connect to server",
+        "Could not delete hdfs://",
+        "Shuffling to disk since",
+        "forcibly closed by the remote host"
+      ]
+    }
+  },
+  "method_budget_rules": {
+    "agent_vs_rag": [
+      "Agent information must not be a strict subset of rag information for most cases.",
+      "Graph evidence must add a distinct signal not already inferable from the selected alert template alone."
+    ],
+    "reference_rules": [
+      "Reference sets should vary across cases and noise levels when the underlying evidence changes.",
+      "References should not be near-duplicates of the evaluation alert.",
+      "At least one dataset should expose clear graph utility beyond retrieved lexical neighbors."
+    ]
+  },
+  "taxonomy_rules": {
+    "family_design": [
+      "Every family must have at least two plausible actions or sub-decisions in the curated small.",
+      "No family should be represented only by one canonical lexical trigger."
+    ],
+    "dataset_priorities": {
+      "HDFS": "Bias toward weaker pipeline or transfer-stage alerts instead of direct serving and allocation anchors.",
+      "OpenStack": "Re-expand beyond image-chain vs instance-state only; include host compatibility or control-service cases if they can be made support-complete without direct label leakage.",
+      "Hadoop": "Prefer longer contexts and weaker selected alerts; if the current source pool cannot support this, reset the pool instead of patching prompts."
+    }
+  },
+  "local_probe_gate_before_api": {
+    "noise_levels_required": [
+      0.0,
+      1.0
+    ],
+    "thresholds": {
+      "open_alert_only_max_family_accuracy": 0.45,
+      "open_alert_context_max_family_accuracy": 0.7,
+      "vanilla_closed_desc_max_family_accuracy_at_noise_1": 0.9,
+      "agent_minus_rag_min_family_gap_at_noise_1": 0.05,
+      "rag_minus_vanilla_min_family_gap_at_noise_1": 0.05
+    },
+    "interpretation": [
+      "If open alert-only probing is already high, the benchmark is still too easy.",
+      "If closed-set vanilla remains near perfect at high noise, the prompt contract is still over-helpful.",
+      "If agent, rag, and vanilla remain tied locally, there is still no defensible reason to spend paid API budget."
+    ]
+  }
+}

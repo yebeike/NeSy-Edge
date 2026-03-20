@@ -1,0 +1,70 @@
+{
+  "source_progress": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/analysis/rq3_local_probe_20260318/rq3_local_probe_leak_highnoise_20260318_progress.jsonl",
+  "status": "partial",
+  "rows": 59,
+  "by_dataset_mode": [
+    {
+      "dataset": "HDFS",
+      "mode": "open_alert_context",
+      "rows": 9,
+      "rca_accuracy": 0.7778,
+      "action_accuracy": 0.7778
+    },
+    {
+      "dataset": "HDFS",
+      "mode": "open_alert_only",
+      "rows": 9,
+      "rca_accuracy": 0.6667,
+      "action_accuracy": 0.6667
+    },
+    {
+      "dataset": "HDFS",
+      "mode": "vanilla_closed_ids",
+      "rows": 9,
+      "rca_accuracy": 0.6667,
+      "action_accuracy": 0.4444
+    },
+    {
+      "dataset": "Hadoop",
+      "mode": "open_alert_context",
+      "rows": 1,
+      "rca_accuracy": 0.0,
+      "action_accuracy": 0.0
+    },
+    {
+      "dataset": "Hadoop",
+      "mode": "open_alert_only",
+      "rows": 2,
+      "rca_accuracy": 0.5,
+      "action_accuracy": 0.5
+    },
+    {
+      "dataset": "Hadoop",
+      "mode": "vanilla_closed_ids",
+      "rows": 2,
+      "rca_accuracy": 0.5,
+      "action_accuracy": 1.0
+    },
+    {
+      "dataset": "OpenStack",
+      "mode": "open_alert_context",
+      "rows": 9,
+      "rca_accuracy": 0.8889,
+      "action_accuracy": 0.7778
+    },
+    {
+      "dataset": "OpenStack",
+      "mode": "open_alert_only",
+      "rows": 9,
+      "rca_accuracy": 0.6667,
+      "action_accuracy": 0.5556
+    },
+    {
+      "dataset": "OpenStack",
+      "mode": "vanilla_closed_ids",
+      "rows": 9,
+      "rca_accuracy": 0.7778,
+      "action_accuracy": 0.4444
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "run_tag": "rq3_openstack_base_image_probe_v1_highnoise_open_20260319",
+  "benchmark_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/rq3_openstack_base_image_probe_v1_20260319/rq3_openstack_base_image_probe_v1_20260319_package.json",
+  "config_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/local_probe_v1_20260318.json",
+  "datasets": [
+    "OpenStack"
+  ],
+  "noise_keys": [
+    "1.0"
+  ],
+  "mode_names": [
+    "open_alert_only",
+    "vanilla_open",
+    "rag_open",
+    "agent_open"
+  ],
+  "case_ids": [
+    "OpenStack:openstack_win_22"
+  ]
+}

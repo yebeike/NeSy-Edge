@@ -1,0 +1,112 @@
+{
+  "benchmark_id": "rq3_hadoop_bulk_candidate_sweep_v5_20260319",
+  "benchmark_kind": "hadoop_bulk_candidate_sweep",
+  "purpose": "Bulk local screening sweep for Hadoop candidate cases under the rebuilt RQ3 contract.",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "datasets": {
+    "Hadoop": [
+      {
+        "case_id": "hadoop_application_1445144423722_0020",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "alert_match": "at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)",
+        "eligibility_note": "reason=Network disconnection; selection_score=8.0; difficulty_score=6.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0",
+        "selection_score": 8.0,
+        "difficulty_score": 6.0,
+        "weak_mainline_alert": false,
+        "fixed_small_member": false,
+        "selected_alert_flags": {
+          "direct_retry_connect": false,
+          "direct_forced_close": false,
+          "direct_delete_hdfs": false,
+          "direct_storage": false
+        },
+        "action_bucket": "hadoop_network_other",
+        "eval_case_id": "hadoop_application_1445144423722_0020"
+      },
+      {
+        "case_id": "hadoop_application_1445144423722_0022",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "alert_match": "at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)",
+        "eligibility_note": "reason=Network disconnection; selection_score=8.0; difficulty_score=6.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0",
+        "selection_score": 8.0,
+        "difficulty_score": 6.0,
+        "weak_mainline_alert": false,
+        "fixed_small_member": false,
+        "selected_alert_flags": {
+          "direct_retry_connect": false,
+          "direct_forced_close": false,
+          "direct_delete_hdfs": false,
+          "direct_storage": false
+        },
+        "action_bucket": "hadoop_network_other",
+        "eval_case_id": "hadoop_application_1445144423722_0022"
+      },
+      {
+        "case_id": "hadoop_application_1445144423722_0023",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "alert_match": "at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)",
+        "eligibility_note": "reason=Network disconnection; selection_score=8.0; difficulty_score=3.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0",
+        "selection_score": 8.0,
+        "difficulty_score": 3.0,
+        "weak_mainline_alert": false,
+        "fixed_small_member": false,
+        "selected_alert_flags": {
+          "direct_retry_connect": false,
+          "direct_forced_close": false,
+          "direct_delete_hdfs": false,
+          "direct_storage": false
+        },
+        "action_bucket": "hadoop_network_other",
+        "eval_case_id": "hadoop_application_1445144423722_0023"
+      },
+      {
+        "case_id": "hadoop_application_1445175094696_0003",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "alert_match": "at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)",
+        "eligibility_note": "reason=Network disconnection; selection_score=8.0; difficulty_score=6.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0",
+        "selection_score": 8.0,
+        "difficulty_score": 6.0,
+        "weak_mainline_alert": false,
+        "fixed_small_member": false,
+        "selected_alert_flags": {
+          "direct_retry_connect": false,
+          "direct_forced_close": false,
+          "direct_delete_hdfs": false,
+          "direct_storage": false
+        },
+        "action_bucket": "hadoop_network_other",
+        "eval_case_id": "hadoop_application_1445175094696_0003"
+      },
+      {
+        "case_id": "hadoop_application_1445175094696_0004",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "alert_match": "at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)",
+        "eligibility_note": "reason=Network disconnection; selection_score=8.0; difficulty_score=1.5; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0",
+        "selection_score": 8.0,
+        "difficulty_score": 1.5,
+        "weak_mainline_alert": false,
+        "fixed_small_member": false,
+        "selected_alert_flags": {
+          "direct_retry_connect": false,
+          "direct_forced_close": false,
+          "direct_delete_hdfs": false,
+          "direct_storage": false
+        },
+        "action_bucket": "hadoop_network_other",
+        "eval_case_id": "hadoop_application_1445175094696_0004"
+      }
+    ]
+  }
+}

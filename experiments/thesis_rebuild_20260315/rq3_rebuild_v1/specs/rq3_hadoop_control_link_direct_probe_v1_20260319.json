@@ -1,0 +1,20 @@
+{
+  "benchmark_id": "rq3_hadoop_control_link_direct_probe_v1_20260319",
+  "benchmark_kind": "single_case_local_probe",
+  "purpose": "Probe whether the direct forced-close exception line from the same Hadoop incident can sustain a usable control-link slot without collapsing the baselines.",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "datasets": {
+    "Hadoop": [
+      {
+        "case_id": "hadoop_application_1445175094696_0002",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "alert_match": "2015-10-18 21:37:18,951 INFO [Socket Reader #1 for port 20324] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 20324: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]",
+        "eligibility_note": "Direct forced-close anchor for the same worker-RPC disruption incident. This is a red-team probe to determine whether the action slot is salvageable at all."
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "benchmark_id": "rq3_hdfs_bulk_candidate_sweep_v3_20260319",
+  "benchmark_kind": "hdfs_bulk_candidate_sweep",
+  "dataset_case_counts": {
+    "HDFS": 25
+  },
+  "family_counts": {
+    "HDFS": {
+      "HDFS_TRANSFER_LINK_FAILURE": 5,
+      "HDFS_PIPELINE_FAILURE": 10,
+      "HDFS_STORAGE_METADATA_PRESSURE": 10
+    }
+  },
+  "action_counts": {
+    "HDFS": {
+      "HDFS_CHECK_LINK_AND_LIMIT_RETRANSMISSION": 4,
+      "HDFS_ISOLATE_RECEIVER_AND_REBUILD_PIPELINE": 4,
+      "HDFS_REBUILD_WRITE_PIPELINE": 6,
+      "HDFS_REPAIR_CLIENT_LINK_AND_REREPLICATE": 1,
+      "HDFS_RETRY_ALLOCATION_AFTER_CAPACITY_CHECK": 6,
+      "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE": 4
+    }
+  },
+  "case_count": 25,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "package_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/rq3_hdfs_bulk_candidate_sweep_v3_20260319/rq3_hdfs_bulk_candidate_sweep_v3_20260319_package.json"
+}

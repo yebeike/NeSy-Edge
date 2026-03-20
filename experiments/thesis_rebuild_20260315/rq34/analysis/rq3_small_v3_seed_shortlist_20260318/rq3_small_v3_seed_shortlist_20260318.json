@@ -1,0 +1,285 @@
+{
+  "config_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/configs/rq3_small_v3_seed_rules_20260318.json",
+  "shortcut_blacklist_case_ids": [
+    "hadoop_application_1445062781478_0015",
+    "hadoop_application_1445087491445_0001",
+    "hadoop_application_1445087491445_0002",
+    "hadoop_application_1445175094696_0001",
+    "hadoop_application_1445175094696_0002",
+    "hadoop_application_1445182159119_0001",
+    "hadoop_application_1445182159119_0003",
+    "hadoop_application_1445182159119_0004",
+    "hdfs_10",
+    "hdfs_11",
+    "hdfs_12",
+    "hdfs_18",
+    "hdfs_33",
+    "hdfs_9",
+    "hdfs_blk_blk_-1748869645497411855",
+    "openstack_47",
+    "openstack_48",
+    "openstack_53",
+    "openstack_65",
+    "openstack_win_16",
+    "openstack_win_21"
+  ],
+  "formal_small_ready": false,
+  "datasets": {
+    "HDFS": {
+      "status": "diagnostic_only",
+      "blocked_reason": "Only a pipeline-focused diagnostic slice currently survives; HDFS transfer/storage families still require a fresh pool.",
+      "candidate_count": 122,
+      "case_count_after_dedup": 25,
+      "hard_flag_rows": 50,
+      "flag_counts": {
+        "direct_allocate_block": 11,
+        "direct_delete_failure": 1,
+        "direct_serving_exception": 49,
+        "pipeline_keyword": 34
+      },
+      "dropped_counts": {
+        "below_min_seed_score": 21
+      },
+      "approved_case_count": 4,
+      "review_case_count": 0,
+      "action_diversity": 1,
+      "approved_shortlist": [
+        {
+          "case_id": "hdfs_42",
+          "pool_source": "rq3_test_set_enriched",
+          "gt_action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+          "gt_label": "HDFS_PIPELINE_FAILURE",
+          "difficulty_score": 7.0,
+          "selection_score": 6.0,
+          "seed_score": 20.6,
+          "risk_penalty": 3.0,
+          "bucket_id": "received_block",
+          "selected_alert": "081111 085429 25314 INFO dfs.DataNode$PacketResponder: Received block blk_-6719337521981113643 of size 3538321 from /10.250.15.198",
+          "selected_alert_flags": {
+            "direct_serving_exception": false,
+            "direct_delete_failure": false,
+            "direct_allocate_block": false,
+            "pipeline_keyword": true
+          },
+          "active_flags": [
+            "pipeline_keyword"
+          ],
+          "short_reason": "score=20.6; diff=7.0; flags=pipeline_keyword; source=rq3_test_set_enriched"
+        },
+        {
+          "case_id": "hdfs_45",
+          "pool_source": "rq3_test_set_enriched",
+          "gt_action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+          "gt_label": "HDFS_PIPELINE_FAILURE",
+          "difficulty_score": 7.0,
+          "selection_score": 6.0,
+          "seed_score": 20.6,
+          "risk_penalty": 3.0,
+          "bucket_id": "received_block",
+          "selected_alert": "081111 083143 24261 INFO dfs.DataNode$PacketResponder: Received block blk_-5970165518655489569 of size 67108864 from /10.250.14.196",
+          "selected_alert_flags": {
+            "direct_serving_exception": false,
+            "direct_delete_failure": false,
+            "direct_allocate_block": false,
+            "pipeline_keyword": true
+          },
+          "active_flags": [
+            "pipeline_keyword"
+          ],
+          "short_reason": "score=20.6; diff=7.0; flags=pipeline_keyword; source=rq3_test_set_enriched"
+        },
+        {
+          "case_id": "hdfs_46",
+          "pool_source": "rq3_test_set_enriched",
+          "gt_action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+          "gt_label": "HDFS_PIPELINE_FAILURE",
+          "difficulty_score": 7.0,
+          "selection_score": 6.0,
+          "seed_score": 20.6,
+          "risk_penalty": 3.0,
+          "bucket_id": "received_block",
+          "selected_alert": "081111 071713 23240 INFO dfs.DataNode$PacketResponder: Received block blk_-1236077201457689973 of size 67108864 from /10.251.35.1",
+          "selected_alert_flags": {
+            "direct_serving_exception": false,
+            "direct_delete_failure": false,
+            "direct_allocate_block": false,
+            "pipeline_keyword": true
+          },
+          "active_flags": [
+            "pipeline_keyword"
+          ],
+          "short_reason": "score=20.6; diff=7.0; flags=pipeline_keyword; source=rq3_test_set_enriched"
+        },
+        {
+          "case_id": "hdfs_37",
+          "pool_source": "rq3_test_set_enriched",
+          "gt_action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+          "gt_label": "HDFS_PIPELINE_FAILURE",
+          "difficulty_score": 2.0,
+          "selection_score": 8.0,
+          "seed_score": 8.8,
+          "risk_penalty": 3.0,
+          "bucket_id": "receiving_block",
+          "selected_alert": "081111 081847 24224 INFO dfs.DataNode$DataXceiver: Receiving block blk_1512136249403454074 src: /10.250.7.244:47958 dest: /10.250.7.244:50010",
+          "selected_alert_flags": {
+            "direct_serving_exception": false,
+            "direct_delete_failure": false,
+            "direct_allocate_block": false,
+            "pipeline_keyword": true
+          },
+          "active_flags": [
+            "pipeline_keyword"
+          ],
+          "short_reason": "score=8.8; diff=2.0; flags=pipeline_keyword; was_fixed_small=true; source=rq3_test_set_enriched"
+        }
+      ],
+      "review_shortlist": []
+    },
+    "OpenStack": {
+      "status": "diagnostic_only",
+      "blocked_reason": "OpenStack has a mixed diagnostic slice, but host-claim and direct cache-bookkeeping alerts stay review-only until local probes prove they are not shortcut-driven.",
+      "candidate_count": 67,
+      "case_count_after_dedup": 11,
+      "hard_flag_rows": 4,
+      "flag_counts": {
+        "direct_host_claim": 1,
+        "direct_image_cache": 52,
+        "direct_metadata": 4,
+        "direct_power_sync": 3
+      },
+      "dropped_counts": {
+        "non_positive_score": 6
+      },
+      "approved_case_count": 4,
+      "review_case_count": 1,
+      "action_diversity": 3,
+      "approved_shortlist": [
+        {
+          "case_id": "openstack_57",
+          "pool_source": "rq3_test_set_enriched",
+          "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+          "gt_label": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "difficulty_score": 9.9,
+          "selection_score": 4.0,
+          "seed_score": 29.2,
+          "risk_penalty": 0.0,
+          "bucket_id": "base_image_in_use",
+          "selected_alert": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:14:30.678 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): in use: on this node 1 local, 0 on other nodes sharing this instance storage",
+          "selected_alert_flags": {
+            "direct_image_cache": false,
+            "direct_power_sync": false,
+            "direct_host_claim": false,
+            "direct_metadata": false
+          },
+          "active_flags": [],
+          "short_reason": "score=29.2; diff=9.9; source=rq3_test_set_enriched"
+        },
+        {
+          "case_id": "openstack_51",
+          "pool_source": "rq3_test_set_enriched",
+          "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+          "gt_label": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "difficulty_score": 5.5,
+          "selection_score": 8.0,
+          "seed_score": 16.8,
+          "risk_penalty": 0.0,
+          "bucket_id": "instance_spawned",
+          "selected_alert": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:16.313 2931 INFO nova.virt.libvirt.driver [-] [instance: 127e769a-4fe6-4548-93b1-513ac51e0452] Instance spawned successfully.",
+          "selected_alert_flags": {
+            "direct_image_cache": false,
+            "direct_power_sync": false,
+            "direct_host_claim": false,
+            "direct_metadata": false
+          },
+          "active_flags": [],
+          "short_reason": "score=16.8; diff=5.5; was_fixed_small=true; source=rq3_test_set_enriched"
+        },
+        {
+          "case_id": "openstack_56",
+          "pool_source": "rq3_test_set_enriched",
+          "gt_action_id": "OPENSTACK_VERIFY_TERMINATION_AND_RESTORE",
+          "gt_label": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "difficulty_score": 4.0,
+          "selection_score": 8.0,
+          "seed_score": 15.8,
+          "risk_penalty": 0.0,
+          "bucket_id": "termination",
+          "selected_alert": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:01.590 2931 INFO nova.compute.manager [req-121ecfae-3fb1-49cc-9a78-8b046fe73a77 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [instance: d96a117b-0193-4549-bdcc-63b917273d1d] Terminating instance",
+          "selected_alert_flags": {
+            "direct_image_cache": false,
+            "direct_power_sync": false,
+            "direct_host_claim": false,
+            "direct_metadata": false
+          },
+          "active_flags": [],
+          "short_reason": "score=15.8; diff=4.0; source=rq3_test_set_enriched"
+        },
+        {
+          "case_id": "openstack_49",
+          "pool_source": "rq3_test_set_enriched",
+          "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+          "gt_label": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "difficulty_score": 3.0,
+          "selection_score": 8.0,
+          "seed_score": 13.8,
+          "risk_penalty": 0.0,
+          "bucket_id": "instance_spawned",
+          "selected_alert": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.756 2931 INFO nova.virt.libvirt.driver [-] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] Instance spawned successfully.",
+          "selected_alert_flags": {
+            "direct_image_cache": false,
+            "direct_power_sync": false,
+            "direct_host_claim": false,
+            "direct_metadata": false
+          },
+          "active_flags": [],
+          "short_reason": "score=13.8; diff=3.0; source=rq3_test_set_enriched"
+        }
+      ],
+      "review_shortlist": [
+        {
+          "case_id": "openstack_win_20",
+          "pool_source": "benchmark_v2",
+          "gt_action_id": "OPENSTACK_REBUILD_ON_COMPATIBLE_HOST",
+          "gt_label": "OPENSTACK_HOST_COMPATIBILITY_FAILURE",
+          "difficulty_score": 9.5,
+          "selection_score": 15.0,
+          "seed_score": 21.5,
+          "risk_penalty": 3.0,
+          "bucket_id": "host_claim",
+          "selected_alert": "nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:50:06.115 2931 INFO nova.compute.claims [req-cf8e4d9c-928d-406f-bd8f-b0bcb1677a90 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [instance: f14b2b2f-4cc2-450a-8314-ab3b6f6f30a0] Attempting claim: memory 2048 MB, disk 20 GB, vcpus 1 CPU",
+          "selected_alert_flags": {
+            "direct_image_cache": false,
+            "direct_power_sync": false,
+            "direct_host_claim": true,
+            "direct_metadata": false
+          },
+          "active_flags": [
+            "direct_host_claim"
+          ],
+          "short_reason": "score=21.5; diff=9.5; flags=direct_host_claim; was_fixed_small=true; source=benchmark_v2"
+        }
+      ]
+    },
+    "Hadoop": {
+      "status": "blocked",
+      "blocked_reason": "Dataset remains shortcut-dominated under current pool and should be reset before any new small selection.",
+      "candidate_count": 44,
+      "case_count_after_dedup": 10,
+      "hard_flag_rows": 39,
+      "flag_counts": {
+        "direct_delete_hdfs": 12,
+        "direct_forced_close": 2,
+        "direct_retry_connect": 16,
+        "direct_storage": 9
+      },
+      "dropped_counts": {
+        "below_min_seed_score": 10
+      },
+      "approved_case_count": 0,
+      "review_case_count": 0,
+      "action_diversity": 0,
+      "approved_shortlist": [],
+      "review_shortlist": []
+    }
+  }
+}

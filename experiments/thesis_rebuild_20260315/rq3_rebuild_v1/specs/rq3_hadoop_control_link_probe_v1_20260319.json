@@ -1,0 +1,20 @@
+{
+  "benchmark_id": "rq3_hadoop_control_link_probe_v1_20260319",
+  "benchmark_kind": "single_case_local_probe",
+  "purpose": "Probe whether a pre-exception reduce control-path anchor can support a thesis-grade Hadoop worker-RPC disruption slot under the strict evaluator.",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "datasets": {
+    "Hadoop": [
+      {
+        "case_id": "hadoop_application_1445175094696_0002",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "alert_match": "2015-10-18 21:37:18,513 INFO [IPC Server handler 29 on 20324] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445175094696_0002_r_000000_0. startIndex 6 maxEvents 10000",
+        "eligibility_note": "Worker-RPC disruption probe anchored to the reduce control-path request immediately before the forced-close exception."
+      }
+    ]
+  }
+}

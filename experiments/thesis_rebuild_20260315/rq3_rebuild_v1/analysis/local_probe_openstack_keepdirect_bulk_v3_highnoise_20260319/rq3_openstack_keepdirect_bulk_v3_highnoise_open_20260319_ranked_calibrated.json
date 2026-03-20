@@ -1,0 +1,1983 @@
+{
+  "policy": "calibrated",
+  "target_noise": 1.0,
+  "rows": 19,
+  "verdict_counts": {
+    "reject": 17,
+    "reject_direct": 1,
+    "shortlist": 1
+  },
+  "ranked_cases": [
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_48",
+      "eval_case_id": "openstack_48",
+      "source": "rq3_test_set_enriched",
+      "gt_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY",
+      "score": 4,
+      "verdict": "shortlist",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_easy",
+        "open_alert_only_not_e2e",
+        "rag_beats_vanilla",
+        "some_llm_support_present"
+      ],
+      "selection_score": 8.0,
+      "difficulty_score": 8.5,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": false,
+        "direct_power_sync": false,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=8.0; difficulty_score=8.5; weak_mainline=False; fixed_small_member=True; direct_flag_penalty=0",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+          "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+        },
+        "rag_open": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+        },
+        "agent_open": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_win_0",
+      "eval_case_id": "openstack_win_0",
+      "source": "benchmark_v2",
+      "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+      "score": 2,
+      "verdict": "reject",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "rag_rca_e2e_decoupled",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 8.0,
+      "difficulty_score": -8.5,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": false,
+        "direct_power_sync": true,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=8.0; difficulty_score=-8.5; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_power_sync",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "heuristic_context": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "open_alert_only": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+        },
+        "vanilla_open": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+        },
+        "rag_open": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+        },
+        "agent_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+          "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_win_20",
+      "eval_case_id": "openstack_win_20",
+      "source": "benchmark_v2",
+      "gt_action_id": "OPENSTACK_REBUILD_ON_COMPATIBLE_HOST",
+      "score": 1,
+      "verdict": "reject",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 15.0,
+      "difficulty_score": 9.5,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": false,
+        "direct_power_sync": false,
+        "direct_host_claim": true,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=15.0; difficulty_score=9.5; weak_mainline=False; fixed_small_member=True; direct_flag_penalty=0; flags=direct_host_claim",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "heuristic_context": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "open_alert_only": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_HOST_COMPATIBILITY_FAILURE",
+          "pred_action_id": "OPENSTACK_REFRESH_HOST_INVENTORY_AND_RETRY_CLAIM"
+        },
+        "vanilla_open": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_HOST_COMPATIBILITY_FAILURE",
+          "pred_action_id": "OPENSTACK_REFRESH_HOST_INVENTORY_AND_RETRY_CLAIM"
+        },
+        "rag_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+          "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+        },
+        "agent_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+          "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_win_1",
+      "eval_case_id": "openstack_win_1",
+      "source": "benchmark_v2",
+      "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+      "score": 1,
+      "verdict": "reject",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 12.0,
+      "difficulty_score": 8.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": true,
+        "direct_power_sync": false,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=12.0; difficulty_score=8.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_image_cache",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+          "pred_action_id": "OPENSTACK_SCALE_METADATA_SERVICE"
+        },
+        "rag_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "agent_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD"
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_win_10",
+      "eval_case_id": "openstack_win_10",
+      "source": "benchmark_v2",
+      "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+      "score": 1,
+      "verdict": "reject",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 12.0,
+      "difficulty_score": 8.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": true,
+        "direct_power_sync": false,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=12.0; difficulty_score=8.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_image_cache",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "rag_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "agent_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_win_11",
+      "eval_case_id": "openstack_win_11",
+      "source": "benchmark_v2",
+      "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+      "score": 1,
+      "verdict": "reject",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 12.0,
+      "difficulty_score": 8.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": true,
+        "direct_power_sync": false,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=12.0; difficulty_score=8.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_image_cache",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "rag_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "agent_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_win_12",
+      "eval_case_id": "openstack_win_12",
+      "source": "benchmark_v2",
+      "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+      "score": 1,
+      "verdict": "reject",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 12.0,
+      "difficulty_score": 8.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": true,
+        "direct_power_sync": false,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=12.0; difficulty_score=8.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_image_cache",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "rag_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "agent_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_win_13",
+      "eval_case_id": "openstack_win_13",
+      "source": "benchmark_v2",
+      "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+      "score": 1,
+      "verdict": "reject",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 12.0,
+      "difficulty_score": 8.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": true,
+        "direct_power_sync": false,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=12.0; difficulty_score=8.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_image_cache",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "rag_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "agent_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_win_14",
+      "eval_case_id": "openstack_win_14",
+      "source": "benchmark_v2",
+      "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+      "score": 1,
+      "verdict": "reject",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 12.0,
+      "difficulty_score": 8.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": true,
+        "direct_power_sync": false,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=12.0; difficulty_score=8.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_image_cache",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+          "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+          "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+        },
+        "rag_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+          "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+        },
+        "agent_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+          "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_win_15",
+      "eval_case_id": "openstack_win_15",
+      "source": "benchmark_v2",
+      "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+      "score": 1,
+      "verdict": "reject",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 12.0,
+      "difficulty_score": 8.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": true,
+        "direct_power_sync": false,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=12.0; difficulty_score=8.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_image_cache",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "rag_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "agent_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_win_16",
+      "eval_case_id": "openstack_win_16",
+      "source": "benchmark_v2",
+      "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+      "score": 1,
+      "verdict": "reject",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 12.0,
+      "difficulty_score": 8.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": true,
+        "direct_power_sync": false,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=12.0; difficulty_score=8.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_image_cache",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "rag_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "agent_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_win_17",
+      "eval_case_id": "openstack_win_17",
+      "source": "benchmark_v2",
+      "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+      "score": 1,
+      "verdict": "reject",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 12.0,
+      "difficulty_score": 8.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": true,
+        "direct_power_sync": false,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=12.0; difficulty_score=8.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_image_cache",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+          "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "rag_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+          "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+        },
+        "agent_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_win_21",
+      "eval_case_id": "openstack_win_21",
+      "source": "benchmark_v2",
+      "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+      "score": 1,
+      "verdict": "reject",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 12.0,
+      "difficulty_score": 9.5,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": true,
+        "direct_power_sync": false,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=12.0; difficulty_score=9.5; weak_mainline=False; fixed_small_member=True; direct_flag_penalty=0; flags=direct_image_cache",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+          "pred_action_id": "OPENSTACK_SCALE_METADATA_SERVICE"
+        },
+        "rag_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+          "pred_action_id": "OPENSTACK_SCALE_METADATA_SERVICE"
+        },
+        "agent_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+          "pred_action_id": "OPENSTACK_SCALE_METADATA_SERVICE"
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_win_22",
+      "eval_case_id": "openstack_win_22",
+      "source": "benchmark_v2",
+      "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+      "score": 1,
+      "verdict": "reject",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 12.0,
+      "difficulty_score": 9.5,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": true,
+        "direct_power_sync": false,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=12.0; difficulty_score=9.5; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_image_cache",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "rag_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "agent_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_win_23",
+      "eval_case_id": "openstack_win_23",
+      "source": "benchmark_v2",
+      "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+      "score": 1,
+      "verdict": "reject",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 12.0,
+      "difficulty_score": 9.5,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": true,
+        "direct_power_sync": false,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=12.0; difficulty_score=9.5; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_image_cache",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "rag_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "agent_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_56",
+      "eval_case_id": "openstack_56",
+      "source": "rq3_test_set_enriched",
+      "gt_action_id": "OPENSTACK_VERIFY_TERMINATION_AND_RESTORE",
+      "score": 1,
+      "verdict": "reject",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 8.0,
+      "difficulty_score": 4.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": false,
+        "direct_power_sync": false,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=8.0; difficulty_score=4.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_VERIFY_TERMINATION_AND_RESTORE"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "rag_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "agent_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_49",
+      "eval_case_id": "openstack_49",
+      "source": "rq3_test_set_enriched",
+      "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+      "score": -2,
+      "verdict": "reject",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_easy",
+        "open_alert_only_not_e2e",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 8.0,
+      "difficulty_score": 3.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": false,
+        "direct_power_sync": false,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=8.0; difficulty_score=3.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD"
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "rag_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+          "pred_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN"
+        },
+        "agent_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+          "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_51",
+      "eval_case_id": "openstack_51",
+      "source": "rq3_test_set_enriched",
+      "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+      "score": -2,
+      "verdict": "reject",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_easy",
+        "open_alert_only_not_e2e",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 8.0,
+      "difficulty_score": 5.5,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": false,
+        "direct_power_sync": false,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=8.0; difficulty_score=5.5; weak_mainline=False; fixed_small_member=True; direct_flag_penalty=0",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD"
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "rag_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+          "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+        },
+        "agent_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_47",
+      "eval_case_id": "openstack_47",
+      "source": "rq3_test_set_enriched",
+      "gt_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY",
+      "score": -5,
+      "verdict": "reject_direct",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_easy",
+        "open_alert_only_solves_case",
+        "some_llm_support_present",
+        "all_llm_e2e_flat_positive"
+      ],
+      "selection_score": 7.0,
+      "difficulty_score": -1.5,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {
+        "direct_image_cache": false,
+        "direct_power_sync": false,
+        "direct_host_claim": false,
+        "direct_metadata": false
+      },
+      "eligibility_note": "selection_score=7.0; difficulty_score=-1.5; weak_mainline=False; fixed_small_member=True; direct_flag_penalty=0",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+        },
+        "open_alert_only": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+        },
+        "vanilla_open": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+        },
+        "rag_open": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+        },
+        "agent_open": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+          "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+        }
+      }
+    }
+  ],
+  "shortlist_by_action": {
+    "OPENSTACK_REBUILD_ON_COMPATIBLE_HOST": [
+      {
+        "dataset": "OpenStack",
+        "case_id": "openstack_win_20",
+        "eval_case_id": "openstack_win_20",
+        "source": "benchmark_v2",
+        "gt_action_id": "OPENSTACK_REBUILD_ON_COMPATIBLE_HOST",
+        "score": 1,
+        "verdict": "reject",
+        "complete_case": true,
+        "reasons": [
+          "heuristic_alert_not_direct",
+          "open_alert_only_not_e2e",
+          "all_llm_e2e_zero"
+        ],
+        "selection_score": 15.0,
+        "difficulty_score": 9.5,
+        "weak_mainline_alert": false,
+        "selected_alert_flags": {
+          "direct_image_cache": false,
+          "direct_power_sync": false,
+          "direct_host_claim": true,
+          "direct_metadata": false
+        },
+        "eligibility_note": "selection_score=15.0; difficulty_score=9.5; weak_mainline=False; fixed_small_member=True; direct_flag_penalty=0; flags=direct_host_claim",
+        "modes": {
+          "heuristic_alert": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "heuristic_context": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "open_alert_only": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_HOST_COMPATIBILITY_FAILURE",
+            "pred_action_id": "OPENSTACK_REFRESH_HOST_INVENTORY_AND_RETRY_CLAIM"
+          },
+          "vanilla_open": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_HOST_COMPATIBILITY_FAILURE",
+            "pred_action_id": "OPENSTACK_REFRESH_HOST_INVENTORY_AND_RETRY_CLAIM"
+          },
+          "rag_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+            "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+          },
+          "agent_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+            "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+          }
+        }
+      }
+    ],
+    "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN": [
+      {
+        "dataset": "OpenStack",
+        "case_id": "openstack_win_1",
+        "eval_case_id": "openstack_win_1",
+        "source": "benchmark_v2",
+        "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+        "score": 1,
+        "verdict": "reject",
+        "complete_case": true,
+        "reasons": [
+          "heuristic_alert_not_direct",
+          "open_alert_only_not_e2e",
+          "all_llm_e2e_zero"
+        ],
+        "selection_score": 12.0,
+        "difficulty_score": 8.0,
+        "weak_mainline_alert": false,
+        "selected_alert_flags": {
+          "direct_image_cache": true,
+          "direct_power_sync": false,
+          "direct_host_claim": false,
+          "direct_metadata": false
+        },
+        "eligibility_note": "selection_score=12.0; difficulty_score=8.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_image_cache",
+        "modes": {
+          "heuristic_alert": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+            "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+          },
+          "heuristic_context": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+            "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+          },
+          "open_alert_only": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "vanilla_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+            "pred_action_id": "OPENSTACK_SCALE_METADATA_SERVICE"
+          },
+          "rag_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "agent_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD"
+          }
+        }
+      },
+      {
+        "dataset": "OpenStack",
+        "case_id": "openstack_win_10",
+        "eval_case_id": "openstack_win_10",
+        "source": "benchmark_v2",
+        "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+        "score": 1,
+        "verdict": "reject",
+        "complete_case": true,
+        "reasons": [
+          "heuristic_alert_not_direct",
+          "open_alert_only_not_e2e",
+          "all_llm_e2e_zero"
+        ],
+        "selection_score": 12.0,
+        "difficulty_score": 8.0,
+        "weak_mainline_alert": false,
+        "selected_alert_flags": {
+          "direct_image_cache": true,
+          "direct_power_sync": false,
+          "direct_host_claim": false,
+          "direct_metadata": false
+        },
+        "eligibility_note": "selection_score=12.0; difficulty_score=8.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_image_cache",
+        "modes": {
+          "heuristic_alert": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+            "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+          },
+          "heuristic_context": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+            "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+          },
+          "open_alert_only": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "vanilla_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "rag_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "agent_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          }
+        }
+      },
+      {
+        "dataset": "OpenStack",
+        "case_id": "openstack_win_11",
+        "eval_case_id": "openstack_win_11",
+        "source": "benchmark_v2",
+        "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+        "score": 1,
+        "verdict": "reject",
+        "complete_case": true,
+        "reasons": [
+          "heuristic_alert_not_direct",
+          "open_alert_only_not_e2e",
+          "all_llm_e2e_zero"
+        ],
+        "selection_score": 12.0,
+        "difficulty_score": 8.0,
+        "weak_mainline_alert": false,
+        "selected_alert_flags": {
+          "direct_image_cache": true,
+          "direct_power_sync": false,
+          "direct_host_claim": false,
+          "direct_metadata": false
+        },
+        "eligibility_note": "selection_score=12.0; difficulty_score=8.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_image_cache",
+        "modes": {
+          "heuristic_alert": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+            "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+          },
+          "heuristic_context": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+            "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+          },
+          "open_alert_only": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "vanilla_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "rag_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "agent_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          }
+        }
+      },
+      {
+        "dataset": "OpenStack",
+        "case_id": "openstack_win_12",
+        "eval_case_id": "openstack_win_12",
+        "source": "benchmark_v2",
+        "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+        "score": 1,
+        "verdict": "reject",
+        "complete_case": true,
+        "reasons": [
+          "heuristic_alert_not_direct",
+          "open_alert_only_not_e2e",
+          "all_llm_e2e_zero"
+        ],
+        "selection_score": 12.0,
+        "difficulty_score": 8.0,
+        "weak_mainline_alert": false,
+        "selected_alert_flags": {
+          "direct_image_cache": true,
+          "direct_power_sync": false,
+          "direct_host_claim": false,
+          "direct_metadata": false
+        },
+        "eligibility_note": "selection_score=12.0; difficulty_score=8.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_image_cache",
+        "modes": {
+          "heuristic_alert": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+            "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+          },
+          "heuristic_context": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+            "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+          },
+          "open_alert_only": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "vanilla_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "rag_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "agent_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          }
+        }
+      },
+      {
+        "dataset": "OpenStack",
+        "case_id": "openstack_win_13",
+        "eval_case_id": "openstack_win_13",
+        "source": "benchmark_v2",
+        "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+        "score": 1,
+        "verdict": "reject",
+        "complete_case": true,
+        "reasons": [
+          "heuristic_alert_not_direct",
+          "open_alert_only_not_e2e",
+          "all_llm_e2e_zero"
+        ],
+        "selection_score": 12.0,
+        "difficulty_score": 8.0,
+        "weak_mainline_alert": false,
+        "selected_alert_flags": {
+          "direct_image_cache": true,
+          "direct_power_sync": false,
+          "direct_host_claim": false,
+          "direct_metadata": false
+        },
+        "eligibility_note": "selection_score=12.0; difficulty_score=8.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_image_cache",
+        "modes": {
+          "heuristic_alert": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+            "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+          },
+          "heuristic_context": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+            "pred_action_id": "OPENSTACK_CLEAN_STALE_BASE_CACHE_AND_RETRY"
+          },
+          "open_alert_only": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "vanilla_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "rag_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "agent_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          }
+        }
+      }
+    ],
+    "OPENSTACK_RESYNC_INSTANCE_INVENTORY": [
+      {
+        "dataset": "OpenStack",
+        "case_id": "openstack_48",
+        "eval_case_id": "openstack_48",
+        "source": "rq3_test_set_enriched",
+        "gt_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY",
+        "score": 4,
+        "verdict": "shortlist",
+        "complete_case": true,
+        "reasons": [
+          "heuristic_alert_easy",
+          "open_alert_only_not_e2e",
+          "rag_beats_vanilla",
+          "some_llm_support_present"
+        ],
+        "selection_score": 8.0,
+        "difficulty_score": 8.5,
+        "weak_mainline_alert": false,
+        "selected_alert_flags": {
+          "direct_image_cache": false,
+          "direct_power_sync": false,
+          "direct_host_claim": false,
+          "direct_metadata": false
+        },
+        "eligibility_note": "selection_score=8.0; difficulty_score=8.5; weak_mainline=False; fixed_small_member=True; direct_flag_penalty=0",
+        "modes": {
+          "heuristic_alert": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+          },
+          "heuristic_context": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+          },
+          "open_alert_only": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "vanilla_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+            "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+          },
+          "rag_open": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+          },
+          "agent_open": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+          }
+        }
+      },
+      {
+        "dataset": "OpenStack",
+        "case_id": "openstack_47",
+        "eval_case_id": "openstack_47",
+        "source": "rq3_test_set_enriched",
+        "gt_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY",
+        "score": -5,
+        "verdict": "reject_direct",
+        "complete_case": true,
+        "reasons": [
+          "heuristic_alert_easy",
+          "open_alert_only_solves_case",
+          "some_llm_support_present",
+          "all_llm_e2e_flat_positive"
+        ],
+        "selection_score": 7.0,
+        "difficulty_score": -1.5,
+        "weak_mainline_alert": false,
+        "selected_alert_flags": {
+          "direct_image_cache": false,
+          "direct_power_sync": false,
+          "direct_host_claim": false,
+          "direct_metadata": false
+        },
+        "eligibility_note": "selection_score=7.0; difficulty_score=-1.5; weak_mainline=False; fixed_small_member=True; direct_flag_penalty=0",
+        "modes": {
+          "heuristic_alert": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+          },
+          "heuristic_context": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+          },
+          "open_alert_only": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+          },
+          "vanilla_open": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+          },
+          "rag_open": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+          },
+          "agent_open": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+          }
+        }
+      }
+    ],
+    "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD": [
+      {
+        "dataset": "OpenStack",
+        "case_id": "openstack_win_0",
+        "eval_case_id": "openstack_win_0",
+        "source": "benchmark_v2",
+        "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+        "score": 2,
+        "verdict": "reject",
+        "complete_case": true,
+        "reasons": [
+          "heuristic_alert_not_direct",
+          "open_alert_only_not_e2e",
+          "rag_rca_e2e_decoupled",
+          "all_llm_e2e_zero"
+        ],
+        "selection_score": 8.0,
+        "difficulty_score": -8.5,
+        "weak_mainline_alert": false,
+        "selected_alert_flags": {
+          "direct_image_cache": false,
+          "direct_power_sync": true,
+          "direct_host_claim": false,
+          "direct_metadata": false
+        },
+        "eligibility_note": "selection_score=8.0; difficulty_score=-8.5; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_power_sync",
+        "modes": {
+          "heuristic_alert": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "heuristic_context": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "open_alert_only": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+          },
+          "vanilla_open": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+          },
+          "rag_open": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_INSTANCE_INVENTORY"
+          },
+          "agent_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+            "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+          }
+        }
+      },
+      {
+        "dataset": "OpenStack",
+        "case_id": "openstack_49",
+        "eval_case_id": "openstack_49",
+        "source": "rq3_test_set_enriched",
+        "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+        "score": -2,
+        "verdict": "reject",
+        "complete_case": true,
+        "reasons": [
+          "heuristic_alert_easy",
+          "open_alert_only_not_e2e",
+          "all_llm_e2e_zero"
+        ],
+        "selection_score": 8.0,
+        "difficulty_score": 3.0,
+        "weak_mainline_alert": false,
+        "selected_alert_flags": {
+          "direct_image_cache": false,
+          "direct_power_sync": false,
+          "direct_host_claim": false,
+          "direct_metadata": false
+        },
+        "eligibility_note": "selection_score=8.0; difficulty_score=3.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0",
+        "modes": {
+          "heuristic_alert": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD"
+          },
+          "heuristic_context": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD"
+          },
+          "open_alert_only": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "vanilla_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "rag_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+            "pred_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN"
+          },
+          "agent_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+            "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+          }
+        }
+      },
+      {
+        "dataset": "OpenStack",
+        "case_id": "openstack_51",
+        "eval_case_id": "openstack_51",
+        "source": "rq3_test_set_enriched",
+        "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+        "score": -2,
+        "verdict": "reject",
+        "complete_case": true,
+        "reasons": [
+          "heuristic_alert_easy",
+          "open_alert_only_not_e2e",
+          "all_llm_e2e_zero"
+        ],
+        "selection_score": 8.0,
+        "difficulty_score": 5.5,
+        "weak_mainline_alert": false,
+        "selected_alert_flags": {
+          "direct_image_cache": false,
+          "direct_power_sync": false,
+          "direct_host_claim": false,
+          "direct_metadata": false
+        },
+        "eligibility_note": "selection_score=8.0; difficulty_score=5.5; weak_mainline=False; fixed_small_member=True; direct_flag_penalty=0",
+        "modes": {
+          "heuristic_alert": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD"
+          },
+          "heuristic_context": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD"
+          },
+          "open_alert_only": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "vanilla_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "rag_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+            "pred_action_id": "OPENSTACK_ENABLE_LOCAL_METADATA_CACHE"
+          },
+          "agent_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          }
+        }
+      }
+    ],
+    "OPENSTACK_VERIFY_TERMINATION_AND_RESTORE": [
+      {
+        "dataset": "OpenStack",
+        "case_id": "openstack_56",
+        "eval_case_id": "openstack_56",
+        "source": "rq3_test_set_enriched",
+        "gt_action_id": "OPENSTACK_VERIFY_TERMINATION_AND_RESTORE",
+        "score": 1,
+        "verdict": "reject",
+        "complete_case": true,
+        "reasons": [
+          "heuristic_alert_not_direct",
+          "open_alert_only_not_e2e",
+          "all_llm_e2e_zero"
+        ],
+        "selection_score": 8.0,
+        "difficulty_score": 4.0,
+        "weak_mainline_alert": false,
+        "selected_alert_flags": {
+          "direct_image_cache": false,
+          "direct_power_sync": false,
+          "direct_host_claim": false,
+          "direct_metadata": false
+        },
+        "eligibility_note": "selection_score=8.0; difficulty_score=4.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0",
+        "modes": {
+          "heuristic_alert": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "heuristic_context": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+            "pred_action_id": "OPENSTACK_VERIFY_TERMINATION_AND_RESTORE"
+          },
+          "open_alert_only": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "vanilla_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "rag_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "agent_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          }
+        }
+      }
+    ]
+  }
+}

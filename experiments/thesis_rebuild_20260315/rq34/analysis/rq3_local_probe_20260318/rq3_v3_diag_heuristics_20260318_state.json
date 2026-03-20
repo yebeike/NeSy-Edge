@@ -1,0 +1,8 @@
+{
+  "run_tag": "rq3_v3_diag_heuristics_20260318",
+  "completed_steps": 64,
+  "total_steps": 64,
+  "llm_calls": 0,
+  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/analysis/rq3_local_probe_20260318/rq3_v3_diag_heuristics_20260318_progress.jsonl",
+  "summary_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/analysis/rq3_local_probe_20260318/rq3_v3_diag_heuristics_20260318_summary.json"
+}

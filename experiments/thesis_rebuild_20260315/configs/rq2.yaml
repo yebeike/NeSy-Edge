@@ -1,0 +1,3 @@
+seed: 2026
+status: migrate_after_rq1
+note: Preserve current modified-graph strength unless protocol defects are found.

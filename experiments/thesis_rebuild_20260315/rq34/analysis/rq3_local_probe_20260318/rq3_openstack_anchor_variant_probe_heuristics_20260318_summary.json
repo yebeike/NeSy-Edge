@@ -1,0 +1,34 @@
+{
+  "run_tag": "rq3_openstack_anchor_variant_probe_heuristics_20260318",
+  "model": "qwen3.5:9b",
+  "rows": 40,
+  "llm_calls": 0,
+  "budget_exhausted": false,
+  "by_mode": {
+    "desc_overlap_alert": {
+      "rows": 10,
+      "family_accuracy": 0.4,
+      "action_accuracy": 0.2,
+      "action_text_success_rate": 0.0
+    },
+    "desc_overlap_context": {
+      "rows": 10,
+      "family_accuracy": 0.7,
+      "action_accuracy": 0.4,
+      "action_text_success_rate": 0.0
+    },
+    "heuristic_alert": {
+      "rows": 10,
+      "family_accuracy": 0.6,
+      "action_accuracy": 0.2,
+      "action_text_success_rate": 0.0
+    },
+    "heuristic_context": {
+      "rows": 10,
+      "family_accuracy": 0.6,
+      "action_accuracy": 0.4,
+      "action_text_success_rate": 0.0
+    }
+  },
+  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/analysis/rq3_local_probe_20260318/rq3_openstack_anchor_variant_probe_heuristics_20260318_progress.jsonl"
+}

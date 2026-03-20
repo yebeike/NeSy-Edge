@@ -1,0 +1,132 @@
+{
+  "by_mode": {
+    "agent_open": {
+      "rows": 7,
+      "family_accuracy": 0.2857,
+      "action_accuracy": 0.2857,
+      "action_text_success_rate": 0.2857,
+      "e2e_accuracy": 0.2857,
+      "rca_e2e_gap_rows": 0
+    },
+    "heuristic_alert": {
+      "rows": 7,
+      "family_accuracy": 0.8571,
+      "action_accuracy": 0.5714,
+      "action_text_success_rate": 0.0,
+      "e2e_accuracy": 0.5714,
+      "rca_e2e_gap_rows": 2
+    },
+    "heuristic_context": {
+      "rows": 7,
+      "family_accuracy": 1.0,
+      "action_accuracy": 0.7143,
+      "action_text_success_rate": 0.0,
+      "e2e_accuracy": 0.7143,
+      "rca_e2e_gap_rows": 2
+    },
+    "open_alert_only": {
+      "rows": 7,
+      "family_accuracy": 0.1429,
+      "action_accuracy": 0.1429,
+      "action_text_success_rate": 0.1429,
+      "e2e_accuracy": 0.1429,
+      "rca_e2e_gap_rows": 0
+    },
+    "rag_open": {
+      "rows": 7,
+      "family_accuracy": 0.2857,
+      "action_accuracy": 0.2857,
+      "action_text_success_rate": 0.2857,
+      "e2e_accuracy": 0.2857,
+      "rca_e2e_gap_rows": 0
+    },
+    "vanilla_open": {
+      "rows": 7,
+      "family_accuracy": 0.1429,
+      "action_accuracy": 0.1429,
+      "action_text_success_rate": 0.1429,
+      "e2e_accuracy": 0.1429,
+      "rca_e2e_gap_rows": 0
+    }
+  },
+  "by_mode_dataset_noise": {
+    "agent_open": {
+      "OpenStack": {
+        "1.0": {
+          "rows": 7,
+          "family_accuracy": 0.2857,
+          "action_accuracy": 0.2857,
+          "action_text_success_rate": 0.2857,
+          "e2e_accuracy": 0.2857,
+          "rca_e2e_gap_rows": 0
+        }
+      }
+    },
+    "heuristic_alert": {
+      "OpenStack": {
+        "1.0": {
+          "rows": 7,
+          "family_accuracy": 0.8571,
+          "action_accuracy": 0.5714,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.5714,
+          "rca_e2e_gap_rows": 2
+        }
+      }
+    },
+    "heuristic_context": {
+      "OpenStack": {
+        "1.0": {
+          "rows": 7,
+          "family_accuracy": 1.0,
+          "action_accuracy": 0.7143,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.7143,
+          "rca_e2e_gap_rows": 2
+        }
+      }
+    },
+    "open_alert_only": {
+      "OpenStack": {
+        "1.0": {
+          "rows": 7,
+          "family_accuracy": 0.1429,
+          "action_accuracy": 0.1429,
+          "action_text_success_rate": 0.1429,
+          "e2e_accuracy": 0.1429,
+          "rca_e2e_gap_rows": 0
+        }
+      }
+    },
+    "rag_open": {
+      "OpenStack": {
+        "1.0": {
+          "rows": 7,
+          "family_accuracy": 0.2857,
+          "action_accuracy": 0.2857,
+          "action_text_success_rate": 0.2857,
+          "e2e_accuracy": 0.2857,
+          "rca_e2e_gap_rows": 0
+        }
+      }
+    },
+    "vanilla_open": {
+      "OpenStack": {
+        "1.0": {
+          "rows": 7,
+          "family_accuracy": 0.1429,
+          "action_accuracy": 0.1429,
+          "action_text_success_rate": 0.1429,
+          "e2e_accuracy": 0.1429,
+          "rca_e2e_gap_rows": 0
+        }
+      }
+    }
+  },
+  "run_tag": "rq3_openstack_bulk_candidate_sweep_v2_highnoise_open_20260319",
+  "model": "qwen3.5:9b",
+  "rows": 42,
+  "llm_calls": 28,
+  "budget_exhausted": false,
+  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_openstack_bulk_candidate_sweep_v2_highnoise_20260319/rq3_openstack_bulk_candidate_sweep_v2_highnoise_open_20260319_progress.jsonl"
+}

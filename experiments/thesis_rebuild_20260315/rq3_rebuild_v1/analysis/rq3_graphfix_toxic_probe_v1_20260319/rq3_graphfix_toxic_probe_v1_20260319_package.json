@@ -1,0 +1,1319 @@
+{
+  "benchmark_id": "rq3_graphfix_toxic_probe_v1_20260319",
+  "benchmark_kind": "graphfix_toxic_probe",
+  "purpose": "Mid-first candidate seed assembled from calibrated local probes plus trusted manual rebuild cases.",
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "cases": [
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_49__reanchor02",
+      "pool_case_id": "openstack_49",
+      "source": "rq3_test_set_enriched",
+      "gt_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+      "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+      "eligibility_note": "shortlist score=7 agent=0 rag=1 vanilla=0 heuristic=0 source=rq3_openstack_reanchor_bulk_v1_highnoise_open_20260319_ranked_calibrated.json note=auto_reanchor from pool_anchor_opportunities: current_directness=9.0 alt_directness=0.0 offset=-2 selection_score=8.0 difficulty_score=3.0",
+      "selected_alert_clean": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.757 2931 INFO nova.compute.manager [req-6f9ecdfe-481c-4535-9bdc-45d86085d739 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] Took 20.03 seconds to spawn the instance on the hypervisor.",
+      "shared_context_clean": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.747 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] VM Resumed (Lifecycle Event)\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.756 2931 INFO nova.virt.libvirt.driver [-] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] Instance spawned successfully.\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.863 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] During sync_power_state the instance has a pending task (spawning). Skip.",
+      "provenance": {
+        "eval_case_id": "openstack_49__reanchor02",
+        "pool_case_id": "openstack_49",
+        "ground_truth_root_cause_template": "nova.compute.manager [req-<UUID> - - - - -] While synchronizing instance power states, found <NUM> instances in the database and <NUM> instances on the hypervisor.",
+        "ground_truth_template": "[instance: <*>] During sync_power_state the instance has a pending task (spawning). Skip.",
+        "reason": ""
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.757 2931 INFO nova.compute.manager [req-6f9ecdfe-481c-4535-9bdc-45d86085d739 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] Took 20.03 seconds to spawn the instance on the hypervisor.",
+          "context_text": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.747 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] VM Resumed (Lifecycle Event)\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.756 2931 INFO nova.virt.libvirt.driver [-] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] Instance spawned successfully.\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.863 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] During sync_power_state the instance has a pending task (spawning). Skip.",
+          "rag_references": [
+            {
+              "reference_id": "rq3_test_set_enriched:openstack_50",
+              "score": 28.4667,
+              "lexical": 28.4667,
+              "action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+              "family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:50.867 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] During sync_power_state the instance has a pending task (spawning). Skip.\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:50.867 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] During sync_power_state the instance has a pending task (spawning). Skip.\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:50.667 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [in"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:openstack_54",
+              "score": 25.3731,
+              "lexical": 25.3731,
+              "action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+              "family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:14:33.392 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: faf974ea-cba5-4e1b-93f4-3a3bc606006f] During sync_power_state the instance has a pending task (spawning). Skip.\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:14:33.197 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: faf974ea-cba5-4e1b-93f4-3a3bc606006f] VM Started (Lifecycle Event)\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:14:33.266 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: faf974ea-cba5-4e1b-93f4-3a3bc606006f]"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:openstack_win_21",
+              "score": 24.25,
+              "lexical": 24.25,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:50:20.270 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking\nNearby context: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:50:20.021 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: f14b2b2f-4cc2-450a-8314-ab3b6f6f30a0] During sync_power_state the instance has a pending task (spawning). Skip.\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:50:20.155 25746 INFO nova.osapi_compute.wsgi.server [req-71a2f928-be22-4640-9378-f568f10d3d1a 113d3a99c3d"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "rq3_test_set_enriched:openstack_50",
+              "score": 28.4667,
+              "lexical": 28.4667,
+              "action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+              "family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:50.867 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] During sync_power_state the instance has a pending task (spawning). Skip.\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:50.867 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] During sync_power_state the instance has a pending task (spawning). Skip.\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:50.667 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [in"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:openstack_54",
+              "score": 25.3731,
+              "lexical": 25.3731,
+              "action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+              "family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:14:33.392 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: faf974ea-cba5-4e1b-93f4-3a3bc606006f] During sync_power_state the instance has a pending task (spawning). Skip.\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:14:33.197 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: faf974ea-cba5-4e1b-93f4-3a3bc606006f] VM Started (Lifecycle Event)\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:14:33.266 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: faf974ea-cba5-4e1b-93f4-3a3bc606006f]"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:openstack_win_21",
+              "score": 24.25,
+              "lexical": 24.25,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:50:20.270 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking\nNearby context: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:50:20.021 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: f14b2b2f-4cc2-450a-8314-ab3b6f6f30a0] During sync_power_state the instance has a pending task (spawning). Skip.\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:50:20.155 25746 INFO nova.osapi_compute.wsgi.server [req-71a2f928-be22-4640-9378-f568f10d3d1a 113d3a99c3d"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [],
+            "matched_edges": []
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.757 2931 INFO nova.compute.manager [req-6f9ecdfe-481c-4535-9bdc-45d86085d739 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [VM: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] Took 20.03 seconds to spawn the VM on the hypervisor.",
+          "context_text": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.747 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [VM: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] lifecycle transition acknowledged after hypervisor state change\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.756 2931 INFO nova.virt.libvirt.driver [-] [VM: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] Instance spawned successfully.\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.863 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [VM: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] During runtime-state reconciliation the VM has a launch workflow still marked in-flight. Defer.",
+          "rag_references": [
+            {
+              "reference_id": "rq3_test_set_enriched:openstack_50",
+              "score": 28.4667,
+              "lexical": 28.4667,
+              "action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+              "family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:50.867 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] During sync_power_state the instance has a pending task (spawning). Skip.\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:50.867 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] During sync_power_state the instance has a pending task (spawning). Skip.\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:50.667 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [in"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:openstack_54",
+              "score": 25.3731,
+              "lexical": 25.3731,
+              "action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+              "family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:14:33.392 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: faf974ea-cba5-4e1b-93f4-3a3bc606006f] During sync_power_state the instance has a pending task (spawning). Skip.\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:14:33.197 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: faf974ea-cba5-4e1b-93f4-3a3bc606006f] VM Started (Lifecycle Event)\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:14:33.266 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: faf974ea-cba5-4e1b-93f4-3a3bc606006f]"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:openstack_win_21",
+              "score": 24.25,
+              "lexical": 24.25,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:50:20.270 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking\nNearby context: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:50:20.021 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: f14b2b2f-4cc2-450a-8314-ab3b6f6f30a0] During sync_power_state the instance has a pending task (spawning). Skip.\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:50:20.155 25746 INFO nova.osapi_compute.wsgi.server [req-71a2f928-be22-4640-9378-f568f10d3d1a 113d3a99c3d"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "rq3_test_set_enriched:openstack_50",
+              "score": 28.4667,
+              "lexical": 28.4667,
+              "action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+              "family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:50.867 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] During sync_power_state the instance has a pending task (spawning). Skip.\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:50.867 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] During sync_power_state the instance has a pending task (spawning). Skip.\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:50.667 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [in"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:openstack_54",
+              "score": 25.3731,
+              "lexical": 25.3731,
+              "action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+              "family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:14:33.392 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: faf974ea-cba5-4e1b-93f4-3a3bc606006f] During sync_power_state the instance has a pending task (spawning). Skip.\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:14:33.197 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: faf974ea-cba5-4e1b-93f4-3a3bc606006f] VM Started (Lifecycle Event)\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:14:33.266 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: faf974ea-cba5-4e1b-93f4-3a3bc606006f]"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:openstack_win_21",
+              "score": 24.25,
+              "lexical": 24.25,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:50:20.270 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking\nNearby context: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:50:20.021 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: f14b2b2f-4cc2-450a-8314-ab3b6f6f30a0] During sync_power_state the instance has a pending task (spawning). Skip.\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:50:20.155 25746 INFO nova.osapi_compute.wsgi.server [req-71a2f928-be22-4640-9378-f568f10d3d1a 113d3a99c3d"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [],
+            "matched_edges": []
+          }
+        }
+      }
+    },
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_56__reanchor01",
+      "pool_case_id": "openstack_56",
+      "source": "rq3_test_set_enriched",
+      "gt_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+      "gt_action_id": "OPENSTACK_VERIFY_TERMINATION_AND_RESTORE",
+      "eligibility_note": "shortlist score=6 agent=0 rag=1 vanilla=0 heuristic=0 source=rq3_openstack_reanchor_bulk_v1_highnoise_open_20260319_ranked_calibrated.json note=auto_reanchor from pool_anchor_opportunities: current_directness=9.0 alt_directness=1.0 offset=2 selection_score=8.0 difficulty_score=4.0",
+      "selected_alert_clean": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:02.514 2931 INFO nova.virt.libvirt.driver [req-121ecfae-3fb1-49cc-9a78-8b046fe73a77 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [instance: d96a117b-0193-4549-bdcc-63b917273d1d] Deleting instance files /var/lib/nova/instances/d96a117b-0193-4549-bdcc-63b917273d1d_del",
+      "shared_context_clean": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:01.590 2931 INFO nova.compute.manager [req-121ecfae-3fb1-49cc-9a78-8b046fe73a77 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [instance: d96a117b-0193-4549-bdcc-63b917273d1d] Terminating instance\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:01.806 2931 INFO nova.virt.libvirt.driver [-] [instance: d96a117b-0193-4549-bdcc-63b917273d1d] Instance destroyed successfully.\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:02.516 2931 INFO nova.virt.libvirt.driver [req-121ecfae-3fb1-49cc-9a78-8b046fe73a77 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [instance: d96a117b-0193-4549-bdcc-63b917273d1d] Deletion of /var/lib/nova/instances/d96a117b-0193-4549-bdcc-63b917273d1d_del complete",
+      "provenance": {
+        "eval_case_id": "openstack_56__reanchor01",
+        "pool_case_id": "openstack_56",
+        "ground_truth_root_cause_template": "unknown",
+        "ground_truth_template": "[instance: <*>] Terminating instance",
+        "reason": ""
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:02.514 2931 INFO nova.virt.libvirt.driver [req-121ecfae-3fb1-49cc-9a78-8b046fe73a77 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [instance: d96a117b-0193-4549-bdcc-63b917273d1d] Deleting instance files /var/lib/nova/instances/d96a117b-0193-4549-bdcc-63b917273d1d_del",
+          "context_text": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:01.590 2931 INFO nova.compute.manager [req-121ecfae-3fb1-49cc-9a78-8b046fe73a77 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [instance: d96a117b-0193-4549-bdcc-63b917273d1d] Terminating instance\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:01.806 2931 INFO nova.virt.libvirt.driver [-] [instance: d96a117b-0193-4549-bdcc-63b917273d1d] Instance destroyed successfully.\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:02.516 2931 INFO nova.virt.libvirt.driver [req-121ecfae-3fb1-49cc-9a78-8b046fe73a77 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [instance: d96a117b-0193-4549-bdcc-63b917273d1d] Deletion of /var/lib/nova/instances/d96a117b-0193-4549-bdcc-63b917273d1d_del complete",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:openstack_61",
+              "score": 28.4308,
+              "lexical": 28.4308,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:05.112 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Removable base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:03.079 2931 INFO nova.compute.manager [req-121ecfae-3fb1-49cc-9a78-8b046fe73a77 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [instance: d96a117b-0193-4549-bdcc-63b917273d1d] Took 0.45 seconds to deallocate network for instance.\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:05.112 2931 WARNING nova.virt.libvirt.imagecache [re"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:openstack_49",
+              "score": 18.25,
+              "lexical": 18.25,
+              "action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+              "family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.756 2931 INFO nova.virt.libvirt.driver [-] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] Instance spawned successfully.\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:55.325 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.747 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: c62f4f25-982c-4ea"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:openstack_53",
+              "score": 15.2027,
+              "lexical": 15.2027,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:40.145 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): in use: on this node 1 local, 0 on other nodes sharing this instance storage\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:35.306 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:40.144 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:openstack_61",
+              "score": 28.4308,
+              "lexical": 28.4308,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:05.112 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Removable base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:03.079 2931 INFO nova.compute.manager [req-121ecfae-3fb1-49cc-9a78-8b046fe73a77 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [instance: d96a117b-0193-4549-bdcc-63b917273d1d] Took 0.45 seconds to deallocate network for instance.\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:05.112 2931 WARNING nova.virt.libvirt.imagecache [re"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:openstack_49",
+              "score": 18.25,
+              "lexical": 18.25,
+              "action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+              "family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.756 2931 INFO nova.virt.libvirt.driver [-] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] Instance spawned successfully.\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:55.325 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.747 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: c62f4f25-982c-4ea"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:openstack_53",
+              "score": 15.2027,
+              "lexical": 15.2027,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:40.145 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): in use: on this node 1 local, 0 on other nodes sharing this instance storage\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:35.306 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:40.144 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [],
+            "matched_edges": []
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:02.514 2931 INFO nova.virt.libvirt.driver [req-121ecfae-3fb1-49cc-9a78-8b046fe73a77 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [VM: d96a117b-0193-4549-bdcc-63b917273d1d] Deleting VM files /var/lib/nova/VMs/d96a117b-0193-4549-bdcc-63b917273d1d_del",
+          "context_text": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:01.590 2931 INFO nova.compute.manager [req-121ecfae-3fb1-49cc-9a78-8b046fe73a77 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [VM: d96a117b-0193-4549-bdcc-63b917273d1d] Terminating VM\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:01.806 2931 INFO nova.virt.libvirt.driver [-] [VM: d96a117b-0193-4549-bdcc-63b917273d1d] Instance destroyed successfully.\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:02.516 2931 INFO nova.virt.libvirt.driver [req-121ecfae-3fb1-49cc-9a78-8b046fe73a77 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [VM: d96a117b-0193-4549-bdcc-63b917273d1d] Deletion of /var/lib/nova/VMs/d96a117b-0193-4549-bdcc-63b917273d1d_del complete",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:openstack_61",
+              "score": 28.4308,
+              "lexical": 28.4308,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:05.112 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Removable base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:03.079 2931 INFO nova.compute.manager [req-121ecfae-3fb1-49cc-9a78-8b046fe73a77 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [instance: d96a117b-0193-4549-bdcc-63b917273d1d] Took 0.45 seconds to deallocate network for instance.\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:05.112 2931 WARNING nova.virt.libvirt.imagecache [re"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:openstack_49",
+              "score": 18.25,
+              "lexical": 18.25,
+              "action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+              "family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.756 2931 INFO nova.virt.libvirt.driver [-] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] Instance spawned successfully.\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:55.325 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.747 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: c62f4f25-982c-4ea"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:openstack_53",
+              "score": 15.2027,
+              "lexical": 15.2027,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:40.145 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): in use: on this node 1 local, 0 on other nodes sharing this instance storage\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:35.306 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:40.144 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:openstack_61",
+              "score": 28.4308,
+              "lexical": 28.4308,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:05.112 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Removable base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:03.079 2931 INFO nova.compute.manager [req-121ecfae-3fb1-49cc-9a78-8b046fe73a77 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] [instance: d96a117b-0193-4549-bdcc-63b917273d1d] Took 0.45 seconds to deallocate network for instance.\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:05.112 2931 WARNING nova.virt.libvirt.imagecache [re"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:openstack_49",
+              "score": 18.25,
+              "lexical": 18.25,
+              "action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+              "family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.756 2931 INFO nova.virt.libvirt.driver [-] [instance: c62f4f25-982c-4ea2-b5e4-93000edfcfbf] Instance spawned successfully.\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:55.325 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:57.747 2931 INFO nova.compute.manager [req-3ea4052c-895d-4b64-9e2d-04d64c4d94ab - - - - -] [instance: c62f4f25-982c-4ea"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:openstack_53",
+              "score": 15.2027,
+              "lexical": 15.2027,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:40.145 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): in use: on this node 1 local, 0 on other nodes sharing this instance storage\nNearby context: nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:35.306 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\nnova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:12:40.144 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [],
+            "matched_edges": []
+          }
+        }
+      }
+    },
+    {
+      "dataset": "HDFS",
+      "case_id": "hdfs_40",
+      "pool_case_id": "hdfs_40",
+      "source": "rq3_test_set_enriched",
+      "gt_family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+      "gt_action_id": "HDFS_RETRY_ALLOCATION_AFTER_CAPACITY_CHECK",
+      "eligibility_note": "shortlist score=3 agent=0 rag=1 vanilla=1 heuristic=1 source=rq3_hdfs_keepdirect_pipeline_storage_v6_highnoise_open_20260319_ranked_mid_relaxed.json note=selection_score=17.0; difficulty_score=0.0; weak_mainline=False; fixed_small_member=True; direct_flag_penalty=0; flags=direct_allocate_block",
+      "selected_alert_clean": "081111 070519 35 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand6/_temporary/_task_200811101024_0013_m_000077_0/part-00077. blk_608957629753483727",
+      "shared_context_clean": "081111 070326 34 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand6/_temporary/_task_200811101024_0013_m_000079_0/part-00079. blk_4225726256421431188\n081111 070505 26 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.25.237:50010 is added to blk_-1496429201748767714 size 67108864\n081111 070735 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.214.130:50010 is added to blk_-4427507243535536615 size 67108864\n081111 070918 33 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.214:50010 is added to blk_5963655886023015963 size 67108864",
+      "provenance": {
+        "eval_case_id": "hdfs_40",
+        "pool_case_id": "hdfs_40",
+        "ground_truth_root_cause_template": "unknown",
+        "ground_truth_template": "BLOCK* NameSystem.allocateBlock: /<*>/part-<*>. blk_<*>",
+        "reason": ""
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "081111 070519 35 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand6/_temporary/_task_200811101024_0013_m_000077_0/part-00077. blk_608957629753483727",
+          "context_text": "081111 070326 34 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand6/_temporary/_task_200811101024_0013_m_000079_0/part-00079. blk_4225726256421431188\n081111 070505 26 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.25.237:50010 is added to blk_-1496429201748767714 size 67108864\n081111 070735 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.214.130:50010 is added to blk_-4427507243535536615 size 67108864\n081111 070918 33 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.214:50010 is added to blk_5963655886023015963 size 67108864",
+          "rag_references": [
+            {
+              "reference_id": "rq3_test_set_enriched:hdfs_38",
+              "score": 19.3333,
+              "lexical": 19.3333,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 092436 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.223:50010 is added to blk_-6390296685077811803 size 3546314\nNearby context: 081111 092436 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.223:50010 is added to blk_-6390296685077811803 size 3546314\n081111 090816 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.196:50010 is added to blk_-6308508598639278892 size 67108864\n081111 091200 27 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand8/_temp"
+            },
+            {
+              "reference_id": "rq3_test_set:hdfs_31",
+              "score": 16.3478,
+              "lexical": 16.3478,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 025634 28 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.214.67:50010 is added to blk_-1417908110808566576 size 67108864"
+            },
+            {
+              "reference_id": "rq3_test_set:hdfs_16",
+              "score": 15.3261,
+              "lexical": 15.3261,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 072523 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.27.63:50010 is added to blk_-7794786562417612249 size 67108864"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "rq3_test_set_enriched:hdfs_38",
+              "score": 19.3333,
+              "lexical": 19.3333,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 092436 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.223:50010 is added to blk_-6390296685077811803 size 3546314\nNearby context: 081111 092436 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.223:50010 is added to blk_-6390296685077811803 size 3546314\n081111 090816 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.196:50010 is added to blk_-6308508598639278892 size 67108864\n081111 091200 27 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand8/_temp"
+            },
+            {
+              "reference_id": "rq3_test_set:hdfs_31",
+              "score": 16.3478,
+              "lexical": 16.3478,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 025634 28 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.214.67:50010 is added to blk_-1417908110808566576 size 67108864"
+            },
+            {
+              "reference_id": "rq3_test_set:hdfs_16",
+              "score": 15.3261,
+              "lexical": 15.3261,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 072523 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.27.63:50010 is added to blk_-7794786562417612249 size 67108864"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: transfer got -> block size block-map-update request received (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "[*]:Failed to transfer[*]to[*]got[*]",
+                "target_template": "[*]BLOCK* NameSystem[*]addStoredBlock: addStoredBlock request received for[*]on[*]size[*]But it does not belong to any file[*]",
+                "relation": "temporally_causes",
+                "weight": 0.5532,
+                "score": 11.2277,
+                "query_source_overlap": 0,
+                "query_target_overlap": 4,
+                "reference_source_overlap": 0,
+                "reference_target_overlap": 4
+              }
+            ]
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "081111 070519 35 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand6/_temporary/_task_200811101024_0013_m_000077_0/part-00077. block-id:608957629753483727",
+          "context_text": "081111 070326 34 INFO dfs.FSNamesystem: BLOCK* NameSystem.reserveReplicaTargets: /user/root/rand6/_temporary/_task_200811101024_0013_m_000079_0/part-00079. block-id:4225726256421431188\n081111 070505 26 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.25.237:50010 is added to block-id:-1496429201748767714 len 67108864\n081111 070735 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.214.130:50010 is added to block-id:-4427507243535536615 len 67108864\n081111 070918 33 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.214:50010 is added to block-id:5963655886023015963 len 67108864",
+          "rag_references": [
+            {
+              "reference_id": "rq3_test_set_enriched:hdfs_38",
+              "score": 19.3333,
+              "lexical": 19.3333,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 092436 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.223:50010 is added to blk_-6390296685077811803 size 3546314\nNearby context: 081111 092436 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.223:50010 is added to blk_-6390296685077811803 size 3546314\n081111 090816 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.196:50010 is added to blk_-6308508598639278892 size 67108864\n081111 091200 27 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand8/_temp"
+            },
+            {
+              "reference_id": "rq3_test_set:hdfs_31",
+              "score": 16.3478,
+              "lexical": 16.3478,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 025634 28 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.214.67:50010 is added to blk_-1417908110808566576 size 67108864"
+            },
+            {
+              "reference_id": "rq3_test_set:hdfs_16",
+              "score": 15.3261,
+              "lexical": 15.3261,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 072523 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.27.63:50010 is added to blk_-7794786562417612249 size 67108864"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "rq3_test_set_enriched:hdfs_38",
+              "score": 19.3333,
+              "lexical": 19.3333,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 092436 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.223:50010 is added to blk_-6390296685077811803 size 3546314\nNearby context: 081111 092436 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.223:50010 is added to blk_-6390296685077811803 size 3546314\n081111 090816 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.196:50010 is added to blk_-6308508598639278892 size 67108864\n081111 091200 27 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand8/_temp"
+            },
+            {
+              "reference_id": "rq3_test_set:hdfs_31",
+              "score": 16.3478,
+              "lexical": 16.3478,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 025634 28 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.214.67:50010 is added to blk_-1417908110808566576 size 67108864"
+            },
+            {
+              "reference_id": "rq3_test_set:hdfs_16",
+              "score": 15.3261,
+              "lexical": 15.3261,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 072523 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.27.63:50010 is added to blk_-7794786562417612249 size 67108864"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: transfer got -> block size block-map-update request received (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "[*]:Failed to transfer[*]to[*]got[*]",
+                "target_template": "[*]BLOCK* NameSystem[*]addStoredBlock: addStoredBlock request received for[*]on[*]size[*]But it does not belong to any file[*]",
+                "relation": "temporally_causes",
+                "weight": 0.5532,
+                "score": 11.2277,
+                "query_source_overlap": 0,
+                "query_target_overlap": 4,
+                "reference_source_overlap": 0,
+                "reference_target_overlap": 4
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "dataset": "HDFS",
+      "case_id": "hdfs_24__02",
+      "pool_case_id": "hdfs_24",
+      "source": "rq3_test_set_enriched",
+      "gt_family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+      "gt_action_id": "HDFS_RETRY_ALLOCATION_AFTER_CAPACITY_CHECK",
+      "eligibility_note": "provisional score=2 agent=0 rag=0 vanilla=0 heuristic=0 source=rq3_hdfs_keepdirect_pipeline_storage_v6_highnoise_open_20260319_ranked_mid_relaxed.json note=selection_score=8.0; difficulty_score=0.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=pipeline_keyword",
+      "selected_alert_clean": "081109 205749 997 INFO dfs.DataNode$DataXceiver: Receiving block blk_-28342503914935090 src: /10.251.123.132:57542 dest: /10.251.123.132:50010",
+      "shared_context_clean": "081109 205412 832 INFO dfs.DataNode$PacketResponder: Received block blk_-5704899712662113150 of size 67108864 from /10.251.91.229\n081109 205742 1001 INFO dfs.DataNode$PacketResponder: Received block blk_-5861636720645142679 of size 67108864 from /10.251.70.211\n081109 205754 952 INFO dfs.DataNode$PacketResponder: Received block blk_8291449241650212794 of size 67108864 from /10.251.89.155\n081109 210022 1110 INFO dfs.DataNode$PacketResponder: Received block blk_-5974833545991408899 of size 67108864 from /10.251.31.180",
+      "provenance": {
+        "eval_case_id": "hdfs_24__02",
+        "pool_case_id": "hdfs_24",
+        "ground_truth_root_cause_template": "[*]BLOCK* NameSystem[*]allocateBlock:[*]",
+        "ground_truth_template": "Receiving block blk_<*> src: /<*>:<*> dest: /<*>:<*>",
+        "reason": ""
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "081109 205749 997 INFO dfs.DataNode$DataXceiver: Receiving block blk_-28342503914935090 src: /10.251.123.132:57542 dest: /10.251.123.132:50010",
+          "context_text": "081109 205412 832 INFO dfs.DataNode$PacketResponder: Received block blk_-5704899712662113150 of size 67108864 from /10.251.91.229\n081109 205742 1001 INFO dfs.DataNode$PacketResponder: Received block blk_-5861636720645142679 of size 67108864 from /10.251.70.211\n081109 205754 952 INFO dfs.DataNode$PacketResponder: Received block blk_8291449241650212794 of size 67108864 from /10.251.89.155\n081109 210022 1110 INFO dfs.DataNode$PacketResponder: Received block blk_-5974833545991408899 of size 67108864 from /10.251.31.180",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_1",
+              "score": 18.2857,
+              "lexical": 18.2857,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 205931 13 INFO dfs.DataBlockScanner: Verification succeeded for blk_-4980916519894289629\nNearby context: 081109 205754 952 INFO dfs.DataNode$PacketResponder: Received block blk_8291449241650212794 of size 67108864 from /10.251.89.155\n081109 205858 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand/_temporary/_task_200811092030_0001_m_000487_0/part-00487. blk_-5319073033164653435\n081109 210022 1110 INFO dfs.DataNode$PacketResponder: Received block blk_-5974833545991408899 of size 67108864 from /10"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_18",
+              "score": 16.25,
+              "lexical": 16.25,
+              "action_id": "HDFS_ISOLATE_RECEIVER_AND_REBUILD_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 232639 3792 INFO dfs.DataNode$PacketResponder: PacketResponder 0 for block blk_-6837050820114491742 terminating\nNearby context: 081109 232200 3856 INFO dfs.DataNode$PacketResponder: Received block blk_-6867873931012347356 of size 67108864 from /10.251.39.64\n081109 232346 3820 INFO dfs.DataNode$DataXceiver: Receiving block blk_8692428775973608797 src: /10.250.10.213:56574 dest: /10.250.10.213:50010\n081109 232828 3875 INFO dfs.DataNode$PacketResponder: Received block blk_-5195432543794777448 of size 67108864 from /10.250.10.6\n081109 232923 3792"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_11",
+              "score": 16.2424,
+              "lexical": 16.2424,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 211038 1490 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_-5073870177832699716 terminating\nNearby context: 081109 210921 1452 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6809181994368905854 src: /10.250.17.225:51754 dest: /10.250.17.225:50010\n081109 210935 1458 INFO dfs.DataNode$PacketResponder: Received block blk_8829027411458566099 of size 67108864 from /10.251.38.214\n081109 211216 1504 INFO dfs.DataNode$PacketResponder: Received block blk_-8241093737585222406 of size 67108864 from /10.250.5.161\n081109 211353 15"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_1",
+              "score": 18.2857,
+              "lexical": 18.2857,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 205931 13 INFO dfs.DataBlockScanner: Verification succeeded for blk_-4980916519894289629\nNearby context: 081109 205754 952 INFO dfs.DataNode$PacketResponder: Received block blk_8291449241650212794 of size 67108864 from /10.251.89.155\n081109 205858 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand/_temporary/_task_200811092030_0001_m_000487_0/part-00487. blk_-5319073033164653435\n081109 210022 1110 INFO dfs.DataNode$PacketResponder: Received block blk_-5974833545991408899 of size 67108864 from /10"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_18",
+              "score": 16.25,
+              "lexical": 16.25,
+              "action_id": "HDFS_ISOLATE_RECEIVER_AND_REBUILD_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 232639 3792 INFO dfs.DataNode$PacketResponder: PacketResponder 0 for block blk_-6837050820114491742 terminating\nNearby context: 081109 232200 3856 INFO dfs.DataNode$PacketResponder: Received block blk_-6867873931012347356 of size 67108864 from /10.251.39.64\n081109 232346 3820 INFO dfs.DataNode$DataXceiver: Receiving block blk_8692428775973608797 src: /10.250.10.213:56574 dest: /10.250.10.213:50010\n081109 232828 3875 INFO dfs.DataNode$PacketResponder: Received block blk_-5195432543794777448 of size 67108864 from /10.250.10.6\n081109 232923 3792"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_11",
+              "score": 16.2424,
+              "lexical": 16.2424,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 211038 1490 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_-5073870177832699716 terminating\nNearby context: 081109 210921 1452 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6809181994368905854 src: /10.250.17.225:51754 dest: /10.250.17.225:50010\n081109 210935 1458 INFO dfs.DataNode$PacketResponder: Received block blk_8829027411458566099 of size 67108864 from /10.251.38.214\n081109 211216 1504 INFO dfs.DataNode$PacketResponder: Received block blk_-8241093737585222406 of size 67108864 from /10.250.5.161\n081109 211353 15"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: block transmitted -> received block src dest size (relation=instantly_triggers)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "[*]:Transmitted block[*]to[*]",
+                "target_template": "[*]Received block[*]src:[*]dest:[*]of size[*]",
+                "relation": "instantly_triggers",
+                "weight": 0.9744,
+                "score": 6.2487,
+                "query_source_overlap": 1,
+                "query_target_overlap": 5,
+                "reference_source_overlap": 1,
+                "reference_target_overlap": 1
+              }
+            ]
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "081109 205749 997 INFO dfs.DataNode$DataXceiver: replica fragment path observed block-id:-28342503914935090 stage relay observed during activity",
+          "context_text": "081109 205412 832 INFO dfs.DataNode$ReplicaStage: replica fragment observed block-id:-5704899712662113150 of len 67108864 during activity\n081109 205742 1001 INFO dfs.DataNode$ReplicaStage: replica fragment observed block-id:-5861636720645142679 of len 67108864 during activity\n081109 205754 952 INFO dfs.DataNode$ReplicaStage: replica fragment observed block-id:8291449241650212794 of len 67108864 during activity\n081109 210022 1110 INFO dfs.DataNode$ReplicaStage: replica fragment observed block-id:-5974833545991408899 of len 67108864 during activity",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_1",
+              "score": 18.2857,
+              "lexical": 18.2857,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 205931 13 INFO dfs.DataBlockScanner: Verification succeeded for blk_-4980916519894289629\nNearby context: 081109 205754 952 INFO dfs.DataNode$PacketResponder: Received block blk_8291449241650212794 of size 67108864 from /10.251.89.155\n081109 205858 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand/_temporary/_task_200811092030_0001_m_000487_0/part-00487. blk_-5319073033164653435\n081109 210022 1110 INFO dfs.DataNode$PacketResponder: Received block blk_-5974833545991408899 of size 67108864 from /10"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_18",
+              "score": 16.25,
+              "lexical": 16.25,
+              "action_id": "HDFS_ISOLATE_RECEIVER_AND_REBUILD_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 232639 3792 INFO dfs.DataNode$PacketResponder: PacketResponder 0 for block blk_-6837050820114491742 terminating\nNearby context: 081109 232200 3856 INFO dfs.DataNode$PacketResponder: Received block blk_-6867873931012347356 of size 67108864 from /10.251.39.64\n081109 232346 3820 INFO dfs.DataNode$DataXceiver: Receiving block blk_8692428775973608797 src: /10.250.10.213:56574 dest: /10.250.10.213:50010\n081109 232828 3875 INFO dfs.DataNode$PacketResponder: Received block blk_-5195432543794777448 of size 67108864 from /10.250.10.6\n081109 232923 3792"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_11",
+              "score": 16.2424,
+              "lexical": 16.2424,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 211038 1490 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_-5073870177832699716 terminating\nNearby context: 081109 210921 1452 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6809181994368905854 src: /10.250.17.225:51754 dest: /10.250.17.225:50010\n081109 210935 1458 INFO dfs.DataNode$PacketResponder: Received block blk_8829027411458566099 of size 67108864 from /10.251.38.214\n081109 211216 1504 INFO dfs.DataNode$PacketResponder: Received block blk_-8241093737585222406 of size 67108864 from /10.250.5.161\n081109 211353 15"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_1",
+              "score": 18.2857,
+              "lexical": 18.2857,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 205931 13 INFO dfs.DataBlockScanner: Verification succeeded for blk_-4980916519894289629\nNearby context: 081109 205754 952 INFO dfs.DataNode$PacketResponder: Received block blk_8291449241650212794 of size 67108864 from /10.251.89.155\n081109 205858 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand/_temporary/_task_200811092030_0001_m_000487_0/part-00487. blk_-5319073033164653435\n081109 210022 1110 INFO dfs.DataNode$PacketResponder: Received block blk_-5974833545991408899 of size 67108864 from /10"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_18",
+              "score": 16.25,
+              "lexical": 16.25,
+              "action_id": "HDFS_ISOLATE_RECEIVER_AND_REBUILD_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 232639 3792 INFO dfs.DataNode$PacketResponder: PacketResponder 0 for block blk_-6837050820114491742 terminating\nNearby context: 081109 232200 3856 INFO dfs.DataNode$PacketResponder: Received block blk_-6867873931012347356 of size 67108864 from /10.251.39.64\n081109 232346 3820 INFO dfs.DataNode$DataXceiver: Receiving block blk_8692428775973608797 src: /10.250.10.213:56574 dest: /10.250.10.213:50010\n081109 232828 3875 INFO dfs.DataNode$PacketResponder: Received block blk_-5195432543794777448 of size 67108864 from /10.250.10.6\n081109 232923 3792"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_11",
+              "score": 16.2424,
+              "lexical": 16.2424,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 211038 1490 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_-5073870177832699716 terminating\nNearby context: 081109 210921 1452 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6809181994368905854 src: /10.250.17.225:51754 dest: /10.250.17.225:50010\n081109 210935 1458 INFO dfs.DataNode$PacketResponder: Received block blk_8829027411458566099 of size 67108864 from /10.251.38.214\n081109 211216 1504 INFO dfs.DataNode$PacketResponder: Received block blk_-8241093737585222406 of size 67108864 from /10.250.5.161\n081109 211353 15"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: block transmitted -> received block src dest size (relation=instantly_triggers)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "[*]:Transmitted block[*]to[*]",
+                "target_template": "[*]Received block[*]src:[*]dest:[*]of size[*]",
+                "relation": "instantly_triggers",
+                "weight": 0.9744,
+                "score": 6.2487,
+                "query_source_overlap": 1,
+                "query_target_overlap": 5,
+                "reference_source_overlap": 1,
+                "reference_target_overlap": 1
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "dataset": "HDFS",
+      "case_id": "hdfs_2",
+      "pool_case_id": "hdfs_2",
+      "source": "rq3_test_set_enriched",
+      "gt_family_id": "HDFS_PIPELINE_FAILURE",
+      "gt_action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+      "eligibility_note": "shortlist score=4 agent=0 rag=1 vanilla=0 heuristic=1 source=rq3_hdfs_keepdirect_pipeline_storage_v6_highnoise_open_20260319_ranked_mid_relaxed.json note=selection_score=12.0; difficulty_score=1.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=pipeline_keyword",
+      "selected_alert_clean": "081110 112152 9621 INFO dfs.DataNode$PacketResponder: PacketResponder 0 for block blk_6610244864386894422 terminating",
+      "shared_context_clean": "081110 111958 26 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.19:50010 is added to blk_-2144263949276079479 size 3547172\n081110 112055 10002 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6927870228542972281 src: /10.250.7.230:41059 dest: /10.250.7.230:50010\n081110 112155 13 INFO dfs.DataBlockScanner: Verification succeeded for blk_774612454978154966\n081110 112234 9888 INFO dfs.DataNode$DataXceiver: Receiving block blk_6672666770563118759 src: /10.251.71.68:44457 dest: /10.251.71.68:50010",
+      "provenance": {
+        "eval_case_id": "hdfs_2",
+        "pool_case_id": "hdfs_2",
+        "ground_truth_root_cause_template": "[*]Verification succeeded for[*]",
+        "ground_truth_template": "Verification succeeded for blk_<*>",
+        "reason": ""
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "081110 112152 9621 INFO dfs.DataNode$PacketResponder: PacketResponder 0 for block blk_6610244864386894422 terminating",
+          "context_text": "081110 111958 26 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.19:50010 is added to blk_-2144263949276079479 size 3547172\n081110 112055 10002 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6927870228542972281 src: /10.250.7.230:41059 dest: /10.250.7.230:50010\n081110 112155 13 INFO dfs.DataBlockScanner: Verification succeeded for blk_774612454978154966\n081110 112234 9888 INFO dfs.DataNode$DataXceiver: Receiving block blk_6672666770563118759 src: /10.251.71.68:44457 dest: /10.251.71.68:50010",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_18",
+              "score": 16.2286,
+              "lexical": 16.2286,
+              "action_id": "HDFS_ISOLATE_RECEIVER_AND_REBUILD_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 232639 3792 INFO dfs.DataNode$PacketResponder: PacketResponder 0 for block blk_-6837050820114491742 terminating\nNearby context: 081109 232200 3856 INFO dfs.DataNode$PacketResponder: Received block blk_-6867873931012347356 of size 67108864 from /10.251.39.64\n081109 232346 3820 INFO dfs.DataNode$DataXceiver: Receiving block blk_8692428775973608797 src: /10.250.10.213:56574 dest: /10.250.10.213:50010\n081109 232828 3875 INFO dfs.DataNode$PacketResponder: Received block blk_-5195432543794777448 of size 67108864 from /10.250.10.6\n081109 232923 3792"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_25",
+              "score": 16.2254,
+              "lexical": 16.2254,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081110 210837 14418 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_3940282600163903101 terminating\nNearby context: 081110 210721 14857 INFO dfs.DataNode$DataXceiver: Receiving block blk_3235988328669699941 src: /10.251.199.159:43276 dest: /10.251.199.159:50010\n081110 210832 14473 INFO dfs.DataNode$DataXceiver: Receiving block blk_-5808893254440551816 src: /10.250.11.194:53256 dest: /10.250.11.194:50010\n081110 211021 14407 INFO dfs.DataNode$DataXceiver: Receiving block blk_4233013542759682998 src: /10.251.109.209:48041 dest: /10.2"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_11",
+              "score": 16.2222,
+              "lexical": 16.2222,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 211038 1490 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_-5073870177832699716 terminating\nNearby context: 081109 210921 1452 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6809181994368905854 src: /10.250.17.225:51754 dest: /10.250.17.225:50010\n081109 210935 1458 INFO dfs.DataNode$PacketResponder: Received block blk_8829027411458566099 of size 67108864 from /10.251.38.214\n081109 211216 1504 INFO dfs.DataNode$PacketResponder: Received block blk_-8241093737585222406 of size 67108864 from /10.250.5.161\n081109 211353 15"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_18",
+              "score": 16.2286,
+              "lexical": 16.2286,
+              "action_id": "HDFS_ISOLATE_RECEIVER_AND_REBUILD_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 232639 3792 INFO dfs.DataNode$PacketResponder: PacketResponder 0 for block blk_-6837050820114491742 terminating\nNearby context: 081109 232200 3856 INFO dfs.DataNode$PacketResponder: Received block blk_-6867873931012347356 of size 67108864 from /10.251.39.64\n081109 232346 3820 INFO dfs.DataNode$DataXceiver: Receiving block blk_8692428775973608797 src: /10.250.10.213:56574 dest: /10.250.10.213:50010\n081109 232828 3875 INFO dfs.DataNode$PacketResponder: Received block blk_-5195432543794777448 of size 67108864 from /10.250.10.6\n081109 232923 3792"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_25",
+              "score": 16.2254,
+              "lexical": 16.2254,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081110 210837 14418 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_3940282600163903101 terminating\nNearby context: 081110 210721 14857 INFO dfs.DataNode$DataXceiver: Receiving block blk_3235988328669699941 src: /10.251.199.159:43276 dest: /10.251.199.159:50010\n081110 210832 14473 INFO dfs.DataNode$DataXceiver: Receiving block blk_-5808893254440551816 src: /10.250.11.194:53256 dest: /10.250.11.194:50010\n081110 211021 14407 INFO dfs.DataNode$DataXceiver: Receiving block blk_4233013542759682998 src: /10.251.109.209:48041 dest: /10.2"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_11",
+              "score": 16.2222,
+              "lexical": 16.2222,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 211038 1490 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_-5073870177832699716 terminating\nNearby context: 081109 210921 1452 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6809181994368905854 src: /10.250.17.225:51754 dest: /10.250.17.225:50010\n081109 210935 1458 INFO dfs.DataNode$PacketResponder: Received block blk_8829027411458566099 of size 67108864 from /10.251.38.214\n081109 211216 1504 INFO dfs.DataNode$PacketResponder: Received block blk_-8241093737585222406 of size 67108864 from /10.250.5.161\n081109 211353 15"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: transfer got -> block size block-map-update request received (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "[*]:Failed to transfer[*]to[*]got[*]",
+                "target_template": "[*]BLOCK* NameSystem[*]addStoredBlock: addStoredBlock request received for[*]on[*]size[*]But it does not belong to any file[*]",
+                "relation": "temporally_causes",
+                "weight": 0.5532,
+                "score": 6.8277,
+                "query_source_overlap": 0,
+                "query_target_overlap": 5,
+                "reference_source_overlap": 0,
+                "reference_target_overlap": 2
+              }
+            ]
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "081110 112152 9621 INFO dfs.DataNode$PacketResponder: PacketResponder 0 for block blk_6610244864386894422 closing",
+          "context_text": "081110 111958 26 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.19:50010 is added to block-id:-2144263949276079479 len 3547172\n081110 112055 10002 INFO dfs.DataNode$DataXceiver: replica fragment path observed block-id:-6927870228542972281 stage relay observed during activity\n081110 112155 13 INFO dfs.DataBlockScanner: Verification succeeded for block-id:774612454978154966\n081110 112234 9888 INFO dfs.DataNode$DataXceiver: replica fragment path observed block-id:6672666770563118759 stage relay observed during activity",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_18",
+              "score": 16.2286,
+              "lexical": 16.2286,
+              "action_id": "HDFS_ISOLATE_RECEIVER_AND_REBUILD_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 232639 3792 INFO dfs.DataNode$PacketResponder: PacketResponder 0 for block blk_-6837050820114491742 terminating\nNearby context: 081109 232200 3856 INFO dfs.DataNode$PacketResponder: Received block blk_-6867873931012347356 of size 67108864 from /10.251.39.64\n081109 232346 3820 INFO dfs.DataNode$DataXceiver: Receiving block blk_8692428775973608797 src: /10.250.10.213:56574 dest: /10.250.10.213:50010\n081109 232828 3875 INFO dfs.DataNode$PacketResponder: Received block blk_-5195432543794777448 of size 67108864 from /10.250.10.6\n081109 232923 3792"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_25",
+              "score": 16.2254,
+              "lexical": 16.2254,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081110 210837 14418 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_3940282600163903101 terminating\nNearby context: 081110 210721 14857 INFO dfs.DataNode$DataXceiver: Receiving block blk_3235988328669699941 src: /10.251.199.159:43276 dest: /10.251.199.159:50010\n081110 210832 14473 INFO dfs.DataNode$DataXceiver: Receiving block blk_-5808893254440551816 src: /10.250.11.194:53256 dest: /10.250.11.194:50010\n081110 211021 14407 INFO dfs.DataNode$DataXceiver: Receiving block blk_4233013542759682998 src: /10.251.109.209:48041 dest: /10.2"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_11",
+              "score": 16.2222,
+              "lexical": 16.2222,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 211038 1490 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_-5073870177832699716 terminating\nNearby context: 081109 210921 1452 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6809181994368905854 src: /10.250.17.225:51754 dest: /10.250.17.225:50010\n081109 210935 1458 INFO dfs.DataNode$PacketResponder: Received block blk_8829027411458566099 of size 67108864 from /10.251.38.214\n081109 211216 1504 INFO dfs.DataNode$PacketResponder: Received block blk_-8241093737585222406 of size 67108864 from /10.250.5.161\n081109 211353 15"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_18",
+              "score": 16.2286,
+              "lexical": 16.2286,
+              "action_id": "HDFS_ISOLATE_RECEIVER_AND_REBUILD_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 232639 3792 INFO dfs.DataNode$PacketResponder: PacketResponder 0 for block blk_-6837050820114491742 terminating\nNearby context: 081109 232200 3856 INFO dfs.DataNode$PacketResponder: Received block blk_-6867873931012347356 of size 67108864 from /10.251.39.64\n081109 232346 3820 INFO dfs.DataNode$DataXceiver: Receiving block blk_8692428775973608797 src: /10.250.10.213:56574 dest: /10.250.10.213:50010\n081109 232828 3875 INFO dfs.DataNode$PacketResponder: Received block blk_-5195432543794777448 of size 67108864 from /10.250.10.6\n081109 232923 3792"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_25",
+              "score": 16.2254,
+              "lexical": 16.2254,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081110 210837 14418 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_3940282600163903101 terminating\nNearby context: 081110 210721 14857 INFO dfs.DataNode$DataXceiver: Receiving block blk_3235988328669699941 src: /10.251.199.159:43276 dest: /10.251.199.159:50010\n081110 210832 14473 INFO dfs.DataNode$DataXceiver: Receiving block blk_-5808893254440551816 src: /10.250.11.194:53256 dest: /10.250.11.194:50010\n081110 211021 14407 INFO dfs.DataNode$DataXceiver: Receiving block blk_4233013542759682998 src: /10.251.109.209:48041 dest: /10.2"
+            },
+            {
+              "reference_id": "supplemental:rq3_test_set_enriched:hdfs_11",
+              "score": 16.2222,
+              "lexical": 16.2222,
+              "action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+              "family_id": "HDFS_PIPELINE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 081109 211038 1490 INFO dfs.DataNode$PacketResponder: PacketResponder 1 for block blk_-5073870177832699716 terminating\nNearby context: 081109 210921 1452 INFO dfs.DataNode$DataXceiver: Receiving block blk_-6809181994368905854 src: /10.250.17.225:51754 dest: /10.250.17.225:50010\n081109 210935 1458 INFO dfs.DataNode$PacketResponder: Received block blk_8829027411458566099 of size 67108864 from /10.251.38.214\n081109 211216 1504 INFO dfs.DataNode$PacketResponder: Received block blk_-8241093737585222406 of size 67108864 from /10.250.5.161\n081109 211353 15"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: transfer got -> block size block-map-update request received (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "[*]:Failed to transfer[*]to[*]got[*]",
+                "target_template": "[*]BLOCK* NameSystem[*]addStoredBlock: addStoredBlock request received for[*]on[*]size[*]But it does not belong to any file[*]",
+                "relation": "temporally_causes",
+                "weight": 0.5532,
+                "score": 6.8277,
+                "query_source_overlap": 0,
+                "query_target_overlap": 5,
+                "reference_source_overlap": 0,
+                "reference_target_overlap": 2
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "dataset": "Hadoop",
+      "case_id": "hadoop_application_1445144423722_0022",
+      "pool_case_id": "hadoop_application_1445144423722_0022",
+      "source": "benchmark_v2",
+      "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+      "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+      "eligibility_note": "provisional score=2 agent=0 rag=0 vanilla=0 heuristic=0 source=rq3_hadoop_keepdirect_bulk_v6_highnoise_open_20260319_ranked_mid_relaxed.json note=reason=Network disconnection; selection_score=8.0; difficulty_score=6.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0",
+      "selected_alert_clean": "at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)",
+      "shared_context_clean": "at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)\nat sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)\nat org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)\nat org.apache.hadoop.net.NetUtils.connect(NetUtils.java:494)\nat org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:607)\nat org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:705)",
+      "provenance": {
+        "eval_case_id": "hadoop_application_1445144423722_0022",
+        "pool_case_id": "hadoop_application_1445144423722_0022",
+        "ground_truth_root_cause_template": "Network disconnection",
+        "ground_truth_template": "Last retry, killing attempt_<*>_<*>_m_<*>_<*>",
+        "reason": "Network disconnection"
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)",
+          "context_text": "at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)\nat sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)\nat org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)\nat org.apache.hadoop.net.NetUtils.connect(NetUtils.java:494)\nat org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:607)\nat org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:705)",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0002",
+              "score": 7.0909,
+              "lexical": 7.0909,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:18,951 INFO [Socket Reader #1 for port 20324] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 20324: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: Container killed on request. Exit code is 137\nContainer exited with a non-zero exit code 137\n2015-10-18 21:37:18,513 INFO [IPC Server handler 29 on 20324] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445175094696_0002_r_000000_0. startIndex 6 maxEvents 10000\njava.io.IOException: An existing connection was forcibly closed by the remote host\nat sun.nio.ch.SocketDispatcher."
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445087491445_0002",
+              "score": 6.0952,
+              "lexical": 6.0952,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_NODE_UNAVAILABILITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 21:41:39,795 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:49594. Already tried 0 time(s); maxRetries=45\nNearby context: at java.io.DataInputStream.readInt(DataInputStream.java:387)\nat org.apache.hadoop.ipc.Client$Connection.receiveRpcResponse(Client.java:1071)\nat org.apache.hadoop.ipc.Client$Connection.run(Client.java:966)\n2015-10-17 21:41:59,803 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:49594. Already tried 1 time(s); maxRetries=45\n201"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0001",
+              "score": 5.0649,
+              "lexical": 5.0649,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:04,358 INFO [Socket Reader #1 for port 60153] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 60153: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: 2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445175094696_0001_m_000000_1 TaskAttempt Transitioned from ASSIGNED to RUNNING\n2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: ATTEMPT_START task_1445175094696_0001_m_000000\n2015-10-18 21:37:04,140 INFO [IPC Serv"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0002",
+              "score": 7.0909,
+              "lexical": 7.0909,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:18,951 INFO [Socket Reader #1 for port 20324] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 20324: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: Container killed on request. Exit code is 137\nContainer exited with a non-zero exit code 137\n2015-10-18 21:37:18,513 INFO [IPC Server handler 29 on 20324] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445175094696_0002_r_000000_0. startIndex 6 maxEvents 10000\njava.io.IOException: An existing connection was forcibly closed by the remote host\nat sun.nio.ch.SocketDispatcher."
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445087491445_0002",
+              "score": 6.0952,
+              "lexical": 6.0952,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_NODE_UNAVAILABILITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 21:41:39,795 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:49594. Already tried 0 time(s); maxRetries=45\nNearby context: at java.io.DataInputStream.readInt(DataInputStream.java:387)\nat org.apache.hadoop.ipc.Client$Connection.receiveRpcResponse(Client.java:1071)\nat org.apache.hadoop.ipc.Client$Connection.run(Client.java:966)\n2015-10-17 21:41:59,803 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:49594. Already tried 1 time(s); maxRetries=45\n201"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0001",
+              "score": 5.0649,
+              "lexical": 5.0649,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:04,358 INFO [Socket Reader #1 for port 60153] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 60153: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: 2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445175094696_0001_m_000000_1 TaskAttempt Transitioned from ASSIGNED to RUNNING\n2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: ATTEMPT_START task_1445175094696_0001_m_000000\n2015-10-18 21:37:04,140 INFO [IPC Serv"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: output output-cleanup could not delete -> socket reader ipc server readandprocess (relation=instantly_triggers)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [CommitterEvent Processor #<*>] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: Could not delete hdfs:<*>:<*><*>",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [Socket Reader #<*> for port <*>] org.apache.hadoop.ipc.Server: Socket Reader #<*> for port <*>: readAndProcess from client <*> threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]",
+                "relation": "instantly_triggers",
+                "weight": 0.7895,
+                "score": 67.4395,
+                "query_source_overlap": 3,
+                "query_target_overlap": 5,
+                "reference_source_overlap": 3,
+                "reference_target_overlap": 25
+              }
+            ]
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)",
+          "context_text": "at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0002",
+              "score": 7.0909,
+              "lexical": 7.0909,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:18,951 INFO [Socket Reader #1 for port 20324] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 20324: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: Container killed on request. Exit code is 137\nContainer exited with a non-zero exit code 137\n2015-10-18 21:37:18,513 INFO [IPC Server handler 29 on 20324] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445175094696_0002_r_000000_0. startIndex 6 maxEvents 10000\njava.io.IOException: An existing connection was forcibly closed by the remote host\nat sun.nio.ch.SocketDispatcher."
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445087491445_0002",
+              "score": 6.0952,
+              "lexical": 6.0952,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_NODE_UNAVAILABILITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 21:41:39,795 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:49594. Already tried 0 time(s); maxRetries=45\nNearby context: at java.io.DataInputStream.readInt(DataInputStream.java:387)\nat org.apache.hadoop.ipc.Client$Connection.receiveRpcResponse(Client.java:1071)\nat org.apache.hadoop.ipc.Client$Connection.run(Client.java:966)\n2015-10-17 21:41:59,803 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:49594. Already tried 1 time(s); maxRetries=45\n201"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0001",
+              "score": 5.0649,
+              "lexical": 5.0649,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:04,358 INFO [Socket Reader #1 for port 60153] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 60153: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: 2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445175094696_0001_m_000000_1 TaskAttempt Transitioned from ASSIGNED to RUNNING\n2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: ATTEMPT_START task_1445175094696_0001_m_000000\n2015-10-18 21:37:04,140 INFO [IPC Serv"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0002",
+              "score": 7.0909,
+              "lexical": 7.0909,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:18,951 INFO [Socket Reader #1 for port 20324] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 20324: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: Container killed on request. Exit code is 137\nContainer exited with a non-zero exit code 137\n2015-10-18 21:37:18,513 INFO [IPC Server handler 29 on 20324] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445175094696_0002_r_000000_0. startIndex 6 maxEvents 10000\njava.io.IOException: An existing connection was forcibly closed by the remote host\nat sun.nio.ch.SocketDispatcher."
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445087491445_0002",
+              "score": 6.0952,
+              "lexical": 6.0952,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_NODE_UNAVAILABILITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 21:41:39,795 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:49594. Already tried 0 time(s); maxRetries=45\nNearby context: at java.io.DataInputStream.readInt(DataInputStream.java:387)\nat org.apache.hadoop.ipc.Client$Connection.receiveRpcResponse(Client.java:1071)\nat org.apache.hadoop.ipc.Client$Connection.run(Client.java:966)\n2015-10-17 21:41:59,803 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:49594. Already tried 1 time(s); maxRetries=45\n201"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0001",
+              "score": 5.0649,
+              "lexical": 5.0649,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:04,358 INFO [Socket Reader #1 for port 60153] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 60153: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: 2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445175094696_0001_m_000000_1 TaskAttempt Transitioned from ASSIGNED to RUNNING\n2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: ATTEMPT_START task_1445175094696_0001_m_000000\n2015-10-18 21:37:04,140 INFO [IPC Serv"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: output output-cleanup could not delete -> socket reader ipc server readandprocess (relation=instantly_triggers)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [CommitterEvent Processor #<*>] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: Could not delete hdfs:<*>:<*><*>",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [Socket Reader #<*> for port <*>] org.apache.hadoop.ipc.Server: Socket Reader #<*> for port <*>: readAndProcess from client <*> threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]",
+                "relation": "instantly_triggers",
+                "weight": 0.7895,
+                "score": 67.4395,
+                "query_source_overlap": 3,
+                "query_target_overlap": 5,
+                "reference_source_overlap": 3,
+                "reference_target_overlap": 25
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "dataset": "Hadoop",
+      "case_id": "hadoop_application_1445062781478_0017",
+      "pool_case_id": "hadoop_application_1445062781478_0017",
+      "source": "benchmark_v2",
+      "gt_family_id": "HADOOP_WORKER_NODE_FAILURE",
+      "gt_action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+      "eligibility_note": "provisional score=1 agent=0 rag=1 vanilla=1 heuristic=0 source=rq3_hadoop_keepdirect_bulk_v6_highnoise_open_20260319_ranked_mid_relaxed.json note=reason=Machine down; selection_score=18.0; difficulty_score=9.5; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_retry_connect",
+      "selected_alert_clean": "2015-10-17 17:04:03,483 INFO [ContainerLauncher #7] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-75DGDAM1.fareast.corp.microsoft.com/10.86.165.66:51951. Already tried 0 time(s); maxRetries=45",
+      "shared_context_clean": "2015-10-17 17:04:01,546 INFO [IPC Server handler 16 on 61655] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0017_r_000000_0 is : 0.23333333\n2015-10-17 17:04:02,030 INFO [IPC Server handler 14 on 61655] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445062781478_0017_r_000000_0. startIndex 7 maxEvents 10000\n2015-10-17 17:04:03,030 INFO [IPC Server handler 14 on 61655] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445062781478_0017_r_000000_0. startIndex 7 maxEvents 10000\n2015-10-17 17:04:04,046 INFO [IPC Server handler 6 on 61655] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445062781478_0017_r_000000_0. startIndex 7 maxEvents 10000\n2015-10-17 17:04:04,577 INFO [IPC Server handler 24 on 61655] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0017_r_000000_0 is : 0.23333333",
+      "provenance": {
+        "eval_case_id": "hadoop_application_1445062781478_0017",
+        "pool_case_id": "hadoop_application_1445062781478_0017",
+        "ground_truth_root_cause_template": "Machine down",
+        "ground_truth_template": "Could not delete hdfs:<*>:<*><*>",
+        "reason": "Machine down"
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "2015-10-17 17:04:03,483 INFO [ContainerLauncher #7] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-75DGDAM1.fareast.corp.microsoft.com/10.86.165.66:51951. Already tried 0 time(s); maxRetries=45",
+          "context_text": "2015-10-17 17:04:01,546 INFO [IPC Server handler 16 on 61655] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0017_r_000000_0 is : 0.23333333\n2015-10-17 17:04:02,030 INFO [IPC Server handler 14 on 61655] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445062781478_0017_r_000000_0. startIndex 7 maxEvents 10000\n2015-10-17 17:04:03,030 INFO [IPC Server handler 14 on 61655] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445062781478_0017_r_000000_0. startIndex 7 maxEvents 10000\n2015-10-17 17:04:04,046 INFO [IPC Server handler 6 on 61655] org.apache.hadoop.mapred.TaskAttemptListenerImpl: MapCompletionEvents request from attempt_1445062781478_0017_r_000000_0. startIndex 7 maxEvents 10000\n2015-10-17 17:04:04,577 INFO [IPC Server handler 24 on 61655] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0017_r_000000_0 is : 0.23333333",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445062781478_0012",
+              "score": 24.3871,
+              "lexical": 24.3871,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_NODE_UNAVAILABILITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 15:45:29,587 INFO [ContainerLauncher #1] org.apache.hadoop.ipc.Client: Retrying connect to server: 04DN8IQ.fareast.corp.microsoft.com/10.86.164.9:64484. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 15:45:29,055 INFO [IPC Server handler 16 on 49451] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0012_m_000004_1 is : 0.6208445\n2015-10-17 15:45:29,180 INFO [IPC Server handler 17 on 49451] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0012_m_000005_1 is : 0.69869125\n2015-10-17 15:45:29,305 INFO [IPC Server "
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445182159119_0016",
+              "score": 22.3667,
+              "lexical": 22.3667,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-19 17:46:27,644 INFO [ContainerLauncher #5] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-75DGDAM1.fareast.corp.microsoft.com/10.86.165.66:58081. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-19 17:46:27,644 INFO [ContainerLauncher #5] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-75DGDAM1.fareast.corp.microsoft.com/10.86.165.66:58081. Already tried 0 time(s); maxRetries=45\n2015-10-19 17:39:19,411 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-19 17:46:47,645 INFO [ContainerLauncher #5] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445182159119_0018",
+              "score": 21.3387,
+              "lexical": 21.3387,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-19 17:41:54,782 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-75dgdam1.fareast.corp.microsoft.com/10.86.165.66:58950. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-19 17:41:54,782 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-75dgdam1.fareast.corp.microsoft.com/10.86.165.66:58950. Already tried 0 time(s); maxRetries=45\n2015-10-19 17:39:25,203 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-19 17:42:14,955 INFO [communication thread] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445062781478_0012",
+              "score": 24.3871,
+              "lexical": 24.3871,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_NODE_UNAVAILABILITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 15:45:29,587 INFO [ContainerLauncher #1] org.apache.hadoop.ipc.Client: Retrying connect to server: 04DN8IQ.fareast.corp.microsoft.com/10.86.164.9:64484. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 15:45:29,055 INFO [IPC Server handler 16 on 49451] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0012_m_000004_1 is : 0.6208445\n2015-10-17 15:45:29,180 INFO [IPC Server handler 17 on 49451] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0012_m_000005_1 is : 0.69869125\n2015-10-17 15:45:29,305 INFO [IPC Server "
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445182159119_0016",
+              "score": 22.3667,
+              "lexical": 22.3667,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-19 17:46:27,644 INFO [ContainerLauncher #5] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-75DGDAM1.fareast.corp.microsoft.com/10.86.165.66:58081. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-19 17:46:27,644 INFO [ContainerLauncher #5] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-75DGDAM1.fareast.corp.microsoft.com/10.86.165.66:58081. Already tried 0 time(s); maxRetries=45\n2015-10-19 17:39:19,411 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-19 17:46:47,645 INFO [ContainerLauncher #5] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445182159119_0018",
+              "score": 21.3387,
+              "lexical": 21.3387,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-19 17:41:54,782 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-75dgdam1.fareast.corp.microsoft.com/10.86.165.66:58950. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-19 17:41:54,782 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-75dgdam1.fareast.corp.microsoft.com/10.86.165.66:58950. Already tried 0 time(s); maxRetries=45\n2015-10-19 17:39:25,203 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-19 17:42:14,955 INFO [communication thread] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: minint fareast corp microsoft com -> minint fareast corp microsoft com (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [Thread-<*>] org.apache.hadoop.mapreduce.v<*>.app.rm.RMContainerRequestor: <*> failures on node MININT-FNANLI<*>.fareast.corp.microsoft.com",
+                "relation": "temporally_causes",
+                "weight": 0.4833,
+                "score": 43.2242,
+                "query_source_overlap": 9,
+                "query_target_overlap": 9,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 10
+              }
+            ]
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "2015-10-17 17:04:03,483 INFO [ContainerLauncher #7] org.apache.hadoop.ipc.Client: Retrying worker-node connection to server: MININT-75DGDAM1.fareast.corp.microsoft.com/10.86.165.66:51951. Already tried 0 time(s); maxRetries=45",
+          "context_text": "2015-10-17 17:04:01,546 INFO [IPC Server handler 16 on 61655] org.apache.hadoop.mapred.task listener: Progress of TaskAttempt attempt_1445062781478_0017_r_000000_0 is : 0.23333333",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445062781478_0012",
+              "score": 24.3871,
+              "lexical": 24.3871,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_NODE_UNAVAILABILITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 15:45:29,587 INFO [ContainerLauncher #1] org.apache.hadoop.ipc.Client: Retrying connect to server: 04DN8IQ.fareast.corp.microsoft.com/10.86.164.9:64484. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 15:45:29,055 INFO [IPC Server handler 16 on 49451] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0012_m_000004_1 is : 0.6208445\n2015-10-17 15:45:29,180 INFO [IPC Server handler 17 on 49451] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0012_m_000005_1 is : 0.69869125\n2015-10-17 15:45:29,305 INFO [IPC Server "
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445182159119_0016",
+              "score": 22.3667,
+              "lexical": 22.3667,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-19 17:46:27,644 INFO [ContainerLauncher #5] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-75DGDAM1.fareast.corp.microsoft.com/10.86.165.66:58081. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-19 17:46:27,644 INFO [ContainerLauncher #5] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-75DGDAM1.fareast.corp.microsoft.com/10.86.165.66:58081. Already tried 0 time(s); maxRetries=45\n2015-10-19 17:39:19,411 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-19 17:46:47,645 INFO [ContainerLauncher #5] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445182159119_0018",
+              "score": 21.3387,
+              "lexical": 21.3387,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-19 17:41:54,782 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-75dgdam1.fareast.corp.microsoft.com/10.86.165.66:58950. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-19 17:41:54,782 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-75dgdam1.fareast.corp.microsoft.com/10.86.165.66:58950. Already tried 0 time(s); maxRetries=45\n2015-10-19 17:39:25,203 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-19 17:42:14,955 INFO [communication thread] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445062781478_0012",
+              "score": 24.3871,
+              "lexical": 24.3871,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_NODE_UNAVAILABILITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 15:45:29,587 INFO [ContainerLauncher #1] org.apache.hadoop.ipc.Client: Retrying connect to server: 04DN8IQ.fareast.corp.microsoft.com/10.86.164.9:64484. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 15:45:29,055 INFO [IPC Server handler 16 on 49451] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0012_m_000004_1 is : 0.6208445\n2015-10-17 15:45:29,180 INFO [IPC Server handler 17 on 49451] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt attempt_1445062781478_0012_m_000005_1 is : 0.69869125\n2015-10-17 15:45:29,305 INFO [IPC Server "
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445182159119_0016",
+              "score": 22.3667,
+              "lexical": 22.3667,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-19 17:46:27,644 INFO [ContainerLauncher #5] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-75DGDAM1.fareast.corp.microsoft.com/10.86.165.66:58081. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-19 17:46:27,644 INFO [ContainerLauncher #5] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-75DGDAM1.fareast.corp.microsoft.com/10.86.165.66:58081. Already tried 0 time(s); maxRetries=45\n2015-10-19 17:39:19,411 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-19 17:46:47,645 INFO [ContainerLauncher #5] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445182159119_0018",
+              "score": 21.3387,
+              "lexical": 21.3387,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-19 17:41:54,782 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-75dgdam1.fareast.corp.microsoft.com/10.86.165.66:58950. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-19 17:41:54,782 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-75dgdam1.fareast.corp.microsoft.com/10.86.165.66:58950. Already tried 0 time(s); maxRetries=45\n2015-10-19 17:39:25,203 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-19 17:42:14,955 INFO [communication thread] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: minint fareast corp microsoft com -> minint fareast corp microsoft com (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [Thread-<*>] org.apache.hadoop.mapreduce.v<*>.app.rm.RMContainerRequestor: <*> failures on node MININT-FNANLI<*>.fareast.corp.microsoft.com",
+                "relation": "temporally_causes",
+                "weight": 0.4833,
+                "score": 43.2242,
+                "query_source_overlap": 9,
+                "query_target_overlap": 9,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 10
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "dataset": "Hadoop",
+      "case_id": "hadoop_application_1445087491445_0001",
+      "pool_case_id": "hadoop_application_1445087491445_0001",
+      "source": "benchmark_v2",
+      "gt_family_id": "HADOOP_WORKER_NODE_FAILURE",
+      "gt_action_id": "HADOOP_CLEAN_OUTPUT_PATH_AND_RESCHEDULE",
+      "eligibility_note": "shortlist score=4 agent=0 rag=1 vanilla=1 heuristic=0 source=rq3_hadoop_formal_candidate_sweep_v4_highnoise_open_20260319_ranked_mid_relaxed.json note=Second cleanup case using the same weaker kill-transition anchor as the first cleanup slot.",
+      "selected_alert_clean": "2015-10-17 21:27:32,453 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: Issuing kill to other attempt attempt_1445087491445_0001_m_000000_0",
+      "shared_context_clean": "2015-10-17 21:27:32,437 INFO [ContainerLauncher #7] org.apache.hadoop.yarn.client.api.impl.ContainerManagementProtocolProxy: Opening proxy : MSRA-SA-41.fareast.corp.microsoft.com:30535\n2015-10-17 21:27:32,453 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445087491445_0001_m_000000_1 TaskAttempt Transitioned from SUCCESS_CONTAINER_CLEANUP to SUCCEEDED\n2015-10-17 21:27:32,453 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: Task succeeded with attempt attempt_1445087491445_0001_m_000000_1\n2015-10-17 21:27:32,453 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: task_1445087491445_0001_m_000000 Task Transitioned from RUNNING to SUCCEEDED\n2015-10-17 21:27:32,453 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Num completed Tasks: 7\n2015-10-17 21:27:32,453 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445087491445_0001_m_000000_0 TaskAttempt Transitioned from RUNNING to KILL_CONTAINER_CLEANUP",
+      "provenance": {
+        "eval_case_id": "hadoop_application_1445087491445_0001",
+        "pool_case_id": "hadoop_application_1445087491445_0001",
+        "ground_truth_root_cause_template": "Machine down",
+        "ground_truth_template": "Could not delete hdfs:<*>:<*><*>",
+        "reason": "Machine down"
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "2015-10-17 21:27:32,453 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: Issuing kill to other attempt attempt_1445087491445_0001_m_000000_0",
+          "context_text": "2015-10-17 21:27:32,437 INFO [ContainerLauncher #7] org.apache.hadoop.yarn.client.api.impl.ContainerManagementProtocolProxy: Opening proxy : MSRA-SA-41.fareast.corp.microsoft.com:30535\n2015-10-17 21:27:32,453 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445087491445_0001_m_000000_1 TaskAttempt Transitioned from SUCCESS_CONTAINER_CLEANUP to SUCCEEDED\n2015-10-17 21:27:32,453 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: Task succeeded with attempt attempt_1445087491445_0001_m_000000_1\n2015-10-17 21:27:32,453 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: task_1445087491445_0001_m_000000 Task Transitioned from RUNNING to SUCCEEDED\n2015-10-17 21:27:32,453 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Num completed Tasks: 7\n2015-10-17 21:27:32,453 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445087491445_0001_m_000000_0 TaskAttempt Transitioned from RUNNING to KILL_CONTAINER_CLEANUP",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445062781478_0015",
+              "score": 29.3816,
+              "lexical": 29.3816,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_NODE_UNAVAILABILITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 15:49:04,954 WARN [CommitterEvent Processor #1] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: Could not delete hdfs://msra-sa-41:9000/pageout/out5/_temporary/1/_temporary/attempt_1445062781478_0015_m_000002_1\nNearby context: 2015-10-17 15:49:04,915 INFO [ContainerLauncher #1] org.apache.hadoop.yarn.client.api.impl.ContainerManagementProtocolProxy: Opening proxy : MSRA-SA-39.fareast.corp.microsoft.com:49130\n2015-10-17 15:49:04,936 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445062781478_0015_m_000002_1 TaskAttempt Transitioned from KILL_CONTAINER_CLEANUP to KILL_TASK_CLEANUP\n2"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0001",
+              "score": 18.2045,
+              "lexical": 18.2045,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:04,358 INFO [Socket Reader #1 for port 60153] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 60153: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: 2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445175094696_0001_m_000000_1 TaskAttempt Transitioned from ASSIGNED to RUNNING\n2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: ATTEMPT_START task_1445175094696_0001_m_000000\n2015-10-18 21:37:04,140 INFO [IPC Serv"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445062781478_0014",
+              "score": 14.1892,
+              "lexical": 14.1892,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 15:41:47,841 INFO [ContainerLauncher #9] org.apache.hadoop.ipc.Client: Retrying connect to server: MSRA-SA-39.fareast.corp.microsoft.com/172.22.149.145:49130. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 15:41:47,841 INFO [ContainerLauncher #9] org.apache.hadoop.ipc.Client: Retrying connect to server: MSRA-SA-39.fareast.corp.microsoft.com/172.22.149.145:49130. Already tried 0 time(s); maxRetries=45\n2015-10-17 15:38:08,907 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445062781478_0015",
+              "score": 29.3816,
+              "lexical": 29.3816,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_NODE_UNAVAILABILITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 15:49:04,954 WARN [CommitterEvent Processor #1] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: Could not delete hdfs://msra-sa-41:9000/pageout/out5/_temporary/1/_temporary/attempt_1445062781478_0015_m_000002_1\nNearby context: 2015-10-17 15:49:04,915 INFO [ContainerLauncher #1] org.apache.hadoop.yarn.client.api.impl.ContainerManagementProtocolProxy: Opening proxy : MSRA-SA-39.fareast.corp.microsoft.com:49130\n2015-10-17 15:49:04,936 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445062781478_0015_m_000002_1 TaskAttempt Transitioned from KILL_CONTAINER_CLEANUP to KILL_TASK_CLEANUP\n2"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0001",
+              "score": 18.2045,
+              "lexical": 18.2045,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:04,358 INFO [Socket Reader #1 for port 60153] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 60153: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: 2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445175094696_0001_m_000000_1 TaskAttempt Transitioned from ASSIGNED to RUNNING\n2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: ATTEMPT_START task_1445175094696_0001_m_000000\n2015-10-18 21:37:04,140 INFO [IPC Serv"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445062781478_0014",
+              "score": 14.1892,
+              "lexical": 14.1892,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 15:41:47,841 INFO [ContainerLauncher #9] org.apache.hadoop.ipc.Client: Retrying connect to server: MSRA-SA-39.fareast.corp.microsoft.com/172.22.149.145:49130. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 15:41:47,841 INFO [ContainerLauncher #9] org.apache.hadoop.ipc.Client: Retrying connect to server: MSRA-SA-39.fareast.corp.microsoft.com/172.22.149.145:49130. Already tried 0 time(s); maxRetries=45\n2015-10-17 15:38:08,907 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: output could not delete hdfs -> socket reader ipc server readandprocess (relation=instantly_triggers)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [CommitterEvent Processor #<*>] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: Could not delete hdfs:<*>:<*><*>",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [Socket Reader #<*> for port <*>] org.apache.hadoop.ipc.Server: Socket Reader #<*> for port <*>: readAndProcess from client <*> threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]",
+                "relation": "instantly_triggers",
+                "weight": 0.7895,
+                "score": 75.6395,
+                "query_source_overlap": 4,
+                "query_target_overlap": 6,
+                "reference_source_overlap": 14,
+                "reference_target_overlap": 25
+              }
+            ]
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "2015-10-17 21:27:32,453 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: Issuing kill to other attempt attempt_1445087491445_0001_m_000000_0",
+          "context_text": "2015-10-17 21:27:32,437 INFO [dispatch path] org.apache.hadoop.yarn.client.api.impl.ContainerManagementProtocolProxy: Opening proxy : peer-endpoint\n2015-10-17 21:27:32,453 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445087491445_0001_m_000000_0 TaskAttempt Transitioned from RUNNING to KILL_CONTAINER_CLEANUP",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445062781478_0015",
+              "score": 29.3816,
+              "lexical": 29.3816,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_NODE_UNAVAILABILITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 15:49:04,954 WARN [CommitterEvent Processor #1] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: Could not delete hdfs://msra-sa-41:9000/pageout/out5/_temporary/1/_temporary/attempt_1445062781478_0015_m_000002_1\nNearby context: 2015-10-17 15:49:04,915 INFO [ContainerLauncher #1] org.apache.hadoop.yarn.client.api.impl.ContainerManagementProtocolProxy: Opening proxy : MSRA-SA-39.fareast.corp.microsoft.com:49130\n2015-10-17 15:49:04,936 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445062781478_0015_m_000002_1 TaskAttempt Transitioned from KILL_CONTAINER_CLEANUP to KILL_TASK_CLEANUP\n2"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0001",
+              "score": 18.2045,
+              "lexical": 18.2045,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:04,358 INFO [Socket Reader #1 for port 60153] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 60153: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: 2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445175094696_0001_m_000000_1 TaskAttempt Transitioned from ASSIGNED to RUNNING\n2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: ATTEMPT_START task_1445175094696_0001_m_000000\n2015-10-18 21:37:04,140 INFO [IPC Serv"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445062781478_0014",
+              "score": 14.1892,
+              "lexical": 14.1892,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 15:41:47,841 INFO [ContainerLauncher #9] org.apache.hadoop.ipc.Client: Retrying connect to server: MSRA-SA-39.fareast.corp.microsoft.com/172.22.149.145:49130. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 15:41:47,841 INFO [ContainerLauncher #9] org.apache.hadoop.ipc.Client: Retrying connect to server: MSRA-SA-39.fareast.corp.microsoft.com/172.22.149.145:49130. Already tried 0 time(s); maxRetries=45\n2015-10-17 15:38:08,907 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445062781478_0015",
+              "score": 29.3816,
+              "lexical": 29.3816,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_NODE_UNAVAILABILITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 15:49:04,954 WARN [CommitterEvent Processor #1] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: Could not delete hdfs://msra-sa-41:9000/pageout/out5/_temporary/1/_temporary/attempt_1445062781478_0015_m_000002_1\nNearby context: 2015-10-17 15:49:04,915 INFO [ContainerLauncher #1] org.apache.hadoop.yarn.client.api.impl.ContainerManagementProtocolProxy: Opening proxy : MSRA-SA-39.fareast.corp.microsoft.com:49130\n2015-10-17 15:49:04,936 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445062781478_0015_m_000002_1 TaskAttempt Transitioned from KILL_CONTAINER_CLEANUP to KILL_TASK_CLEANUP\n2"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:hadoop_application_1445175094696_0001",
+              "score": 18.2045,
+              "lexical": 18.2045,
+              "action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+              "family_id": "HADOOP_NETWORK_CONNECTIVITY",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-18 21:37:04,358 INFO [Socket Reader #1 for port 60153] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 60153: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]\nNearby context: 2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: attempt_1445175094696_0001_m_000000_1 TaskAttempt Transitioned from ASSIGNED to RUNNING\n2015-10-18 21:37:04,077 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: ATTEMPT_START task_1445175094696_0001_m_000000\n2015-10-18 21:37:04,140 INFO [IPC Serv"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445062781478_0014",
+              "score": 14.1892,
+              "lexical": 14.1892,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 15:41:47,841 INFO [ContainerLauncher #9] org.apache.hadoop.ipc.Client: Retrying connect to server: MSRA-SA-39.fareast.corp.microsoft.com/172.22.149.145:49130. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 15:41:47,841 INFO [ContainerLauncher #9] org.apache.hadoop.ipc.Client: Retrying connect to server: MSRA-SA-39.fareast.corp.microsoft.com/172.22.149.145:49130. Already tried 0 time(s); maxRetries=45\n2015-10-17 15:38:08,907 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: output could not delete hdfs -> socket reader ipc server readandprocess (relation=instantly_triggers)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [CommitterEvent Processor #<*>] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: Could not delete hdfs:<*>:<*><*>",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [Socket Reader #<*> for port <*>] org.apache.hadoop.ipc.Server: Socket Reader #<*> for port <*>: readAndProcess from client <*> threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]",
+                "relation": "instantly_triggers",
+                "weight": 0.7895,
+                "score": 75.6395,
+                "query_source_overlap": 4,
+                "query_target_overlap": 6,
+                "reference_source_overlap": 14,
+                "reference_target_overlap": 25
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "case_count": 8
+}

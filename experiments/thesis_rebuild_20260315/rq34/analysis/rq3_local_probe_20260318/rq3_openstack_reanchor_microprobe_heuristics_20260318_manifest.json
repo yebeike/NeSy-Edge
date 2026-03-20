@@ -1,0 +1,22 @@
+{
+  "run_tag": "rq3_openstack_reanchor_microprobe_heuristics_20260318",
+  "config_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/configs/rq3_local_probe_matrix_openstack_reanchor_microprobe_20260318.json",
+  "benchmark_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/analysis/rq3_openstack_reanchor_microprobe_20260318/rq3_openstack_reanchor_microprobe_20260318_package.json",
+  "datasets": [
+    "HDFS",
+    "OpenStack",
+    "Hadoop"
+  ],
+  "noise_keys": [
+    "0.0",
+    "1.0"
+  ],
+  "mode_names": [
+    "heuristic_alert",
+    "heuristic_context",
+    "desc_overlap_alert",
+    "desc_overlap_context"
+  ],
+  "case_count": 4,
+  "model": "qwen3.5:9b"
+}

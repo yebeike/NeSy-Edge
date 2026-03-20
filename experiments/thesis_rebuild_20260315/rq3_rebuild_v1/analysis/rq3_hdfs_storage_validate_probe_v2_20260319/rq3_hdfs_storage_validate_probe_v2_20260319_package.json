@@ -1,0 +1,53 @@
+{
+  "benchmark_id": "rq3_hdfs_storage_validate_probe_v2_20260319",
+  "benchmark_kind": "hdfs_storage_action_redesign_probe",
+  "purpose": "One-case probe for the invalidSet anchor under the current validate-blockmap action definition.",
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "cases": [
+    {
+      "dataset": "HDFS",
+      "case_id": "hdfs_blk_blk_-3544583377289625738",
+      "source": "benchmark_v2",
+      "gt_family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+      "gt_action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+      "eligibility_note": "Storage-metadata incident anchored on invalidSet for action-taxonomy validation.",
+      "selected_alert_clean": "081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: blk_-3544583377289625738 is added to invalidSet of 10.250.11.100:50010",
+      "shared_context_clean": "081109 203545 237 INFO dfs.DataNode$DataXceiver: 10.250.11.100:50010 Served block blk_-3544583377289625738 to /10.250.14.38\n081109 203616 250 INFO dfs.DataNode$DataXceiver: 10.251.197.226:50010 Served block blk_-3544583377289625738 to /10.251.202.134\n081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: blk_-3544583377289625738 is added to invalidSet of 10.251.197.226:50010\n081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: blk_-3544583377289625738 is added to invalidSet of 10.251.39.179:50010",
+      "provenance": {
+        "ground_truth_root_cause_template": "unknown",
+        "ground_truth_template": "Unexpected error trying to delete block blk_<*>. BlockInfo not found in volumeMap.",
+        "reason": ""
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: blk_-3544583377289625738 is added to invalidSet of 10.250.11.100:50010",
+          "context_text": "081109 203545 237 INFO dfs.DataNode$DataXceiver: 10.250.11.100:50010 Served block blk_-3544583377289625738 to /10.250.14.38\n081109 203616 250 INFO dfs.DataNode$DataXceiver: 10.251.197.226:50010 Served block blk_-3544583377289625738 to /10.251.202.134\n081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: blk_-3544583377289625738 is added to invalidSet of 10.251.197.226:50010\n081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: blk_-3544583377289625738 is added to invalidSet of 10.251.39.179:50010",
+          "rag_references": [],
+          "agent_references": [],
+          "graph_evidence": {
+            "summary_lines": [],
+            "matched_edges": []
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: block-id:-3544583377289625738 is added to invalidSet of 10.250.11.100:50010",
+          "context_text": "081109 203545 237 INFO dfs.DataNode$DataXceiver: 10.250.11.100:50010 Replica handoff workflow acknowledged for block-id:-3544583377289625738 during activity\n081109 203616 250 INFO dfs.DataNode$DataXceiver: 10.251.197.226:50010 Replica handoff workflow acknowledged for block-id:-3544583377289625738 during activity\n081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: block-id:-3544583377289625738 is added to invalidSet of 10.251.197.226:50010\n081109 213809 32 INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: block-id:-3544583377289625738 is added to invalidSet of 10.251.39.179:50010",
+          "rag_references": [],
+          "agent_references": [],
+          "graph_evidence": {
+            "summary_lines": [],
+            "matched_edges": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "run_tag": "rq3_hdfs_keepdirect_pipeline_storage_v6_highnoise_open_20260319",
+  "benchmark_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/rq3_hdfs_keepdirect_pipeline_storage_v6_20260319/rq3_hdfs_keepdirect_pipeline_storage_v6_20260319_package.json",
+  "config_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/local_probe_v1_20260318.json",
+  "datasets": [
+    "HDFS"
+  ],
+  "noise_keys": [
+    "1.0"
+  ],
+  "mode_names": [
+    "heuristic_alert",
+    "heuristic_context",
+    "open_alert_only",
+    "vanilla_open",
+    "rag_open",
+    "agent_open"
+  ],
+  "case_ids": [
+    "HDFS:hdfs_13__01",
+    "HDFS:hdfs_14__01",
+    "HDFS:hdfs_28__01",
+    "HDFS:hdfs_29__01",
+    "HDFS:hdfs_13__02",
+    "HDFS:hdfs_14__02",
+    "HDFS:hdfs_28__02",
+    "HDFS:hdfs_29__02",
+    "HDFS:hdfs_26",
+    "HDFS:hdfs_27",
+    "HDFS:hdfs_0",
+    "HDFS:hdfs_2",
+    "HDFS:hdfs_36",
+    "HDFS:hdfs_40",
+    "HDFS:hdfs_22",
+    "HDFS:hdfs_23__01",
+    "HDFS:hdfs_24__01",
+    "HDFS:hdfs_23__02",
+    "HDFS:hdfs_24__02",
+    "HDFS:hdfs_5__01",
+    "HDFS:hdfs_6__01",
+    "HDFS:hdfs_5__02",
+    "HDFS:hdfs_6__02"
+  ]
+}

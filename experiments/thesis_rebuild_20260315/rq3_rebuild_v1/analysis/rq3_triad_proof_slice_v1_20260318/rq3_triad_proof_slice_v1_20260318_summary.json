@@ -1,0 +1,51 @@
+{
+  "benchmark_id": "rq3_triad_proof_slice_v1_20260318",
+  "benchmark_kind": "triad_local_proof_slice",
+  "dataset_case_counts": {
+    "OpenStack": 4,
+    "Hadoop": 5,
+    "HDFS": 4
+  },
+  "family_counts": {
+    "OpenStack": {
+      "OPENSTACK_INSTANCE_STATE_DRIFT": 3,
+      "OPENSTACK_IMAGE_CHAIN_FAILURE": 1
+    },
+    "Hadoop": {
+      "HADOOP_WORKER_NODE_FAILURE": 2,
+      "HADOOP_CONTROL_LINK_DISRUPTION": 2,
+      "HADOOP_STORAGE_PRESSURE": 1
+    },
+    "HDFS": {
+      "HDFS_TRANSFER_LINK_FAILURE": 2,
+      "HDFS_PIPELINE_FAILURE": 1,
+      "HDFS_STORAGE_METADATA_PRESSURE": 1
+    }
+  },
+  "action_counts": {
+    "OpenStack": {
+      "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD": 2,
+      "OPENSTACK_VERIFY_TERMINATION_AND_RESTORE": 1,
+      "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN": 1
+    },
+    "Hadoop": {
+      "HADOOP_CLEAN_OUTPUT_PATH_AND_RESCHEDULE": 1,
+      "HADOOP_ISOLATE_NODE_AND_RESCHEDULE": 1,
+      "HADOOP_RESTORE_WORKER_RPC_AND_RETRY": 1,
+      "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY": 1,
+      "HADOOP_REDUCE_SHUFFLE_PRESSURE_AND_RETRY": 1
+    },
+    "HDFS": {
+      "HDFS_REPAIR_CLIENT_LINK_AND_REREPLICATE": 1,
+      "HDFS_CHECK_LINK_AND_LIMIT_RETRANSMISSION": 1,
+      "HDFS_REBUILD_WRITE_PIPELINE": 1,
+      "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE": 1
+    }
+  },
+  "case_count": 13,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "package_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/rq3_triad_proof_slice_v1_20260318/rq3_triad_proof_slice_v1_20260318_package.json"
+}

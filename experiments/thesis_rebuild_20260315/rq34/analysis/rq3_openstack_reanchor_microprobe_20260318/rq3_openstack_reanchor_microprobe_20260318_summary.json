@@ -1,0 +1,13 @@
+{
+  "benchmark_id": "rq3_openstack_reanchor_microprobe_20260318",
+  "benchmark_kind": "local_reanchor_microprobe",
+  "dataset_case_counts": {
+    "OpenStack": 4
+  },
+  "case_count": 4,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "package_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/analysis/rq3_openstack_reanchor_microprobe_20260318/rq3_openstack_reanchor_microprobe_20260318_package.json"
+}

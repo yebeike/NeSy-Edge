@@ -1,0 +1,132 @@
+{
+  "by_mode": {
+    "agent_open": {
+      "rows": 28,
+      "family_accuracy": 0.6071,
+      "action_accuracy": 0.1071,
+      "action_text_success_rate": 0.0,
+      "e2e_accuracy": 0.1071,
+      "rca_e2e_gap_rows": 14
+    },
+    "heuristic_alert": {
+      "rows": 28,
+      "family_accuracy": 0.3929,
+      "action_accuracy": 0.0714,
+      "action_text_success_rate": 0.0,
+      "e2e_accuracy": 0.0714,
+      "rca_e2e_gap_rows": 9
+    },
+    "heuristic_context": {
+      "rows": 28,
+      "family_accuracy": 0.5714,
+      "action_accuracy": 0.25,
+      "action_text_success_rate": 0.0,
+      "e2e_accuracy": 0.25,
+      "rca_e2e_gap_rows": 9
+    },
+    "open_alert_only": {
+      "rows": 28,
+      "family_accuracy": 0.8214,
+      "action_accuracy": 0.5,
+      "action_text_success_rate": 0.0,
+      "e2e_accuracy": 0.5,
+      "rca_e2e_gap_rows": 9
+    },
+    "rag_open": {
+      "rows": 28,
+      "family_accuracy": 0.4286,
+      "action_accuracy": 0.1071,
+      "action_text_success_rate": 0.0,
+      "e2e_accuracy": 0.1071,
+      "rca_e2e_gap_rows": 9
+    },
+    "vanilla_open": {
+      "rows": 28,
+      "family_accuracy": 0.6071,
+      "action_accuracy": 0.2857,
+      "action_text_success_rate": 0.0,
+      "e2e_accuracy": 0.2857,
+      "rca_e2e_gap_rows": 9
+    }
+  },
+  "by_mode_dataset_noise": {
+    "agent_open": {
+      "Hadoop": {
+        "1.0": {
+          "rows": 28,
+          "family_accuracy": 0.6071,
+          "action_accuracy": 0.1071,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.1071,
+          "rca_e2e_gap_rows": 14
+        }
+      }
+    },
+    "heuristic_alert": {
+      "Hadoop": {
+        "1.0": {
+          "rows": 28,
+          "family_accuracy": 0.3929,
+          "action_accuracy": 0.0714,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.0714,
+          "rca_e2e_gap_rows": 9
+        }
+      }
+    },
+    "heuristic_context": {
+      "Hadoop": {
+        "1.0": {
+          "rows": 28,
+          "family_accuracy": 0.5714,
+          "action_accuracy": 0.25,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.25,
+          "rca_e2e_gap_rows": 9
+        }
+      }
+    },
+    "open_alert_only": {
+      "Hadoop": {
+        "1.0": {
+          "rows": 28,
+          "family_accuracy": 0.8214,
+          "action_accuracy": 0.5,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.5,
+          "rca_e2e_gap_rows": 9
+        }
+      }
+    },
+    "rag_open": {
+      "Hadoop": {
+        "1.0": {
+          "rows": 28,
+          "family_accuracy": 0.4286,
+          "action_accuracy": 0.1071,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.1071,
+          "rca_e2e_gap_rows": 9
+        }
+      }
+    },
+    "vanilla_open": {
+      "Hadoop": {
+        "1.0": {
+          "rows": 28,
+          "family_accuracy": 0.6071,
+          "action_accuracy": 0.2857,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.2857,
+          "rca_e2e_gap_rows": 9
+        }
+      }
+    }
+  },
+  "run_tag": "rq3_hadoop_keepdirect_bulk_v6_highnoise_open_20260319",
+  "model": "qwen3.5:9b",
+  "rows": 168,
+  "llm_calls": 112,
+  "budget_exhausted": false,
+  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_hadoop_keepdirect_bulk_v6_highnoise_20260319/rq3_hadoop_keepdirect_bulk_v6_highnoise_open_20260319_progress.jsonl"
+}

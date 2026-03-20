@@ -1,0 +1,11 @@
+{
+  "run_tag": "rq3_hadoop_control_reanchor_bulk_v1_highnoise_open_20260319",
+  "completed_steps": 42,
+  "total_steps": 42,
+  "llm_calls": 28,
+  "elapsed_seconds": 2137.18,
+  "estimated_remaining_seconds": 0.0,
+  "steps_per_second": 0.0197,
+  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_hadoop_control_reanchor_bulk_v1_highnoise_20260319/rq3_hadoop_control_reanchor_bulk_v1_highnoise_open_20260319_progress.jsonl",
+  "summary_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_hadoop_control_reanchor_bulk_v1_highnoise_20260319/rq3_hadoop_control_reanchor_bulk_v1_highnoise_open_20260319_summary.json"
+}

@@ -1,0 +1,8 @@
+{
+  "run_tag": "rq3_hdfs_bulk_candidate_sweep_v2_highnoise_open_20260319",
+  "completed_steps": 26,
+  "total_steps": 150,
+  "llm_calls": 16,
+  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_hdfs_bulk_candidate_sweep_v2_highnoise_20260319/rq3_hdfs_bulk_candidate_sweep_v2_highnoise_open_20260319_progress.jsonl",
+  "summary_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_hdfs_bulk_candidate_sweep_v2_highnoise_20260319/rq3_hdfs_bulk_candidate_sweep_v2_highnoise_open_20260319_summary.json"
+}

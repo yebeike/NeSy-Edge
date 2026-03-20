@@ -1,0 +1,252 @@
+{
+  "by_mode": {
+    "agent_open": {
+      "rows": 15,
+      "family_accuracy": 1.0,
+      "action_accuracy": 0.9333,
+      "action_text_success_rate": 0.5333,
+      "e2e_accuracy": 1.0,
+      "rca_e2e_gap_rows": 0
+    },
+    "heuristic_alert": {
+      "rows": 15,
+      "family_accuracy": 0.2667,
+      "action_accuracy": 0.2667,
+      "action_text_success_rate": 0.0,
+      "e2e_accuracy": 0.2667,
+      "rca_e2e_gap_rows": 0
+    },
+    "heuristic_context": {
+      "rows": 15,
+      "family_accuracy": 0.6,
+      "action_accuracy": 0.6,
+      "action_text_success_rate": 0.0,
+      "e2e_accuracy": 0.6,
+      "rca_e2e_gap_rows": 0
+    },
+    "open_alert_only": {
+      "rows": 15,
+      "family_accuracy": 0.1333,
+      "action_accuracy": 0.0667,
+      "action_text_success_rate": 0.0667,
+      "e2e_accuracy": 0.0667,
+      "rca_e2e_gap_rows": 1
+    },
+    "rag_open": {
+      "rows": 15,
+      "family_accuracy": 0.8667,
+      "action_accuracy": 0.6,
+      "action_text_success_rate": 0.4,
+      "e2e_accuracy": 0.6667,
+      "rca_e2e_gap_rows": 3
+    },
+    "vanilla_open": {
+      "rows": 15,
+      "family_accuracy": 0.4667,
+      "action_accuracy": 0.3333,
+      "action_text_success_rate": 0.1333,
+      "e2e_accuracy": 0.4,
+      "rca_e2e_gap_rows": 1
+    }
+  },
+  "by_mode_dataset_noise": {
+    "agent_open": {
+      "HDFS": {
+        "1.0": {
+          "rows": 6,
+          "family_accuracy": 1.0,
+          "action_accuracy": 1.0,
+          "action_text_success_rate": 0.3333,
+          "e2e_accuracy": 1.0,
+          "rca_e2e_gap_rows": 0
+        }
+      },
+      "Hadoop": {
+        "1.0": {
+          "rows": 6,
+          "family_accuracy": 1.0,
+          "action_accuracy": 1.0,
+          "action_text_success_rate": 0.5,
+          "e2e_accuracy": 1.0,
+          "rca_e2e_gap_rows": 0
+        }
+      },
+      "OpenStack": {
+        "1.0": {
+          "rows": 3,
+          "family_accuracy": 1.0,
+          "action_accuracy": 0.6667,
+          "action_text_success_rate": 1.0,
+          "e2e_accuracy": 1.0,
+          "rca_e2e_gap_rows": 0
+        }
+      }
+    },
+    "heuristic_alert": {
+      "HDFS": {
+        "1.0": {
+          "rows": 6,
+          "family_accuracy": 0.5,
+          "action_accuracy": 0.5,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.5,
+          "rca_e2e_gap_rows": 0
+        }
+      },
+      "Hadoop": {
+        "1.0": {
+          "rows": 6,
+          "family_accuracy": 0.0,
+          "action_accuracy": 0.0,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.0,
+          "rca_e2e_gap_rows": 0
+        }
+      },
+      "OpenStack": {
+        "1.0": {
+          "rows": 3,
+          "family_accuracy": 0.3333,
+          "action_accuracy": 0.3333,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.3333,
+          "rca_e2e_gap_rows": 0
+        }
+      }
+    },
+    "heuristic_context": {
+      "HDFS": {
+        "1.0": {
+          "rows": 6,
+          "family_accuracy": 0.5,
+          "action_accuracy": 0.5,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.5,
+          "rca_e2e_gap_rows": 0
+        }
+      },
+      "Hadoop": {
+        "1.0": {
+          "rows": 6,
+          "family_accuracy": 0.6667,
+          "action_accuracy": 0.6667,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.6667,
+          "rca_e2e_gap_rows": 0
+        }
+      },
+      "OpenStack": {
+        "1.0": {
+          "rows": 3,
+          "family_accuracy": 0.6667,
+          "action_accuracy": 0.6667,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.6667,
+          "rca_e2e_gap_rows": 0
+        }
+      }
+    },
+    "open_alert_only": {
+      "HDFS": {
+        "1.0": {
+          "rows": 6,
+          "family_accuracy": 0.1667,
+          "action_accuracy": 0.0,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.0,
+          "rca_e2e_gap_rows": 1
+        }
+      },
+      "Hadoop": {
+        "1.0": {
+          "rows": 6,
+          "family_accuracy": 0.1667,
+          "action_accuracy": 0.1667,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.1667,
+          "rca_e2e_gap_rows": 0
+        }
+      },
+      "OpenStack": {
+        "1.0": {
+          "rows": 3,
+          "family_accuracy": 0.0,
+          "action_accuracy": 0.0,
+          "action_text_success_rate": 0.3333,
+          "e2e_accuracy": 0.0,
+          "rca_e2e_gap_rows": 0
+        }
+      }
+    },
+    "rag_open": {
+      "HDFS": {
+        "1.0": {
+          "rows": 6,
+          "family_accuracy": 0.8333,
+          "action_accuracy": 0.5,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.5,
+          "rca_e2e_gap_rows": 2
+        }
+      },
+      "Hadoop": {
+        "1.0": {
+          "rows": 6,
+          "family_accuracy": 0.8333,
+          "action_accuracy": 0.6667,
+          "action_text_success_rate": 0.5,
+          "e2e_accuracy": 0.6667,
+          "rca_e2e_gap_rows": 1
+        }
+      },
+      "OpenStack": {
+        "1.0": {
+          "rows": 3,
+          "family_accuracy": 1.0,
+          "action_accuracy": 0.6667,
+          "action_text_success_rate": 1.0,
+          "e2e_accuracy": 1.0,
+          "rca_e2e_gap_rows": 0
+        }
+      }
+    },
+    "vanilla_open": {
+      "HDFS": {
+        "1.0": {
+          "rows": 6,
+          "family_accuracy": 0.5,
+          "action_accuracy": 0.1667,
+          "action_text_success_rate": 0.3333,
+          "e2e_accuracy": 0.3333,
+          "rca_e2e_gap_rows": 1
+        }
+      },
+      "Hadoop": {
+        "1.0": {
+          "rows": 6,
+          "family_accuracy": 0.6667,
+          "action_accuracy": 0.6667,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.6667,
+          "rca_e2e_gap_rows": 0
+        }
+      },
+      "OpenStack": {
+        "1.0": {
+          "rows": 3,
+          "family_accuracy": 0.0,
+          "action_accuracy": 0.0,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.0,
+          "rca_e2e_gap_rows": 0
+        }
+      }
+    }
+  },
+  "run_tag": "rq3_mid_seed_v3_mixed_open_20260319",
+  "model": "qwen3.5:9b",
+  "rows": 90,
+  "llm_calls": 60,
+  "budget_exhausted": false,
+  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_mid_seed_v3_mixed_20260319/rq3_mid_seed_v3_mixed_open_20260319_progress.jsonl"
+}

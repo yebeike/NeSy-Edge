@@ -1,0 +1,790 @@
+{
+  "benchmark_id": "rq3_hadoop_rm_reanchor_probe_v1_20260319",
+  "benchmark_kind": "hadoop_rm_reanchor_probe",
+  "purpose": "Probe RM-channel-specific Hadoop control-link anchors under the rebuilt RQ3 contract.",
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "cases": [
+    {
+      "dataset": "Hadoop",
+      "case_id": "hadoop_application_1445144423722_0020__rm01",
+      "pool_case_id": "hadoop_application_1445144423722_0020",
+      "source": "benchmark_v2",
+      "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+      "gt_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY",
+      "eligibility_note": "RM-specific reanchor probe built from :8030 / ResourceManager retry lines.",
+      "selected_alert_clean": "2015-10-18 18:06:03,856 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying connect to server: msra-sa-41:8030. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)",
+      "shared_context_clean": "at org.apache.hadoop.ipc.Client.getConnection(Client.java:1521)\nat org.apache.hadoop.ipc.Client.call(Client.java:1438)\n... 16 more\n2015-10-18 18:06:03,856 ERROR [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: ERROR IN CONTACTING RM.\njava.io.IOException: Failed on local exception: java.io.IOException: Couldn't set up IO streams; Host Details : local host is: \"MININT-FNANLI5/127.0.0.1\"; destination host is: \"msra-sa-41\":8030;\nat org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:772)",
+      "provenance": {
+        "eval_case_id": "hadoop_application_1445144423722_0020__rm01",
+        "pool_case_id": "hadoop_application_1445144423722_0020",
+        "ground_truth_root_cause_template": "Network disconnection",
+        "ground_truth_template": "Could not delete hdfs:<*>:<*><*>",
+        "reason": "Network disconnection"
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "2015-10-18 18:06:03,856 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying connect to server: msra-sa-41:8030. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)",
+          "context_text": "at org.apache.hadoop.ipc.Client.getConnection(Client.java:1521)\nat org.apache.hadoop.ipc.Client.call(Client.java:1438)\n... 16 more\n2015-10-18 18:06:03,856 ERROR [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: ERROR IN CONTACTING RM.\njava.io.IOException: Failed on local exception: java.io.IOException: Couldn't set up IO streams; Host Details : local host is: \"MININT-FNANLI5/127.0.0.1\"; destination host is: \"msra-sa-41\":8030;\nat org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:772)",
+          "rag_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0006",
+              "score": 22.3014,
+              "lexical": 22.3014,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\nNearby context: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\n2015-10-17 22:26:45,266 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0003",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:24,225 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:15:08,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0006",
+              "score": 22.3014,
+              "lexical": 22.3014,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\nNearby context: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\n2015-10-17 22:26:45,266 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0003",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:24,225 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:15:08,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: ioexception local host msra minint fareast -> net host minint msra more diagnostics (relation=temporally_causes).",
+              "Historical causal cue: ioexception local host msra minint fareast -> ipc server net host minint msra (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v<*>.app.job.impl.TaskAttemptImpl: Diagnostics report from attempt_<*>_<*>_m_<*>_<*>: Error: java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5047,
+                "score": 38.6757,
+                "query_source_overlap": 13,
+                "query_target_overlap": 16,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 5
+              },
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> [IPC Server handler <*> on <*>] org.apache.hadoop.mapred.TaskAttemptListenerImpl: <*> java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5605,
+                "score": 36.8841,
+                "query_source_overlap": 13,
+                "query_target_overlap": 14,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 6
+              }
+            ]
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "2015-10-18 18:06:03,856 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying ResourceManager channel to server: msra-sa-41:8030. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)",
+          "context_text": "at org.apache.hadoop.ipc.Channel.getConnection(Client.java:1521)\njava.io.IOException: Failed on local exception: java.io.IOException: Couldn't set up IO streams; Host Details : local worker is: \"peer-endpoint/peer-endpoint\"; peer worker is: \"peer-endpoint\":8030;",
+          "rag_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0006",
+              "score": 22.3014,
+              "lexical": 22.3014,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\nNearby context: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\n2015-10-17 22:26:45,266 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0003",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:24,225 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:15:08,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0006",
+              "score": 22.3014,
+              "lexical": 22.3014,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\nNearby context: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\n2015-10-17 22:26:45,266 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0003",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:24,225 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:15:08,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: ioexception local host msra minint fareast -> net host minint msra more diagnostics (relation=temporally_causes).",
+              "Historical causal cue: ioexception local host msra minint fareast -> ipc server net host minint msra (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v<*>.app.job.impl.TaskAttemptImpl: Diagnostics report from attempt_<*>_<*>_m_<*>_<*>: Error: java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5047,
+                "score": 38.6757,
+                "query_source_overlap": 13,
+                "query_target_overlap": 16,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 5
+              },
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> [IPC Server handler <*> on <*>] org.apache.hadoop.mapred.TaskAttemptListenerImpl: <*> java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5605,
+                "score": 36.8841,
+                "query_source_overlap": 13,
+                "query_target_overlap": 14,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 6
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "dataset": "Hadoop",
+      "case_id": "hadoop_application_1445144423722_0023__rm01",
+      "pool_case_id": "hadoop_application_1445144423722_0023",
+      "source": "benchmark_v2",
+      "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+      "gt_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY",
+      "eligibility_note": "RM-specific reanchor probe built from :8030 / ResourceManager retry lines.",
+      "selected_alert_clean": "2015-10-18 18:05:42,008 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying connect to server: msra-sa-41:8030. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)",
+      "shared_context_clean": "at org.apache.hadoop.ipc.Client.getConnection(Client.java:1521)\nat org.apache.hadoop.ipc.Client.call(Client.java:1438)\n... 16 more\n2015-10-18 18:05:42,008 ERROR [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: ERROR IN CONTACTING RM.\njava.io.IOException: Failed on local exception: java.io.IOException: Couldn't set up IO streams; Host Details : local host is: \"MININT-FNANLI5/127.0.0.1\"; destination host is: \"msra-sa-41\":8030;\nat org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:772)",
+      "provenance": {
+        "eval_case_id": "hadoop_application_1445144423722_0023__rm01",
+        "pool_case_id": "hadoop_application_1445144423722_0023",
+        "ground_truth_root_cause_template": "Network disconnection",
+        "ground_truth_template": "Could not delete hdfs:<*>:<*><*>",
+        "reason": "Network disconnection"
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "2015-10-18 18:05:42,008 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying connect to server: msra-sa-41:8030. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)",
+          "context_text": "at org.apache.hadoop.ipc.Client.getConnection(Client.java:1521)\nat org.apache.hadoop.ipc.Client.call(Client.java:1438)\n... 16 more\n2015-10-18 18:05:42,008 ERROR [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: ERROR IN CONTACTING RM.\njava.io.IOException: Failed on local exception: java.io.IOException: Couldn't set up IO streams; Host Details : local host is: \"MININT-FNANLI5/127.0.0.1\"; destination host is: \"msra-sa-41\":8030;\nat org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:772)",
+          "rag_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0006",
+              "score": 22.3014,
+              "lexical": 22.3014,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\nNearby context: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\n2015-10-17 22:26:45,266 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0003",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:24,225 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:15:08,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0006",
+              "score": 22.3014,
+              "lexical": 22.3014,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\nNearby context: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\n2015-10-17 22:26:45,266 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0003",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:24,225 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:15:08,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: ioexception local host msra minint fareast -> net host minint msra more diagnostics (relation=temporally_causes).",
+              "Historical causal cue: ioexception local host msra minint fareast -> ipc server net host minint msra (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v<*>.app.job.impl.TaskAttemptImpl: Diagnostics report from attempt_<*>_<*>_m_<*>_<*>: Error: java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5047,
+                "score": 38.6757,
+                "query_source_overlap": 13,
+                "query_target_overlap": 16,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 5
+              },
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> [IPC Server handler <*> on <*>] org.apache.hadoop.mapred.TaskAttemptListenerImpl: <*> java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5605,
+                "score": 36.8841,
+                "query_source_overlap": 13,
+                "query_target_overlap": 14,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 6
+              }
+            ]
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "2015-10-18 18:05:42,008 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying ResourceManager channel to server: msra-sa-41:8030. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)",
+          "context_text": "at org.apache.hadoop.ipc.Channel.getConnection(Client.java:1521)\njava.io.IOException: Failed on local exception: java.io.IOException: Couldn't set up IO streams; Host Details : local worker is: \"peer-endpoint/peer-endpoint\"; peer worker is: \"peer-endpoint\":8030;",
+          "rag_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0006",
+              "score": 22.3014,
+              "lexical": 22.3014,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\nNearby context: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\n2015-10-17 22:26:45,266 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0003",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:24,225 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:15:08,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0006",
+              "score": 22.3014,
+              "lexical": 22.3014,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\nNearby context: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\n2015-10-17 22:26:45,266 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0003",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:24,225 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:15:08,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: ioexception local host msra minint fareast -> net host minint msra more diagnostics (relation=temporally_causes).",
+              "Historical causal cue: ioexception local host msra minint fareast -> ipc server net host minint msra (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v<*>.app.job.impl.TaskAttemptImpl: Diagnostics report from attempt_<*>_<*>_m_<*>_<*>: Error: java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5047,
+                "score": 38.6757,
+                "query_source_overlap": 13,
+                "query_target_overlap": 16,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 5
+              },
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> [IPC Server handler <*> on <*>] org.apache.hadoop.mapred.TaskAttemptListenerImpl: <*> java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5605,
+                "score": 36.8841,
+                "query_source_overlap": 13,
+                "query_target_overlap": 14,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 6
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "dataset": "Hadoop",
+      "case_id": "hadoop_application_1445175094696_0003__rm01",
+      "pool_case_id": "hadoop_application_1445175094696_0003",
+      "source": "benchmark_v2",
+      "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+      "gt_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY",
+      "eligibility_note": "RM-specific reanchor probe built from :8030 / ResourceManager retry lines.",
+      "selected_alert_clean": "2015-10-18 21:39:41,390 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying connect to server: msra-sa-41:8030. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)",
+      "shared_context_clean": "at org.apache.hadoop.ipc.Client.getConnection(Client.java:1521)\nat org.apache.hadoop.ipc.Client.call(Client.java:1438)\n... 16 more\n2015-10-18 21:39:41,390 ERROR [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: ERROR IN CONTACTING RM.\njava.io.IOException: Failed on local exception: java.io.IOException: Couldn't set up IO streams; Host Details : local host is: \"MININT-FNANLI5/127.0.0.1\"; destination host is: \"msra-sa-41\":8030;\nat org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:772)",
+      "provenance": {
+        "eval_case_id": "hadoop_application_1445175094696_0003__rm01",
+        "pool_case_id": "hadoop_application_1445175094696_0003",
+        "ground_truth_root_cause_template": "Network disconnection",
+        "ground_truth_template": "Could not delete hdfs:<*>:<*><*>",
+        "reason": "Network disconnection"
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "2015-10-18 21:39:41,390 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying connect to server: msra-sa-41:8030. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)",
+          "context_text": "at org.apache.hadoop.ipc.Client.getConnection(Client.java:1521)\nat org.apache.hadoop.ipc.Client.call(Client.java:1438)\n... 16 more\n2015-10-18 21:39:41,390 ERROR [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: ERROR IN CONTACTING RM.\njava.io.IOException: Failed on local exception: java.io.IOException: Couldn't set up IO streams; Host Details : local host is: \"MININT-FNANLI5/127.0.0.1\"; destination host is: \"msra-sa-41\":8030;\nat org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:772)",
+          "rag_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0006",
+              "score": 22.3014,
+              "lexical": 22.3014,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\nNearby context: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\n2015-10-17 22:26:45,266 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0003",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:24,225 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:15:08,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0006",
+              "score": 22.3014,
+              "lexical": 22.3014,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\nNearby context: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\n2015-10-17 22:26:45,266 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0003",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:24,225 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:15:08,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: ioexception local host msra minint fareast -> net host minint msra more diagnostics (relation=temporally_causes).",
+              "Historical causal cue: ioexception local host msra minint fareast -> ipc server net host minint msra (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v<*>.app.job.impl.TaskAttemptImpl: Diagnostics report from attempt_<*>_<*>_m_<*>_<*>: Error: java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5047,
+                "score": 38.6757,
+                "query_source_overlap": 13,
+                "query_target_overlap": 16,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 5
+              },
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> [IPC Server handler <*> on <*>] org.apache.hadoop.mapred.TaskAttemptListenerImpl: <*> java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5605,
+                "score": 36.8841,
+                "query_source_overlap": 13,
+                "query_target_overlap": 14,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 6
+              }
+            ]
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "2015-10-18 21:39:41,390 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying ResourceManager channel to server: msra-sa-41:8030. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)",
+          "context_text": "at org.apache.hadoop.ipc.Channel.getConnection(Client.java:1521)\njava.io.IOException: Failed on local exception: java.io.IOException: Couldn't set up IO streams; Host Details : local worker is: \"peer-endpoint/peer-endpoint\"; peer worker is: \"peer-endpoint\":8030;",
+          "rag_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0006",
+              "score": 22.3014,
+              "lexical": 22.3014,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\nNearby context: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\n2015-10-17 22:26:45,266 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0003",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:24,225 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:15:08,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0006",
+              "score": 22.3014,
+              "lexical": 22.3014,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\nNearby context: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\n2015-10-17 22:26:45,266 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0003",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:24,225 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:15:08,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: ioexception local host msra minint fareast -> net host minint msra more diagnostics (relation=temporally_causes).",
+              "Historical causal cue: ioexception local host msra minint fareast -> ipc server net host minint msra (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v<*>.app.job.impl.TaskAttemptImpl: Diagnostics report from attempt_<*>_<*>_m_<*>_<*>: Error: java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5047,
+                "score": 38.6757,
+                "query_source_overlap": 13,
+                "query_target_overlap": 16,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 5
+              },
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> [IPC Server handler <*> on <*>] org.apache.hadoop.mapred.TaskAttemptListenerImpl: <*> java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5605,
+                "score": 36.8841,
+                "query_source_overlap": 13,
+                "query_target_overlap": 14,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 6
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "dataset": "Hadoop",
+      "case_id": "hadoop_application_1445087491445_0002__rm01",
+      "pool_case_id": "hadoop_application_1445087491445_0002",
+      "source": "benchmark_v2",
+      "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+      "gt_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY",
+      "eligibility_note": "RM-specific reanchor probe built from :8030 / ResourceManager retry lines.",
+      "selected_alert_clean": "2015-10-17 21:41:44,832 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying connect to server: msra-sa-41:8030. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)",
+      "shared_context_clean": "at org.apache.hadoop.ipc.Client.getConnection(Client.java:1521)\nat org.apache.hadoop.ipc.Client.call(Client.java:1438)\n... 16 more\n2015-10-17 21:41:44,832 ERROR [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: ERROR IN CONTACTING RM.\njava.io.IOException: Failed on local exception: java.io.IOException: Couldn't set up IO streams; Host Details : local host is: \"MININT-FNANLI5/127.0.0.1\"; destination host is: \"msra-sa-41\":8030;\nat org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:772)",
+      "provenance": {
+        "eval_case_id": "hadoop_application_1445087491445_0002__rm01",
+        "pool_case_id": "hadoop_application_1445087491445_0002",
+        "ground_truth_root_cause_template": "Machine down",
+        "ground_truth_template": "Could not delete hdfs:<*>:<*><*>",
+        "reason": "Machine down"
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "2015-10-17 21:41:44,832 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying connect to server: msra-sa-41:8030. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)",
+          "context_text": "at org.apache.hadoop.ipc.Client.getConnection(Client.java:1521)\nat org.apache.hadoop.ipc.Client.call(Client.java:1438)\n... 16 more\n2015-10-17 21:41:44,832 ERROR [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: ERROR IN CONTACTING RM.\njava.io.IOException: Failed on local exception: java.io.IOException: Couldn't set up IO streams; Host Details : local host is: \"MININT-FNANLI5/127.0.0.1\"; destination host is: \"msra-sa-41\":8030;\nat org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:772)",
+          "rag_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0006",
+              "score": 22.3014,
+              "lexical": 22.3014,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\nNearby context: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\n2015-10-17 22:26:45,266 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0003",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:24,225 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:15:08,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0006",
+              "score": 22.3014,
+              "lexical": 22.3014,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\nNearby context: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\n2015-10-17 22:26:45,266 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0003",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:24,225 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:15:08,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: ioexception local host msra minint fareast -> net host minint msra more diagnostics (relation=temporally_causes).",
+              "Historical causal cue: ioexception local host msra minint fareast -> ipc server net host minint msra (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v<*>.app.job.impl.TaskAttemptImpl: Diagnostics report from attempt_<*>_<*>_m_<*>_<*>: Error: java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5047,
+                "score": 38.6757,
+                "query_source_overlap": 13,
+                "query_target_overlap": 16,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 5
+              },
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> [IPC Server handler <*> on <*>] org.apache.hadoop.mapred.TaskAttemptListenerImpl: <*> java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5605,
+                "score": 36.8841,
+                "query_source_overlap": 13,
+                "query_target_overlap": 14,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 6
+              }
+            ]
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "2015-10-17 21:41:44,832 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying ResourceManager channel to server: msra-sa-41:8030. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)",
+          "context_text": "at org.apache.hadoop.ipc.Channel.getConnection(Client.java:1521)\njava.io.IOException: Failed on local exception: java.io.IOException: Couldn't set up IO streams; Host Details : local worker is: \"peer-endpoint/peer-endpoint\"; peer worker is: \"peer-endpoint\":8030;",
+          "rag_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0006",
+              "score": 22.3014,
+              "lexical": 22.3014,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\nNearby context: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\n2015-10-17 22:26:45,266 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0003",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:24,225 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:15:08,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445087491445_0006",
+              "score": 22.3014,
+              "lexical": 22.3014,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\nNearby context: 2015-10-17 22:33:54,870 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: minint-fnanli5.fareast.corp.microsoft.com/10.86.169.121:55219. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)\n2015-10-17 22:26:45,266 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0003",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:24,225 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:15:08,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            },
+            {
+              "reference_id": "benchmark_v2:hadoop_application_1445076437777_0004",
+              "score": 17.2297,
+              "lexical": 17.2297,
+              "action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+              "family_id": "HADOOP_WORKER_NODE_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\nNearby context: 2015-10-17 18:16:43,171 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45\n2015-10-17 18:09:26,226 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true\n2015-10-17 18:17:03,172 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: R"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: ioexception local host msra minint fareast -> net host minint msra more diagnostics (relation=temporally_causes).",
+              "Historical causal cue: ioexception local host msra minint fareast -> ipc server net host minint msra (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v<*>.app.job.impl.TaskAttemptImpl: Diagnostics report from attempt_<*>_<*>_m_<*>_<*>: Error: java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5047,
+                "score": 38.6757,
+                "query_source_overlap": 13,
+                "query_target_overlap": 16,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 5
+              },
+              {
+                "source_template": "<*>-<*>-<*>:<*>:<*>,<*> WARN [main] org.apache.hadoop.mapred.Task: Failure sending status update: java.io.IOException: Failed on local exception: java.io.IOException: An existing connection was forcibly closed by the remote host; Host Details : local host is: \"MSRA-SA-<*>/<*>\"; destination host is: \"minint-fnanli<*>.fareast.corp.microsoft.com\":<*>;",
+                "target_template": "<*>-<*>-<*>:<*>:<*>,<*> [IPC Server handler <*> on <*>] org.apache.hadoop.mapred.TaskAttemptListenerImpl: <*> java.net.NoRouteToHostException: No Route to Host from MININT-FNANLI<*>/<*> to msra-sa-<*>:<*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see:",
+                "relation": "temporally_causes",
+                "weight": 0.5605,
+                "score": 36.8841,
+                "query_source_overlap": 13,
+                "query_target_overlap": 14,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 6
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

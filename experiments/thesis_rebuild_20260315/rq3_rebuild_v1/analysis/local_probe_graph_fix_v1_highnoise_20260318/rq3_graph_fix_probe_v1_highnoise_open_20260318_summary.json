@@ -1,0 +1,172 @@
+{
+  "by_mode": {
+    "agent_open": {
+      "rows": 6,
+      "family_accuracy": 0.8333,
+      "action_accuracy": 0.5,
+      "action_text_success_rate": 0.5,
+      "e2e_accuracy": 0.6667,
+      "rca_e2e_gap_rows": 1
+    },
+    "open_alert_only": {
+      "rows": 6,
+      "family_accuracy": 0.0,
+      "action_accuracy": 0.0,
+      "action_text_success_rate": 0.3333,
+      "e2e_accuracy": 0.0,
+      "rca_e2e_gap_rows": 0
+    },
+    "rag_open": {
+      "rows": 6,
+      "family_accuracy": 0.6667,
+      "action_accuracy": 0.5,
+      "action_text_success_rate": 0.5,
+      "e2e_accuracy": 0.6667,
+      "rca_e2e_gap_rows": 0
+    },
+    "vanilla_open": {
+      "rows": 6,
+      "family_accuracy": 0.3333,
+      "action_accuracy": 0.3333,
+      "action_text_success_rate": 0.5,
+      "e2e_accuracy": 0.3333,
+      "rca_e2e_gap_rows": 0
+    }
+  },
+  "by_mode_dataset_noise": {
+    "agent_open": {
+      "HDFS": {
+        "1.0": {
+          "rows": 3,
+          "family_accuracy": 0.6667,
+          "action_accuracy": 0.3333,
+          "action_text_success_rate": 0.6667,
+          "e2e_accuracy": 0.6667,
+          "rca_e2e_gap_rows": 0
+        }
+      },
+      "Hadoop": {
+        "1.0": {
+          "rows": 2,
+          "family_accuracy": 1.0,
+          "action_accuracy": 0.5,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.5,
+          "rca_e2e_gap_rows": 1
+        }
+      },
+      "OpenStack": {
+        "1.0": {
+          "rows": 1,
+          "family_accuracy": 1.0,
+          "action_accuracy": 1.0,
+          "action_text_success_rate": 1.0,
+          "e2e_accuracy": 1.0,
+          "rca_e2e_gap_rows": 0
+        }
+      }
+    },
+    "open_alert_only": {
+      "HDFS": {
+        "1.0": {
+          "rows": 3,
+          "family_accuracy": 0.0,
+          "action_accuracy": 0.0,
+          "action_text_success_rate": 0.3333,
+          "e2e_accuracy": 0.0,
+          "rca_e2e_gap_rows": 0
+        }
+      },
+      "Hadoop": {
+        "1.0": {
+          "rows": 2,
+          "family_accuracy": 0.0,
+          "action_accuracy": 0.0,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.0,
+          "rca_e2e_gap_rows": 0
+        }
+      },
+      "OpenStack": {
+        "1.0": {
+          "rows": 1,
+          "family_accuracy": 0.0,
+          "action_accuracy": 0.0,
+          "action_text_success_rate": 1.0,
+          "e2e_accuracy": 0.0,
+          "rca_e2e_gap_rows": 0
+        }
+      }
+    },
+    "rag_open": {
+      "HDFS": {
+        "1.0": {
+          "rows": 3,
+          "family_accuracy": 0.3333,
+          "action_accuracy": 0.3333,
+          "action_text_success_rate": 0.3333,
+          "e2e_accuracy": 0.3333,
+          "rca_e2e_gap_rows": 0
+        }
+      },
+      "Hadoop": {
+        "1.0": {
+          "rows": 2,
+          "family_accuracy": 1.0,
+          "action_accuracy": 0.5,
+          "action_text_success_rate": 0.5,
+          "e2e_accuracy": 1.0,
+          "rca_e2e_gap_rows": 0
+        }
+      },
+      "OpenStack": {
+        "1.0": {
+          "rows": 1,
+          "family_accuracy": 1.0,
+          "action_accuracy": 1.0,
+          "action_text_success_rate": 1.0,
+          "e2e_accuracy": 1.0,
+          "rca_e2e_gap_rows": 0
+        }
+      }
+    },
+    "vanilla_open": {
+      "HDFS": {
+        "1.0": {
+          "rows": 3,
+          "family_accuracy": 0.0,
+          "action_accuracy": 0.0,
+          "action_text_success_rate": 0.6667,
+          "e2e_accuracy": 0.0,
+          "rca_e2e_gap_rows": 0
+        }
+      },
+      "Hadoop": {
+        "1.0": {
+          "rows": 2,
+          "family_accuracy": 0.5,
+          "action_accuracy": 0.5,
+          "action_text_success_rate": 0.0,
+          "e2e_accuracy": 0.5,
+          "rca_e2e_gap_rows": 0
+        }
+      },
+      "OpenStack": {
+        "1.0": {
+          "rows": 1,
+          "family_accuracy": 1.0,
+          "action_accuracy": 1.0,
+          "action_text_success_rate": 1.0,
+          "e2e_accuracy": 1.0,
+          "rca_e2e_gap_rows": 0
+        }
+      }
+    }
+  },
+  "run_tag": "rq3_graph_fix_probe_v1_highnoise_open_20260318",
+  "model": "qwen3.5:9b",
+  "rows": 24,
+  "llm_calls": 24,
+  "budget_exhausted": false,
+  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_graph_fix_v1_highnoise_20260318/rq3_graph_fix_probe_v1_highnoise_open_20260318_progress.jsonl"
+}

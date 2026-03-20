@@ -1,0 +1,138 @@
+{
+  "benchmark_id": "rq3_openstack_reanchor_bulk_v2_20260319",
+  "benchmark_kind": "openstack_reanchor_bulk",
+  "purpose": "OpenStack reanchor bulk built from nearby weaker alert opportunities to expand the mid-first RQ3 pool.",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "datasets": {
+    "OpenStack": [
+      {
+        "case_id": "openstack_win_20",
+        "eval_case_id": "openstack_win_20__reanchor01",
+        "source": "benchmark_v2",
+        "gt_family_id": "OPENSTACK_HOST_COMPATIBILITY_FAILURE",
+        "gt_action_id": "OPENSTACK_REBUILD_ON_COMPATIBLE_HOST",
+        "alert_match": "nova-api.log.2017-05-14_21:27:04 2017-05-14 19:50:06.010 25746 INFO nova.osapi_compute.wsgi.server [req-7daf8f0c-549b-49c7-95c8-2551b4d0c7fa 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1583 time: 0.1921122",
+        "eligibility_note": "auto_reanchor from pool_anchor_opportunities: current_directness=4.5 alt_directness=0.0 offset=-1 selection_score=15.0 difficulty_score=9.5"
+      },
+      {
+        "case_id": "openstack_57",
+        "eval_case_id": "openstack_57__reanchor01",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+        "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+        "alert_match": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:14:25.518 2931 INFO nova.compute.resource_tracker [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Compute_service record updated for cp-1.slowvm1.tcloud-pg0.utah.cloudlab.us:cp-1.slowvm1.tcloud-pg0.utah.cloudlab.us",
+        "eligibility_note": "auto_reanchor from pool_anchor_opportunities: current_directness=1.0 alt_directness=0.0 offset=-2 selection_score=4.0 difficulty_score=9.9"
+      },
+      {
+        "case_id": "openstack_win_22",
+        "eval_case_id": "openstack_win_22__reanchor02",
+        "source": "benchmark_v2",
+        "gt_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+        "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+        "alert_match": "nova-api.log.2017-05-14_21:27:04 2017-05-14 19:50:59.266 25746 INFO nova.osapi_compute.wsgi.server [req-69beb1db-6c02-42a1-8a06-b4857d72cf8e 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.2466671",
+        "eligibility_note": "auto_reanchor from pool_anchor_opportunities: current_directness=1.0 alt_directness=0.0 offset=-1 selection_score=12.0 difficulty_score=9.5"
+      },
+      {
+        "case_id": "openstack_win_23",
+        "eval_case_id": "openstack_win_23__reanchor03",
+        "source": "benchmark_v2",
+        "gt_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+        "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+        "alert_match": "nova-api.log.2017-05-14_21:27:04 2017-05-14 19:50:59.266 25746 INFO nova.osapi_compute.wsgi.server [req-69beb1db-6c02-42a1-8a06-b4857d72cf8e 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.2466671",
+        "eligibility_note": "auto_reanchor from pool_anchor_opportunities: current_directness=1.0 alt_directness=0.0 offset=-1 selection_score=12.0 difficulty_score=9.5"
+      },
+      {
+        "case_id": "openstack_win_1",
+        "eval_case_id": "openstack_win_1__reanchor04",
+        "source": "benchmark_v2",
+        "gt_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+        "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+        "alert_match": "nova-api.log.2017-05-14_21:27:04 2017-05-14 19:39:15.203 25746 INFO nova.osapi_compute.wsgi.server [req-3127022f-f330-4686-83b7-f6c8e087fc53 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.2673762",
+        "eligibility_note": "auto_reanchor from pool_anchor_opportunities: current_directness=1.0 alt_directness=0.0 offset=2 selection_score=12.0 difficulty_score=8.0"
+      },
+      {
+        "case_id": "openstack_win_10",
+        "eval_case_id": "openstack_win_10__reanchor05",
+        "source": "benchmark_v2",
+        "gt_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+        "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+        "alert_match": "nova-api.log.2017-05-14_21:27:04 2017-05-14 19:44:46.263 25746 INFO nova.osapi_compute.wsgi.server [req-52931106-f23a-4593-9446-68c956c1d861 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.2891469",
+        "eligibility_note": "auto_reanchor from pool_anchor_opportunities: current_directness=1.0 alt_directness=0.0 offset=-1 selection_score=12.0 difficulty_score=8.0"
+      },
+      {
+        "case_id": "openstack_win_11",
+        "eval_case_id": "openstack_win_11__reanchor06",
+        "source": "benchmark_v2",
+        "gt_family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+        "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+        "alert_match": "nova-api.log.2017-05-14_21:27:04 2017-05-14 19:44:46.263 25746 INFO nova.osapi_compute.wsgi.server [req-52931106-f23a-4593-9446-68c956c1d861 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.2891469",
+        "eligibility_note": "auto_reanchor from pool_anchor_opportunities: current_directness=1.0 alt_directness=0.0 offset=-1 selection_score=12.0 difficulty_score=8.0"
+      },
+      {
+        "case_id": "openstack_51",
+        "eval_case_id": "openstack_51__reanchor01",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+        "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+        "alert_match": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:15.561 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742",
+        "eligibility_note": "auto_reanchor from pool_anchor_opportunities: current_directness=9.0 alt_directness=0.0 offset=-2 selection_score=8.0 difficulty_score=5.5"
+      },
+      {
+        "case_id": "openstack_49",
+        "eval_case_id": "openstack_49__reanchor02",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+        "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+        "alert_match": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:55.325 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742",
+        "eligibility_note": "auto_reanchor from pool_anchor_opportunities: current_directness=9.0 alt_directness=0.0 offset=-2 selection_score=8.0 difficulty_score=3.0"
+      },
+      {
+        "case_id": "openstack_win_0",
+        "eval_case_id": "openstack_win_0__reanchor03",
+        "source": "benchmark_v2",
+        "gt_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+        "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+        "alert_match": "nova-api.log.2017-05-14_21:27:04 2017-05-14 19:39:09.330 25746 INFO nova.osapi_compute.wsgi.server [req-c7d137bb-3573-427e-876c-c861aff95551 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.2636831",
+        "eligibility_note": "auto_reanchor from pool_anchor_opportunities: current_directness=13.5 alt_directness=0.0 offset=-1 selection_score=8.0 difficulty_score=-8.5"
+      },
+      {
+        "case_id": "openstack_54",
+        "eval_case_id": "openstack_54__reanchor04",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+        "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+        "alert_match": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:14:35.138 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking",
+        "eligibility_note": "auto_reanchor from pool_anchor_opportunities: current_directness=14.5 alt_directness=0.0 offset=1 selection_score=-26.0 difficulty_score=-11.5"
+      },
+      {
+        "case_id": "openstack_50",
+        "eval_case_id": "openstack_50__reanchor05",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+        "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+        "alert_match": "nova-compute.log.1.2017-05-16_13:55:31 2017-05-16 00:13:55.140 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking",
+        "eligibility_note": "auto_reanchor from pool_anchor_opportunities: current_directness=14.5 alt_directness=0.0 offset=1 selection_score=-22.0 difficulty_score=-16.0"
+      },
+      {
+        "case_id": "openstack_58",
+        "eval_case_id": "openstack_58__reanchor01",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+        "gt_action_id": "OPENSTACK_SCALE_METADATA_SERVICE",
+        "alert_match": "nova-api.log.1.2017-05-16_13:53:08 2017-05-16 00:12:35.663 25746 INFO nova.osapi_compute.wsgi.server [req-537bc103-6c6d-4c9d-a801-52aa85533601 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1910 time: 0.2428820",
+        "eligibility_note": "auto_reanchor from pool_anchor_opportunities: current_directness=15.5 alt_directness=0.0 offset=-2 selection_score=-13.0 difficulty_score=-13.5"
+      },
+      {
+        "case_id": "openstack_64",
+        "eval_case_id": "openstack_64__reanchor02",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "OPENSTACK_CONTROL_SERVICE_PRESSURE",
+        "gt_action_id": "OPENSTACK_SCALE_METADATA_SERVICE",
+        "alert_match": "nova-api.log.1.2017-05-16_13:53:08 2017-05-16 00:13:17.448 25746 INFO nova.osapi_compute.wsgi.server [req-5b273dce-4719-47ba-acc2-276214bd6c87 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1910 time: 0.2577119",
+        "eligibility_note": "auto_reanchor from pool_anchor_opportunities: current_directness=15.5 alt_directness=0.0 offset=-2 selection_score=-13.0 difficulty_score=-13.5"
+      }
+    ]
+  }
+}

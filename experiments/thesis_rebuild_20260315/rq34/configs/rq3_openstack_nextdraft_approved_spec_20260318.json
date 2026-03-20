@@ -1,0 +1,42 @@
+{
+  "benchmark_id": "rq3_openstack_nextdraft_approved_20260318",
+  "benchmark_kind": "local_reanchor_nextdraft",
+  "purpose": "Approved OpenStack-only next-draft slice after local re-anchor probing. Still local-only and blocked from paid API use.",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "datasets": {
+    "OpenStack": [
+      {
+        "case_id": "openstack_49",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+        "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+        "alert_match": "Took 20.03 seconds to spawn the instance on the hypervisor.",
+        "alert_occurrence": 1,
+        "eligibility_note": "Promoted after microprobe. Re-anchored from direct spawn-success to build-time evidence."
+      },
+      {
+        "case_id": "openstack_51",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+        "gt_action_id": "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD",
+        "alert_match": "Took 20.29 seconds to spawn the instance on the hypervisor.",
+        "alert_occurrence": 1,
+        "eligibility_note": "Promoted after microprobe. Re-anchored from direct spawn-success to build-time evidence."
+      },
+      {
+        "case_id": "openstack_56",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+        "gt_action_id": "OPENSTACK_VERIFY_TERMINATION_AND_RESTORE",
+        "alert_match": "Deleting instance files /var/lib/nova/instances/d96a117b-0193-4549-bdcc-63b917273d1d_del",
+        "alert_occurrence": 1,
+        "eligibility_note": "Promoted after variant probe. File-deletion anchor preserved context solvability while dropping alert-only shortcut success."
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "benchmark_id": "rq3_replacement_probe_v1_20260318",
+  "benchmark_kind": "replacement_local_probe",
+  "dataset_case_counts": {
+    "Hadoop": 2,
+    "HDFS": 2
+  },
+  "family_counts": {
+    "Hadoop": {
+      "HADOOP_WORKER_NODE_FAILURE": 2
+    },
+    "HDFS": {
+      "HDFS_STORAGE_METADATA_PRESSURE": 2
+    }
+  },
+  "action_counts": {
+    "Hadoop": {
+      "HADOOP_ISOLATE_NODE_AND_RESCHEDULE": 2
+    },
+    "HDFS": {
+      "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE": 2
+    }
+  },
+  "case_count": 4,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "package_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/rq3_replacement_probe_v1_20260318/rq3_replacement_probe_v1_20260318_package.json"
+}

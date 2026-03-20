@@ -1,0 +1,205 @@
+{
+  "benchmark_id": "rq3_openstack_base_image_probe_v1_20260319",
+  "benchmark_kind": "single_case_local_probe",
+  "purpose": "Probe whether an indirect control-plane anchor can expose a genuine OpenStack base-image-chain repair case under the strict evaluator.",
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "cases": [
+    {
+      "dataset": "OpenStack",
+      "case_id": "openstack_win_22",
+      "source": "benchmark_v2",
+      "gt_family_id": "OPENSTACK_INSTANCE_STATE_DRIFT",
+      "gt_action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+      "eligibility_note": "Base-image-chain probe anchored to the external-event failure immediately before unknown-base-file cleanup evidence.",
+      "selected_alert_clean": "nova-api.log.2017-05-14_21:27:04 2017-05-14 19:50:38.148 25746 INFO nova.osapi_compute.wsgi.server [req-2b4b8eaf-e847-4000-ae46-f939e2d6eb3a f7b8d1f1d4d44643b07fa10ca7d021fb e9746973ac574c6b8a9e8857f56a7608 - - -] 10.11.10.1 \"POST /v2/e9746973ac574c6b8a9e8857f56a7608/os-server-external-events HTTP/1.1\" status: 404 len: 296 time: 0.0873759",
+      "shared_context_clean": "nova-api.log.2017-05-14_21:27:04 2017-05-14 19:50:37.120 25746 INFO nova.osapi_compute.wsgi.server [req-0638cff9-a105-4bc6-b1f1-1788dd879a50 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 211 time: 0.1083539\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:50:38.146 25746 INFO nova.api.openstack.wsgi [req-2b4b8eaf-e847-4000-ae46-f939e2d6eb3a f7b8d1f1d4d44643b07fa10ca7d021fb e9746973ac574c6b8a9e8857f56a7608 - - -] HTTP exception thrown: No instances found for any event\nnova-compute.log.2017-05-14_21:27:09 2017-05-14 19:50:41.111 2931 WARNING nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Unknown base file: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742",
+      "provenance": {
+        "ground_truth_root_cause_template": "Unknown base file: <*>",
+        "ground_truth_template": "Unknown base file: <*>",
+        "reason": ""
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "nova-api.log.2017-05-14_21:27:04 2017-05-14 19:50:38.148 25746 INFO nova.osapi_compute.wsgi.server [req-2b4b8eaf-e847-4000-ae46-f939e2d6eb3a f7b8d1f1d4d44643b07fa10ca7d021fb e9746973ac574c6b8a9e8857f56a7608 - - -] 10.11.10.1 \"POST /v2/e9746973ac574c6b8a9e8857f56a7608/os-server-external-events HTTP/1.1\" status: 404 len: 296 time: 0.0873759",
+          "context_text": "nova-api.log.2017-05-14_21:27:04 2017-05-14 19:50:37.120 25746 INFO nova.osapi_compute.wsgi.server [req-0638cff9-a105-4bc6-b1f1-1788dd879a50 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 211 time: 0.1083539\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:50:38.146 25746 INFO nova.api.openstack.wsgi [req-2b4b8eaf-e847-4000-ae46-f939e2d6eb3a f7b8d1f1d4d44643b07fa10ca7d021fb e9746973ac574c6b8a9e8857f56a7608 - - -] HTTP exception thrown: No instances found for any event\nnova-compute.log.2017-05-14_21:27:09 2017-05-14 19:50:41.111 2931 WARNING nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Unknown base file: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:openstack_win_11",
+              "score": 40.375,
+              "lexical": 36.375,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:44:47.079 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking\nNearby context: nova-api.log.2017-05-14_21:27:04 2017-05-14 19:44:45.968 25746 INFO nova.osapi_compute.wsgi.server [req-d4d78fa8-0094-409b-8201-a10796387037 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.2836571\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:44:46.263 25746 INFO nova.osapi_compute.wsg"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:openstack_win_16",
+              "score": 40.375,
+              "lexical": 36.375,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:48:15.279 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking\nNearby context: nova-api.log.2017-05-14_21:27:04 2017-05-14 19:48:14.188 25746 INFO nova.osapi_compute.wsgi.server [req-28252e36-40aa-4f4a-a998-57db890489f0 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.2717550\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:48:14.451 25746 INFO nova.osapi_compute.wsg"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:openstack_win_18",
+              "score": 40.375,
+              "lexical": 36.375,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:48:55.158 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking\nNearby context: nova-api.log.2017-05-14_21:27:04 2017-05-14 19:48:54.785 25746 INFO nova.osapi_compute.wsgi.server [req-6299ca1f-90a4-4e14-a356-c5e209411bbe 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.4280231\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:48:55.045 25746 INFO nova.osapi_compute.wsg"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:openstack_win_11",
+              "score": 40.375,
+              "lexical": 36.375,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:44:47.079 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking\nNearby context: nova-api.log.2017-05-14_21:27:04 2017-05-14 19:44:45.968 25746 INFO nova.osapi_compute.wsgi.server [req-d4d78fa8-0094-409b-8201-a10796387037 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.2836571\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:44:46.263 25746 INFO nova.osapi_compute.wsg"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:openstack_win_16",
+              "score": 40.375,
+              "lexical": 36.375,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:48:15.279 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking\nNearby context: nova-api.log.2017-05-14_21:27:04 2017-05-14 19:48:14.188 25746 INFO nova.osapi_compute.wsgi.server [req-28252e36-40aa-4f4a-a998-57db890489f0 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.2717550\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:48:14.451 25746 INFO nova.osapi_compute.wsg"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:openstack_win_18",
+              "score": 40.375,
+              "lexical": 36.375,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:48:55.158 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking\nNearby context: nova-api.log.2017-05-14_21:27:04 2017-05-14 19:48:54.785 25746 INFO nova.osapi_compute.wsgi.server [req-6299ca1f-90a4-4e14-a356-c5e209411bbe 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.4280231\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:48:55.045 25746 INFO nova.osapi_compute.wsg"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: wsgi server get len metadata ipip -> wsgi server req get len metadata (relation=symbolic_prior).",
+              "Historical causal cue: wsgi server get len metadata ipip -> wsgi server req get len metadata (relation=symbolic_prior)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "nova.metadata.wsgi.server [-] <IP>,<IP> \"GET /latest/meta-data/local-hostname HTTP/<NUM>.<NUM>\" status: <NUM> len: <NUM> time: <NUM>.<NUM>",
+                "target_template": "nova.metadata.wsgi.server [req-<UUID> - - - - -] <IP>,<IP> \"GET /latest/meta-data/security-groups HTTP/<NUM>.<NUM>\" status: <NUM> len: <NUM> time: <NUM>.<NUM>",
+                "relation": "symbolic_prior",
+                "weight": 1.0647,
+                "score": 36.3597,
+                "query_source_overlap": 8,
+                "query_target_overlap": 9,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 9
+              },
+              {
+                "source_template": "nova.metadata.wsgi.server [-] <IP>,<IP> \"GET /latest/meta-data/public-hostname HTTP/<NUM>.<NUM>\" status: <NUM> len: <NUM> time: <NUM>.<NUM>",
+                "target_template": "nova.metadata.wsgi.server [req-<UUID> - - - - -] <IP>,<IP> \"GET /latest/meta-data/hostname HTTP/<NUM>.<NUM>\" status: <NUM> len: <NUM> time: <NUM>.<NUM>",
+                "relation": "symbolic_prior",
+                "weight": 0.9691,
+                "score": 36.3454,
+                "query_source_overlap": 8,
+                "query_target_overlap": 9,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 9
+              }
+            ]
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "nova-api.log.2017-05-14_21:27:04 2017-05-14 19:50:38.148 25746 INFO nova.osapi_compute.wsgi.control [req-2b4b8eaf-e847-4000-ae46-f939e2d6eb3a f7b8d1f1d4d44643b07fa10ca7d021fb e9746973ac574c6b8a9e8857f56a7608 - - -] 10.11.10.1 \"SUBMIT /v2/e9746973ac574c6b8a9e8857f56a7608/os-ComputeNode-external-events HTTP/1.1\" result=object-missing len: 296 time: 0.0873759",
+          "context_text": "nova-api.log.2017-05-14_21:27:04 2017-05-14 19:50:37.120 25746 INFO nova.osapi_compute.wsgi.control [req-0638cff9-a105-4bc6-b1f1-1788dd879a50 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"LIST /v2/54fadb412c4e40cdbaed9335e4c35a9e/control-plane-cache-view HTTP/1.1\" status=200 len: 211 time: 0.1083539\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:50:38.146 25746 INFO nova.api.openstack.wsgi [req-2b4b8eaf-e847-4000-ae46-f939e2d6eb3a f7b8d1f1d4d44643b07fa10ca7d021fb e9746973ac574c6b8a9e8857f56a7608 - - -] HTTP exception thrown: No VMs found for any event\nnova-compute.log.2017-05-14_21:27:09 2017-05-14 19:50:41.111 2931 WARNING nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] Unrecognized base resource: /var/lib/nova/runtime/objects/a489c868f0c37da93b76227c91bb03908ac0e742",
+          "rag_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:openstack_win_11",
+              "score": 40.375,
+              "lexical": 36.375,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:44:47.079 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking\nNearby context: nova-api.log.2017-05-14_21:27:04 2017-05-14 19:44:45.968 25746 INFO nova.osapi_compute.wsgi.server [req-d4d78fa8-0094-409b-8201-a10796387037 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.2836571\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:44:46.263 25746 INFO nova.osapi_compute.wsg"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:openstack_win_16",
+              "score": 40.375,
+              "lexical": 36.375,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:48:15.279 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking\nNearby context: nova-api.log.2017-05-14_21:27:04 2017-05-14 19:48:14.188 25746 INFO nova.osapi_compute.wsgi.server [req-28252e36-40aa-4f4a-a998-57db890489f0 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.2717550\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:48:14.451 25746 INFO nova.osapi_compute.wsg"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:openstack_win_18",
+              "score": 40.375,
+              "lexical": 36.375,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:48:55.158 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking\nNearby context: nova-api.log.2017-05-14_21:27:04 2017-05-14 19:48:54.785 25746 INFO nova.osapi_compute.wsgi.server [req-6299ca1f-90a4-4e14-a356-c5e209411bbe 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.4280231\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:48:55.045 25746 INFO nova.osapi_compute.wsg"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "supplemental:benchmark_v2:openstack_win_11",
+              "score": 40.375,
+              "lexical": 36.375,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:44:47.079 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking\nNearby context: nova-api.log.2017-05-14_21:27:04 2017-05-14 19:44:45.968 25746 INFO nova.osapi_compute.wsgi.server [req-d4d78fa8-0094-409b-8201-a10796387037 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.2836571\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:44:46.263 25746 INFO nova.osapi_compute.wsg"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:openstack_win_16",
+              "score": 40.375,
+              "lexical": 36.375,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:48:15.279 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking\nNearby context: nova-api.log.2017-05-14_21:27:04 2017-05-14 19:48:14.188 25746 INFO nova.osapi_compute.wsgi.server [req-28252e36-40aa-4f4a-a998-57db890489f0 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.2717550\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:48:14.451 25746 INFO nova.osapi_compute.wsg"
+            },
+            {
+              "reference_id": "supplemental:benchmark_v2:openstack_win_18",
+              "score": 40.375,
+              "lexical": 36.375,
+              "action_id": "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN",
+              "family_id": "OPENSTACK_IMAGE_CHAIN_FAILURE",
+              "text": "Historical incident snippet\nPrimary signal: nova-compute.log.2017-05-14_21:27:09 2017-05-14 19:48:55.158 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): checking\nNearby context: nova-api.log.2017-05-14_21:27:04 2017-05-14 19:48:54.785 25746 INFO nova.osapi_compute.wsgi.server [req-6299ca1f-90a4-4e14-a356-c5e209411bbe 113d3a99c3da401fbd62cc2caa5b96d2 54fadb412c4e40cdbaed9335e4c35a9e - - -] 10.11.10.1 \"GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1\" status: 200 len: 1893 time: 0.4280231\nnova-api.log.2017-05-14_21:27:04 2017-05-14 19:48:55.045 25746 INFO nova.osapi_compute.wsg"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: wsgi server get len metadata ipip -> wsgi server req get len metadata (relation=symbolic_prior).",
+              "Historical causal cue: wsgi server get len metadata ipip -> wsgi server req get len metadata (relation=symbolic_prior)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "nova.metadata.wsgi.server [-] <IP>,<IP> \"GET /latest/meta-data/local-hostname HTTP/<NUM>.<NUM>\" status: <NUM> len: <NUM> time: <NUM>.<NUM>",
+                "target_template": "nova.metadata.wsgi.server [req-<UUID> - - - - -] <IP>,<IP> \"GET /latest/meta-data/security-groups HTTP/<NUM>.<NUM>\" status: <NUM> len: <NUM> time: <NUM>.<NUM>",
+                "relation": "symbolic_prior",
+                "weight": 1.0647,
+                "score": 36.3597,
+                "query_source_overlap": 8,
+                "query_target_overlap": 9,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 9
+              },
+              {
+                "source_template": "nova.metadata.wsgi.server [-] <IP>,<IP> \"GET /latest/meta-data/public-hostname HTTP/<NUM>.<NUM>\" status: <NUM> len: <NUM> time: <NUM>.<NUM>",
+                "target_template": "nova.metadata.wsgi.server [req-<UUID> - - - - -] <IP>,<IP> \"GET /latest/meta-data/hostname HTTP/<NUM>.<NUM>\" status: <NUM> len: <NUM> time: <NUM>.<NUM>",
+                "relation": "symbolic_prior",
+                "weight": 0.9691,
+                "score": 36.3454,
+                "query_source_overlap": 8,
+                "query_target_overlap": 9,
+                "reference_source_overlap": 8,
+                "reference_target_overlap": 9
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

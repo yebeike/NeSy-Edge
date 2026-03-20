@@ -1,0 +1,240 @@
+{
+  "benchmark_id": "rq3_hadoop_bulk_candidate_sweep_v1_20260319",
+  "benchmark_kind": "hadoop_bulk_candidate_sweep",
+  "purpose": "Bulk local screening sweep for Hadoop candidate cases under the rebuilt RQ3 contract.",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "datasets": {
+    "Hadoop": [
+      {
+        "case_id": "hadoop_application_1445062781478_0012",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_WORKER_NODE_FAILURE",
+        "gt_action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+        "alert_match": "2015-10-17 15:45:29,587 INFO [ContainerLauncher #1] org.apache.hadoop.ipc.Client: Retrying connect to server: 04DN8IQ.fareast.corp.microsoft.com/10.86.164.9:64484. Already tried 0 time(s); maxRetries=45",
+        "eligibility_note": "reason=Machine down; selection_score=18.0; difficulty_score=9.5; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_retry_connect",
+        "selection_score": 18.0,
+        "difficulty_score": 9.5,
+        "weak_mainline_alert": false,
+        "fixed_small_member": false,
+        "selected_alert_flags": {
+          "direct_retry_connect": true,
+          "direct_forced_close": false,
+          "direct_delete_hdfs": false,
+          "direct_storage": false
+        },
+        "action_bucket": "hadoop_node_retry_connect"
+      },
+      {
+        "case_id": "hadoop_application_1445062781478_0013",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_WORKER_NODE_FAILURE",
+        "gt_action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+        "alert_match": "2015-10-17 15:41:11,613 INFO [communication thread] org.apache.hadoop.ipc.Client: Retrying connect to server: 04dn8iq.fareast.corp.microsoft.com/10.86.164.9:49470. Already tried 0 time(s); maxRetries=45",
+        "eligibility_note": "reason=Machine down; selection_score=18.0; difficulty_score=9.5; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_retry_connect",
+        "selection_score": 18.0,
+        "difficulty_score": 9.5,
+        "weak_mainline_alert": false,
+        "fixed_small_member": false,
+        "selected_alert_flags": {
+          "direct_retry_connect": true,
+          "direct_forced_close": false,
+          "direct_delete_hdfs": false,
+          "direct_storage": false
+        },
+        "action_bucket": "hadoop_node_retry_connect"
+      },
+      {
+        "case_id": "hadoop_application_1445062781478_0014",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_WORKER_NODE_FAILURE",
+        "gt_action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+        "alert_match": "2015-10-17 15:41:47,841 INFO [ContainerLauncher #9] org.apache.hadoop.ipc.Client: Retrying connect to server: MSRA-SA-39.fareast.corp.microsoft.com/172.22.149.145:49130. Already tried 0 time(s); maxRetries=45",
+        "eligibility_note": "reason=Machine down; selection_score=18.0; difficulty_score=9.5; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_retry_connect",
+        "selection_score": 18.0,
+        "difficulty_score": 9.5,
+        "weak_mainline_alert": false,
+        "fixed_small_member": false,
+        "selected_alert_flags": {
+          "direct_retry_connect": true,
+          "direct_forced_close": false,
+          "direct_delete_hdfs": false,
+          "direct_storage": false
+        },
+        "action_bucket": "hadoop_node_retry_connect"
+      },
+      {
+        "case_id": "hadoop_application_1445062781478_0017",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_WORKER_NODE_FAILURE",
+        "gt_action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+        "alert_match": "2015-10-17 17:04:03,483 INFO [ContainerLauncher #7] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-75DGDAM1.fareast.corp.microsoft.com/10.86.165.66:51951. Already tried 0 time(s); maxRetries=45",
+        "eligibility_note": "reason=Machine down; selection_score=18.0; difficulty_score=9.5; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_retry_connect",
+        "selection_score": 18.0,
+        "difficulty_score": 9.5,
+        "weak_mainline_alert": false,
+        "fixed_small_member": false,
+        "selected_alert_flags": {
+          "direct_retry_connect": true,
+          "direct_forced_close": false,
+          "direct_delete_hdfs": false,
+          "direct_storage": false
+        },
+        "action_bucket": "hadoop_node_retry_connect"
+      },
+      {
+        "case_id": "hadoop_application_1445062781478_0018",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_WORKER_NODE_FAILURE",
+        "gt_action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+        "alert_match": "2015-10-17 16:51:04,443 INFO [LeaseRenewer:msrabi@msra-sa-41:9000] org.apache.hadoop.ipc.Client: Retrying connect to server: msra-sa-41/10.190.173.170:9000. Already tried 0 time(s); maxRetries=45",
+        "eligibility_note": "reason=Machine down; selection_score=18.0; difficulty_score=9.5; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_retry_connect",
+        "selection_score": 18.0,
+        "difficulty_score": 9.5,
+        "weak_mainline_alert": false,
+        "fixed_small_member": false,
+        "selected_alert_flags": {
+          "direct_retry_connect": true,
+          "direct_forced_close": false,
+          "direct_delete_hdfs": false,
+          "direct_storage": false
+        },
+        "action_bucket": "hadoop_node_retry_connect"
+      },
+      {
+        "case_id": "hadoop_application_1445076437777_0003",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_WORKER_NODE_FAILURE",
+        "gt_action_id": "HADOOP_ISOLATE_NODE_AND_RESCHEDULE",
+        "alert_match": "2015-10-17 18:14:48,499 INFO [ContainerLauncher #4] org.apache.hadoop.ipc.Client: Retrying connect to server: MININT-FNANLI5.fareast.corp.microsoft.com/10.86.169.121:64642. Already tried 0 time(s); maxRetries=45",
+        "eligibility_note": "reason=Machine down; selection_score=18.0; difficulty_score=9.5; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_retry_connect",
+        "selection_score": 18.0,
+        "difficulty_score": 9.5,
+        "weak_mainline_alert": false,
+        "fixed_small_member": false,
+        "selected_alert_flags": {
+          "direct_retry_connect": true,
+          "direct_forced_close": false,
+          "direct_delete_hdfs": false,
+          "direct_storage": false
+        },
+        "action_bucket": "hadoop_node_retry_connect"
+      },
+      {
+        "case_id": "hadoop_application_1445175094696_0001",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "alert_match": "2015-10-18 21:37:04,358 INFO [Socket Reader #1 for port 60153] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 60153: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]",
+        "eligibility_note": "reason=Network disconnection; selection_score=17.0; difficulty_score=8.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_forced_close",
+        "selection_score": 17.0,
+        "difficulty_score": 8.0,
+        "weak_mainline_alert": false,
+        "fixed_small_member": false,
+        "selected_alert_flags": {
+          "direct_retry_connect": false,
+          "direct_forced_close": true,
+          "direct_delete_hdfs": false,
+          "direct_storage": false
+        },
+        "action_bucket": "hadoop_network_forced_close"
+      },
+      {
+        "case_id": "hadoop_application_1445175094696_0002",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "alert_match": "2015-10-18 21:37:18,951 INFO [Socket Reader #1 for port 20324] org.apache.hadoop.ipc.Server: Socket Reader #1 for port 20324: readAndProcess from client 10.86.169.121 threw exception [java.io.IOException: An existing connection was forcibly closed by the remote host]",
+        "eligibility_note": "reason=Network disconnection; selection_score=17.0; difficulty_score=8.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0; flags=direct_forced_close",
+        "selection_score": 17.0,
+        "difficulty_score": 8.0,
+        "weak_mainline_alert": false,
+        "fixed_small_member": false,
+        "selected_alert_flags": {
+          "direct_retry_connect": false,
+          "direct_forced_close": true,
+          "direct_delete_hdfs": false,
+          "direct_storage": false
+        },
+        "action_bucket": "hadoop_network_forced_close"
+      },
+      {
+        "case_id": "hadoop_application_1445144423722_0020",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "alert_match": "at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)",
+        "eligibility_note": "reason=Network disconnection; selection_score=8.0; difficulty_score=6.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0",
+        "selection_score": 8.0,
+        "difficulty_score": 6.0,
+        "weak_mainline_alert": false,
+        "fixed_small_member": false,
+        "selected_alert_flags": {
+          "direct_retry_connect": false,
+          "direct_forced_close": false,
+          "direct_delete_hdfs": false,
+          "direct_storage": false
+        },
+        "action_bucket": "hadoop_network_other"
+      },
+      {
+        "case_id": "hadoop_application_1445144423722_0022",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "alert_match": "at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)",
+        "eligibility_note": "reason=Network disconnection; selection_score=8.0; difficulty_score=6.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0",
+        "selection_score": 8.0,
+        "difficulty_score": 6.0,
+        "weak_mainline_alert": false,
+        "fixed_small_member": false,
+        "selected_alert_flags": {
+          "direct_retry_connect": false,
+          "direct_forced_close": false,
+          "direct_delete_hdfs": false,
+          "direct_storage": false
+        },
+        "action_bucket": "hadoop_network_other"
+      },
+      {
+        "case_id": "hadoop_application_1445144423722_0023",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "alert_match": "at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)",
+        "eligibility_note": "reason=Network disconnection; selection_score=8.0; difficulty_score=3.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0",
+        "selection_score": 8.0,
+        "difficulty_score": 3.0,
+        "weak_mainline_alert": false,
+        "fixed_small_member": false,
+        "selected_alert_flags": {
+          "direct_retry_connect": false,
+          "direct_forced_close": false,
+          "direct_delete_hdfs": false,
+          "direct_storage": false
+        },
+        "action_bucket": "hadoop_network_other"
+      },
+      {
+        "case_id": "hadoop_application_1445175094696_0003",
+        "source": "benchmark_v2",
+        "gt_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "alert_match": "at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)",
+        "eligibility_note": "reason=Network disconnection; selection_score=8.0; difficulty_score=6.0; weak_mainline=False; fixed_small_member=False; direct_flag_penalty=0",
+        "selection_score": 8.0,
+        "difficulty_score": 6.0,
+        "weak_mainline_alert": false,
+        "fixed_small_member": false,
+        "selected_alert_flags": {
+          "direct_retry_connect": false,
+          "direct_forced_close": false,
+          "direct_delete_hdfs": false,
+          "direct_storage": false
+        },
+        "action_bucket": "hadoop_network_other"
+      }
+    ]
+  }
+}

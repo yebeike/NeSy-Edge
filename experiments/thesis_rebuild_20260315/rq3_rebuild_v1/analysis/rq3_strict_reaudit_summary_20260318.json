@@ -1,0 +1,67 @@
+{
+  "artifact_id": "rq3_strict_reaudit_summary_20260318",
+  "purpose": "Persist the first strict-evaluator local re-audit so the rebuild line stops relying on shortcut-heavy local scores.",
+  "evaluator_changes": {
+    "scripts": [
+      "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/scripts/rebuild_utils_v1.py",
+      "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/scripts/run_local_probe_v1.py"
+    ],
+    "notes": [
+      "Open-text inference now uses diagnosis + repair_action semantics instead of raw JSON response text.",
+      "Evidence-phrase echoes no longer count as action hits.",
+      "Negative repair language such as 'no repair action required' suppresses false positives.",
+      "HDFS family inference now has a separate semantic pass so RCA can remain decoupled from action matching."
+    ]
+  },
+  "rejected_hdfs_storage_probes": [
+    {
+      "probe": "rq3_hdfs_storage_replicate_probe_v2_highnoise_open_20260318",
+      "summary_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_hdfs_storage_replicate_v2_highnoise_20260318/rq3_hdfs_storage_replicate_probe_v2_highnoise_open_20260318_summary.json",
+      "verdict": "reject",
+      "reason": "Under the strict evaluator, all open-text methods fail while heuristic_context remains solvable, so the candidate does not produce a thesis-grade storage slot."
+    },
+    {
+      "probe": "rq3_hdfs_storage_invalidset_probe_v2_highnoise_open_20260318",
+      "summary_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_hdfs_storage_invalidset_v2_highnoise_20260318/rq3_hdfs_storage_invalidset_probe_v2_highnoise_open_20260318_summary.json",
+      "verdict": "reject",
+      "reason": "Under the strict evaluator, all open-text methods fail while heuristic_context remains solvable, so the invalidSet/delete-intent anchor is not a stable replacement either."
+    }
+  ],
+  "dataset_slices": {
+    "HDFS": {
+      "summary_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_triad_v3_hdfs_strict_v2_highnoise_20260318/rq3_triad_proof_slice_v3_hdfs_strict_v2_highnoise_open_20260318_summary.json",
+      "verdict": "blocked",
+      "notes": [
+        "RCA is partially recoverable: vanilla_open and agent_open both reach family_accuracy 0.75 at noise 1.0.",
+        "Action recovery is not stable: agent_open action_accuracy is 0.0 and e2e_accuracy is 0.0.",
+        "hdfs_19 behaves like routine replica exchange under the strict evaluator and should not remain in the formal slice.",
+        "hdfs_38 stays family-only and still lacks a credible remediation."
+      ]
+    },
+    "OpenStack": {
+      "summary_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_triad_v3_openstack_hadoop_strict_v1_highnoise_20260318/rq3_triad_proof_slice_v3_openstack_hadoop_strict_v1_highnoise_open_20260318_summary.json",
+      "verdict": "mostly_healthy",
+      "notes": [
+        "At noise 1.0, open_alert_only and vanilla_open both stay at family_accuracy 0.0.",
+        "rag_open reaches family/e2e 0.5 and agent_open reaches family/e2e 0.75.",
+        "openstack_48, openstack_49, and openstack_51 remain usable under the strict evaluator.",
+        "openstack_56 now looks like successful termination cleanup rather than a repair-worthy drift case and should be replaced."
+      ]
+    },
+    "Hadoop": {
+      "summary_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_triad_v3_openstack_hadoop_strict_v1_highnoise_20260318/rq3_triad_proof_slice_v3_openstack_hadoop_strict_v1_highnoise_open_20260318_summary.json",
+      "verdict": "mixed",
+      "notes": [
+        "Overall at noise 1.0, agent_open reaches family/e2e 0.6, rag_open 0.4, vanilla_open 0.4.",
+        "The cleanup case 1445087491445_0001 and storage-pressure case 1445182159119_0001 remain usable.",
+        "The isolate-node replacement 1445076437777_0003 is only provisional: alert-only and vanilla already solve the family, rag fails, and only agent reaches e2e.",
+        "The control-link pair 1445175094696_0001 and 1445175094696_0003 are not admissible under the strict evaluator."
+      ]
+    }
+  },
+  "next_rebuild_targets": [
+    "Replace openstack_56 with another instance-state drift case that is not a successful cleanup path.",
+    "Replace hdfs_19 and hdfs_38, and redesign the HDFS storage slot rather than patching addStoredBlock/delete anchors again.",
+    "Rebuild the Hadoop control-link pair and re-audit the isolate-node case before any new formal small."
+  ]
+}

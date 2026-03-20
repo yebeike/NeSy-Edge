@@ -1,0 +1,77 @@
+{
+  "benchmark_id": "rq3_full_relaxed_144_v1_20260319",
+  "benchmark_kind": "rq3_relaxed_full_local",
+  "dataset_case_counts": {
+    "HDFS": 50,
+    "OpenStack": 50,
+    "Hadoop": 44
+  },
+  "family_counts": {
+    "HDFS": {
+      "HDFS_TRANSFER_LINK_FAILURE": 16,
+      "HDFS_PIPELINE_FAILURE": 14,
+      "HDFS_STORAGE_METADATA_PRESSURE": 20
+    },
+    "OpenStack": {
+      "OPENSTACK_INSTANCE_STATE_DRIFT": 20,
+      "OPENSTACK_CONTROL_SERVICE_PRESSURE": 8,
+      "OPENSTACK_IMAGE_CHAIN_FAILURE": 19,
+      "OPENSTACK_HOST_COMPATIBILITY_FAILURE": 3
+    },
+    "Hadoop": {
+      "HADOOP_STORAGE_PRESSURE": 11,
+      "HADOOP_CONTROL_LINK_DISRUPTION": 19,
+      "HADOOP_WORKER_NODE_FAILURE": 14
+    }
+  },
+  "action_counts": {
+    "HDFS": {
+      "HDFS_CHECK_LINK_AND_LIMIT_RETRANSMISSION": 6,
+      "HDFS_REBUILD_WRITE_PIPELINE": 10,
+      "HDFS_REPAIR_CLIENT_LINK_AND_REREPLICATE": 10,
+      "HDFS_RETRY_ALLOCATION_AFTER_CAPACITY_CHECK": 10,
+      "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE": 9,
+      "HDFS_ISOLATE_RECEIVER_AND_REBUILD_PIPELINE": 4,
+      "HDFS_CHECK_STORAGE_AND_DELETE_STALE_BLOCK": 1
+    },
+    "OpenStack": {
+      "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD": 8,
+      "OPENSTACK_RESYNC_INSTANCE_INVENTORY": 8,
+      "OPENSTACK_SCALE_METADATA_SERVICE": 8,
+      "OPENSTACK_VERIFY_TERMINATION_AND_RESTORE": 4,
+      "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN": 19,
+      "OPENSTACK_REBUILD_ON_COMPATIBLE_HOST": 3
+    },
+    "Hadoop": {
+      "HADOOP_REDUCE_SHUFFLE_PRESSURE_AND_RETRY": 2,
+      "HADOOP_RESTORE_WORKER_RPC_AND_RETRY": 16,
+      "HADOOP_CLEAN_OUTPUT_PATH_AND_RESCHEDULE": 2,
+      "HADOOP_ISOLATE_NODE_AND_RESCHEDULE": 12,
+      "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY": 3,
+      "HADOOP_FREE_LOCAL_DISK_AND_RETRY": 9
+    }
+  },
+  "quality_tier_counts": {
+    "HDFS": {
+      "core_hard": 5,
+      "core_usable": 13,
+      "filler_reanchor": 32
+    },
+    "OpenStack": {
+      "core_hard": 3,
+      "core_usable": 7,
+      "filler_reanchor": 40
+    },
+    "Hadoop": {
+      "core_hard": 4,
+      "core_usable": 20,
+      "filler_reanchor": 20
+    }
+  },
+  "case_count": 144,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "package_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/rq3_full_relaxed_144_v1_20260319/rq3_full_relaxed_144_v1_20260319_package.json"
+}

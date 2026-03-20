@@ -1,0 +1,49 @@
+{
+  "source_progress": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/analysis/rq3_local_probe_20260318/rq3_local_probe_methods_extremes_20260318_progress.jsonl",
+  "status": "partial",
+  "rows": 80,
+  "by_dataset_mode": [
+    {
+      "dataset": "HDFS",
+      "mode": "agent_closed_desc",
+      "rows": 18,
+      "rca_accuracy": 0.9444,
+      "action_accuracy": 0.9444
+    },
+    {
+      "dataset": "HDFS",
+      "mode": "rag_closed_desc",
+      "rows": 18,
+      "rca_accuracy": 1.0,
+      "action_accuracy": 1.0
+    },
+    {
+      "dataset": "HDFS",
+      "mode": "vanilla_closed_desc",
+      "rows": 18,
+      "rca_accuracy": 1.0,
+      "action_accuracy": 1.0
+    },
+    {
+      "dataset": "OpenStack",
+      "mode": "agent_closed_desc",
+      "rows": 8,
+      "rca_accuracy": 1.0,
+      "action_accuracy": 1.0
+    },
+    {
+      "dataset": "OpenStack",
+      "mode": "rag_closed_desc",
+      "rows": 9,
+      "rca_accuracy": 1.0,
+      "action_accuracy": 1.0
+    },
+    {
+      "dataset": "OpenStack",
+      "mode": "vanilla_closed_desc",
+      "rows": 9,
+      "rca_accuracy": 1.0,
+      "action_accuracy": 0.8889
+    }
+  ]
+}

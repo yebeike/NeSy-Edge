@@ -1,0 +1,47 @@
+{
+  "benchmark_id": "rq3_mid_seed_v3_mixed_20260319",
+  "benchmark_kind": "mid_seed_candidate_pool",
+  "dataset_case_counts": {
+    "OpenStack": 3,
+    "HDFS": 6,
+    "Hadoop": 6
+  },
+  "family_counts": {
+    "OpenStack": {
+      "OPENSTACK_INSTANCE_STATE_DRIFT": 3
+    },
+    "HDFS": {
+      "HDFS_PIPELINE_FAILURE": 3,
+      "HDFS_TRANSFER_LINK_FAILURE": 3
+    },
+    "Hadoop": {
+      "HADOOP_STORAGE_PRESSURE": 2,
+      "HADOOP_WORKER_NODE_FAILURE": 2,
+      "HADOOP_CONTROL_LINK_DISRUPTION": 2
+    }
+  },
+  "action_counts": {
+    "OpenStack": {
+      "OPENSTACK_VERIFY_TERMINATION_AND_RESTORE": 1,
+      "OPENSTACK_RESYNC_INSTANCE_INVENTORY": 1,
+      "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD": 1
+    },
+    "HDFS": {
+      "HDFS_REBUILD_WRITE_PIPELINE": 3,
+      "HDFS_REPAIR_CLIENT_LINK_AND_REREPLICATE": 1,
+      "HDFS_CHECK_LINK_AND_LIMIT_RETRANSMISSION": 2
+    },
+    "Hadoop": {
+      "HADOOP_REDUCE_SHUFFLE_PRESSURE_AND_RETRY": 2,
+      "HADOOP_CLEAN_OUTPUT_PATH_AND_RESCHEDULE": 1,
+      "HADOOP_RESTORE_WORKER_RPC_AND_RETRY": 2,
+      "HADOOP_ISOLATE_NODE_AND_RESCHEDULE": 1
+    }
+  },
+  "case_count": 15,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "package_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/rq3_mid_seed_v3_mixed_20260319/rq3_mid_seed_v3_mixed_20260319_package.json"
+}

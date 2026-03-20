@@ -1,0 +1,731 @@
+{
+  "policy": "mid_relaxed",
+  "target_noise": 1.0,
+  "rows": 7,
+  "verdict_counts": {
+    "provisional": 4,
+    "shortlist": 3
+  },
+  "ranked_cases": [
+    {
+      "dataset": "Hadoop",
+      "case_id": "hadoop_application_1445175094696_0004__ctrl07",
+      "eval_case_id": "hadoop_application_1445175094696_0004__ctrl07",
+      "source": "benchmark_v2",
+      "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+      "score": 6,
+      "verdict": "shortlist",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "agent_beats_rag",
+        "rag_rca_e2e_decoupled",
+        "some_llm_support_present"
+      ],
+      "selection_score": 0.0,
+      "difficulty_score": 0.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {},
+      "eligibility_note": "auto_reanchor from hadoop_control_anchor_opportunities: current_directness=0.0 alt_directness=0.0 offset=1",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "rag_open": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY"
+        },
+        "agent_open": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+        }
+      }
+    },
+    {
+      "dataset": "Hadoop",
+      "case_id": "hadoop_application_1445175094696_0001__ctrl04",
+      "eval_case_id": "hadoop_application_1445175094696_0001__ctrl04",
+      "source": "benchmark_v2",
+      "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+      "score": 2,
+      "verdict": "shortlist",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "some_llm_support_present",
+        "all_llm_e2e_flat_positive"
+      ],
+      "selection_score": 0.0,
+      "difficulty_score": 0.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {},
+      "eligibility_note": "auto_reanchor from hadoop_control_anchor_opportunities: current_directness=18.5 alt_directness=0.0 offset=-1",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+        },
+        "rag_open": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+        },
+        "agent_open": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+        }
+      }
+    },
+    {
+      "dataset": "Hadoop",
+      "case_id": "hadoop_application_1445175094696_0002__ctrl05",
+      "eval_case_id": "hadoop_application_1445175094696_0002__ctrl05",
+      "source": "benchmark_v2",
+      "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+      "score": 2,
+      "verdict": "shortlist",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "some_llm_support_present",
+        "all_llm_e2e_flat_positive"
+      ],
+      "selection_score": 0.0,
+      "difficulty_score": 0.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {},
+      "eligibility_note": "auto_reanchor from hadoop_control_anchor_opportunities: current_directness=18.5 alt_directness=0.0 offset=-1",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+        },
+        "rag_open": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+        },
+        "agent_open": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+        }
+      }
+    },
+    {
+      "dataset": "Hadoop",
+      "case_id": "hadoop_application_1445144423722_0020__ctrl01",
+      "eval_case_id": "hadoop_application_1445144423722_0020__ctrl01",
+      "source": "benchmark_v2",
+      "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+      "score": 3,
+      "verdict": "provisional",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "agent_rca_e2e_decoupled",
+        "rag_rca_e2e_decoupled",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 0.0,
+      "difficulty_score": 0.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {},
+      "eligibility_note": "auto_reanchor from hadoop_control_anchor_opportunities: current_directness=0.0 alt_directness=0.0 offset=1",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "rag_open": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY"
+        },
+        "agent_open": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY"
+        }
+      }
+    },
+    {
+      "dataset": "Hadoop",
+      "case_id": "hadoop_application_1445144423722_0022__ctrl02",
+      "eval_case_id": "hadoop_application_1445144423722_0022__ctrl02",
+      "source": "benchmark_v2",
+      "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+      "score": 3,
+      "verdict": "provisional",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "agent_rca_e2e_decoupled",
+        "rag_rca_e2e_decoupled",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 0.0,
+      "difficulty_score": 0.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {},
+      "eligibility_note": "auto_reanchor from hadoop_control_anchor_opportunities: current_directness=0.0 alt_directness=0.0 offset=1",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "rag_open": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY"
+        },
+        "agent_open": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY"
+        }
+      }
+    },
+    {
+      "dataset": "Hadoop",
+      "case_id": "hadoop_application_1445144423722_0023__ctrl03",
+      "eval_case_id": "hadoop_application_1445144423722_0023__ctrl03",
+      "source": "benchmark_v2",
+      "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+      "score": 3,
+      "verdict": "provisional",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "agent_rca_e2e_decoupled",
+        "rag_rca_e2e_decoupled",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 0.0,
+      "difficulty_score": 0.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {},
+      "eligibility_note": "auto_reanchor from hadoop_control_anchor_opportunities: current_directness=0.0 alt_directness=0.0 offset=1",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "rag_open": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY"
+        },
+        "agent_open": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY"
+        }
+      }
+    },
+    {
+      "dataset": "Hadoop",
+      "case_id": "hadoop_application_1445175094696_0003__ctrl06",
+      "eval_case_id": "hadoop_application_1445175094696_0003__ctrl06",
+      "source": "benchmark_v2",
+      "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+      "score": 3,
+      "verdict": "provisional",
+      "complete_case": true,
+      "reasons": [
+        "heuristic_alert_not_direct",
+        "open_alert_only_not_e2e",
+        "agent_rca_e2e_decoupled",
+        "rag_rca_e2e_decoupled",
+        "all_llm_e2e_zero"
+      ],
+      "selection_score": 0.0,
+      "difficulty_score": 0.0,
+      "weak_mainline_alert": false,
+      "selected_alert_flags": {},
+      "eligibility_note": "auto_reanchor from hadoop_control_anchor_opportunities: current_directness=0.0 alt_directness=0.0 offset=1",
+      "modes": {
+        "heuristic_alert": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "heuristic_context": {
+          "rca_success": 1,
+          "e2e_success": 1,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+        },
+        "open_alert_only": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "vanilla_open": {
+          "rca_success": 0,
+          "e2e_success": 0,
+          "pred_family_id": "",
+          "pred_action_id": ""
+        },
+        "rag_open": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY"
+        },
+        "agent_open": {
+          "rca_success": 1,
+          "e2e_success": 0,
+          "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+          "pred_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY"
+        }
+      }
+    }
+  ],
+  "shortlist_by_action": {
+    "HADOOP_RESTORE_WORKER_RPC_AND_RETRY": [
+      {
+        "dataset": "Hadoop",
+        "case_id": "hadoop_application_1445175094696_0004__ctrl07",
+        "eval_case_id": "hadoop_application_1445175094696_0004__ctrl07",
+        "source": "benchmark_v2",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "score": 6,
+        "verdict": "shortlist",
+        "complete_case": true,
+        "reasons": [
+          "heuristic_alert_not_direct",
+          "open_alert_only_not_e2e",
+          "agent_beats_rag",
+          "rag_rca_e2e_decoupled",
+          "some_llm_support_present"
+        ],
+        "selection_score": 0.0,
+        "difficulty_score": 0.0,
+        "weak_mainline_alert": false,
+        "selected_alert_flags": {},
+        "eligibility_note": "auto_reanchor from hadoop_control_anchor_opportunities: current_directness=0.0 alt_directness=0.0 offset=1",
+        "modes": {
+          "heuristic_alert": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "heuristic_context": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+            "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+          },
+          "open_alert_only": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "vanilla_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "rag_open": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+            "pred_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY"
+          },
+          "agent_open": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+            "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+          }
+        }
+      },
+      {
+        "dataset": "Hadoop",
+        "case_id": "hadoop_application_1445175094696_0001__ctrl04",
+        "eval_case_id": "hadoop_application_1445175094696_0001__ctrl04",
+        "source": "benchmark_v2",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "score": 2,
+        "verdict": "shortlist",
+        "complete_case": true,
+        "reasons": [
+          "heuristic_alert_not_direct",
+          "open_alert_only_not_e2e",
+          "some_llm_support_present",
+          "all_llm_e2e_flat_positive"
+        ],
+        "selection_score": 0.0,
+        "difficulty_score": 0.0,
+        "weak_mainline_alert": false,
+        "selected_alert_flags": {},
+        "eligibility_note": "auto_reanchor from hadoop_control_anchor_opportunities: current_directness=18.5 alt_directness=0.0 offset=-1",
+        "modes": {
+          "heuristic_alert": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "heuristic_context": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+            "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+          },
+          "open_alert_only": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "vanilla_open": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+            "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+          },
+          "rag_open": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+            "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+          },
+          "agent_open": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+            "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+          }
+        }
+      },
+      {
+        "dataset": "Hadoop",
+        "case_id": "hadoop_application_1445175094696_0002__ctrl05",
+        "eval_case_id": "hadoop_application_1445175094696_0002__ctrl05",
+        "source": "benchmark_v2",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "score": 2,
+        "verdict": "shortlist",
+        "complete_case": true,
+        "reasons": [
+          "heuristic_alert_not_direct",
+          "open_alert_only_not_e2e",
+          "some_llm_support_present",
+          "all_llm_e2e_flat_positive"
+        ],
+        "selection_score": 0.0,
+        "difficulty_score": 0.0,
+        "weak_mainline_alert": false,
+        "selected_alert_flags": {},
+        "eligibility_note": "auto_reanchor from hadoop_control_anchor_opportunities: current_directness=18.5 alt_directness=0.0 offset=-1",
+        "modes": {
+          "heuristic_alert": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "heuristic_context": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+            "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+          },
+          "open_alert_only": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "vanilla_open": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+            "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+          },
+          "rag_open": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+            "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+          },
+          "agent_open": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+            "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+          }
+        }
+      },
+      {
+        "dataset": "Hadoop",
+        "case_id": "hadoop_application_1445144423722_0020__ctrl01",
+        "eval_case_id": "hadoop_application_1445144423722_0020__ctrl01",
+        "source": "benchmark_v2",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "score": 3,
+        "verdict": "provisional",
+        "complete_case": true,
+        "reasons": [
+          "heuristic_alert_not_direct",
+          "open_alert_only_not_e2e",
+          "agent_rca_e2e_decoupled",
+          "rag_rca_e2e_decoupled",
+          "all_llm_e2e_zero"
+        ],
+        "selection_score": 0.0,
+        "difficulty_score": 0.0,
+        "weak_mainline_alert": false,
+        "selected_alert_flags": {},
+        "eligibility_note": "auto_reanchor from hadoop_control_anchor_opportunities: current_directness=0.0 alt_directness=0.0 offset=1",
+        "modes": {
+          "heuristic_alert": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "heuristic_context": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+            "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+          },
+          "open_alert_only": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "vanilla_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "rag_open": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+            "pred_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY"
+          },
+          "agent_open": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+            "pred_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY"
+          }
+        }
+      },
+      {
+        "dataset": "Hadoop",
+        "case_id": "hadoop_application_1445144423722_0022__ctrl02",
+        "eval_case_id": "hadoop_application_1445144423722_0022__ctrl02",
+        "source": "benchmark_v2",
+        "gt_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY",
+        "score": 3,
+        "verdict": "provisional",
+        "complete_case": true,
+        "reasons": [
+          "heuristic_alert_not_direct",
+          "open_alert_only_not_e2e",
+          "agent_rca_e2e_decoupled",
+          "rag_rca_e2e_decoupled",
+          "all_llm_e2e_zero"
+        ],
+        "selection_score": 0.0,
+        "difficulty_score": 0.0,
+        "weak_mainline_alert": false,
+        "selected_alert_flags": {},
+        "eligibility_note": "auto_reanchor from hadoop_control_anchor_opportunities: current_directness=0.0 alt_directness=0.0 offset=1",
+        "modes": {
+          "heuristic_alert": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "heuristic_context": {
+            "rca_success": 1,
+            "e2e_success": 1,
+            "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+            "pred_action_id": "HADOOP_RESTORE_WORKER_RPC_AND_RETRY"
+          },
+          "open_alert_only": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "vanilla_open": {
+            "rca_success": 0,
+            "e2e_success": 0,
+            "pred_family_id": "",
+            "pred_action_id": ""
+          },
+          "rag_open": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+            "pred_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY"
+          },
+          "agent_open": {
+            "rca_success": 1,
+            "e2e_success": 0,
+            "pred_family_id": "HADOOP_CONTROL_LINK_DISRUPTION",
+            "pred_action_id": "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY"
+          }
+        }
+      }
+    ]
+  }
+}

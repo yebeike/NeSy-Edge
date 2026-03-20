@@ -1,0 +1,205 @@
+{
+  "benchmark_id": "rq3_hdfs_storage_replicate_probe_v1_20260318",
+  "benchmark_kind": "single_case_local_probe",
+  "purpose": "Probe whether a weaker NameSystem replicate-request anchor can support a thesis-grade HDFS storage/metadata slot without collapsing baseline behavior.",
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "cases": [
+    {
+      "dataset": "HDFS",
+      "case_id": "hdfs_22",
+      "source": "rq3_test_set_enriched",
+      "gt_family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+      "gt_action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+      "eligibility_note": "Redesign candidate: weaker replicate-request anchor instead of direct allocateBlock or blockMap-updated cues.",
+      "selected_alert_clean": "081111 080934 19 INFO dfs.FSNamesystem: BLOCK* ask 10.250.14.38:50010 to replicate blk_-7571492020523929240 to datanode(s) 10.251.122.38:50010",
+      "shared_context_clean": "081111 080329 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.196:50010 is added to blk_-2843780069100181052 size 67108864\n081111 080710 26 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.74.192:50010 is added to blk_7439201509602018752 size 67108864\n081111 081027 28 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.30.6:50010 is added to blk_1119272693889755844 size 67108864\n081111 081534 34 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.110.160:50010 is added to blk_-2852294661215451806 size 67108864",
+      "provenance": {
+        "ground_truth_root_cause_template": "[*]Starting thread to transfer block[*]to[*]",
+        "ground_truth_template": "BLOCK* ask <*>:<*> to replicate blk_<*> to datanode(s) <*>:<*>",
+        "reason": ""
+      },
+      "noise_views": {
+        "0.0": {
+          "noise": 0.0,
+          "selected_alert": "081111 080934 19 INFO dfs.FSNamesystem: BLOCK* ask 10.250.14.38:50010 to replicate blk_-7571492020523929240 to datanode(s) 10.251.122.38:50010",
+          "context_text": "081111 080329 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.196:50010 is added to blk_-2843780069100181052 size 67108864\n081111 080710 26 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.74.192:50010 is added to blk_7439201509602018752 size 67108864\n081111 081027 28 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.30.6:50010 is added to blk_1119272693889755844 size 67108864\n081111 081534 34 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.110.160:50010 is added to blk_-2852294661215451806 size 67108864",
+          "rag_references": [
+            {
+              "reference_id": "rq3_test_set_enriched:hdfs_38",
+              "score": 22.3333,
+              "lexical": 18.3333,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 092436 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.223:50010 is added to blk_-6390296685077811803 size 3546314\nNearby context: 081111 092436 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.223:50010 is added to blk_-6390296685077811803 size 3546314\n081111 090816 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.196:50010 is added to blk_-6308508598639278892 size 67108864\n081111 091200 27 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand8/_temp"
+            },
+            {
+              "reference_id": "rq3_test_set_enriched:hdfs_44",
+              "score": 20.3333,
+              "lexical": 16.3333,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 072921 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.242:50010 is added to blk_621685330749869453 size 67108864\nNearby context: 081111 072921 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.242:50010 is added to blk_621685330749869453 size 67108864\n081111 071746 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.71.16:50010 is added to blk_-6464763289185102366 size 67108864\n081111 072059 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.2"
+            },
+            {
+              "reference_id": "rq3_test_set:hdfs_16",
+              "score": 19.3571,
+              "lexical": 15.3571,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 072523 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.27.63:50010 is added to blk_-7794786562417612249 size 67108864"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "rq3_test_set_enriched:hdfs_38",
+              "score": 22.3333,
+              "lexical": 18.3333,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 092436 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.223:50010 is added to blk_-6390296685077811803 size 3546314\nNearby context: 081111 092436 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.223:50010 is added to blk_-6390296685077811803 size 3546314\n081111 090816 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.196:50010 is added to blk_-6308508598639278892 size 67108864\n081111 091200 27 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand8/_temp"
+            },
+            {
+              "reference_id": "rq3_test_set_enriched:hdfs_44",
+              "score": 20.3333,
+              "lexical": 16.3333,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 072921 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.242:50010 is added to blk_621685330749869453 size 67108864\nNearby context: 081111 072921 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.242:50010 is added to blk_621685330749869453 size 67108864\n081111 071746 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.71.16:50010 is added to blk_-6464763289185102366 size 67108864\n081111 072059 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.2"
+            },
+            {
+              "reference_id": "rq3_test_set:hdfs_16",
+              "score": 19.3571,
+              "lexical": 15.3571,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 072523 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.27.63:50010 is added to blk_-7794786562417612249 size 67108864"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: block packet-responder terminating -> block updated added size block-map-update block-map (relation=symbolic_prior).",
+              "Historical causal cue: transfer got -> block size block-map-update request received but (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "[*]PacketResponder[*]for block[*]terminating[*]",
+                "target_template": "[*]BLOCK* NameSystem[*]addStoredBlock: blockMap updated:[*]is added to[*]size[*]",
+                "relation": "symbolic_prior",
+                "weight": 0.55,
+                "score": 19.8825,
+                "query_source_overlap": 1,
+                "query_target_overlap": 7,
+                "reference_source_overlap": 1,
+                "reference_target_overlap": 7
+              },
+              {
+                "source_template": "[*]:Failed to transfer[*]to[*]got[*]",
+                "target_template": "[*]BLOCK* NameSystem[*]addStoredBlock: addStoredBlock request received for[*]on[*]size[*]But it does not belong to any file[*]",
+                "relation": "temporally_causes",
+                "weight": 0.5532,
+                "score": 10.483,
+                "query_source_overlap": 0,
+                "query_target_overlap": 4,
+                "reference_source_overlap": 0,
+                "reference_target_overlap": 4
+              }
+            ]
+          }
+        },
+        "1.0": {
+          "noise": 1.0,
+          "selected_alert": "081111 080934 19 INFO dfs.FSNamesystem: BLOCK* ask 10.250.14.38:50010 to replicate block-id:-7571492020523929240 to datanode(s) 10.251.122.38:50010",
+          "context_text": "081111 080329 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.196:50010 is added to block-id:-2843780069100181052 len 67108864\n081111 080710 26 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.74.192:50010 is added to block-id:7439201509602018752 len 67108864\n081111 081027 28 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.30.6:50010 is added to block-id:1119272693889755844 len 67108864\n081111 081534 34 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.110.160:50010 is added to block-id:-2852294661215451806 len 67108864",
+          "rag_references": [
+            {
+              "reference_id": "rq3_test_set_enriched:hdfs_38",
+              "score": 22.3333,
+              "lexical": 18.3333,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 092436 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.223:50010 is added to blk_-6390296685077811803 size 3546314\nNearby context: 081111 092436 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.223:50010 is added to blk_-6390296685077811803 size 3546314\n081111 090816 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.196:50010 is added to blk_-6308508598639278892 size 67108864\n081111 091200 27 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand8/_temp"
+            },
+            {
+              "reference_id": "rq3_test_set_enriched:hdfs_44",
+              "score": 20.3333,
+              "lexical": 16.3333,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 072921 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.242:50010 is added to blk_621685330749869453 size 67108864\nNearby context: 081111 072921 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.242:50010 is added to blk_621685330749869453 size 67108864\n081111 071746 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.71.16:50010 is added to blk_-6464763289185102366 size 67108864\n081111 072059 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.2"
+            },
+            {
+              "reference_id": "rq3_test_set:hdfs_16",
+              "score": 19.3571,
+              "lexical": 15.3571,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 072523 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.27.63:50010 is added to blk_-7794786562417612249 size 67108864"
+            }
+          ],
+          "agent_references": [
+            {
+              "reference_id": "rq3_test_set_enriched:hdfs_38",
+              "score": 22.3333,
+              "lexical": 18.3333,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 092436 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.223:50010 is added to blk_-6390296685077811803 size 3546314\nNearby context: 081111 092436 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.6.223:50010 is added to blk_-6390296685077811803 size 3546314\n081111 090816 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.196:50010 is added to blk_-6308508598639278892 size 67108864\n081111 091200 27 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand8/_temp"
+            },
+            {
+              "reference_id": "rq3_test_set_enriched:hdfs_44",
+              "score": 20.3333,
+              "lexical": 16.3333,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 072921 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.242:50010 is added to blk_621685330749869453 size 67108864\nNearby context: 081111 072921 29 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.107.242:50010 is added to blk_621685330749869453 size 67108864\n081111 071746 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.71.16:50010 is added to blk_-6464763289185102366 size 67108864\n081111 072059 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.2"
+            },
+            {
+              "reference_id": "rq3_test_set:hdfs_16",
+              "score": 19.3571,
+              "lexical": 15.3571,
+              "action_id": "HDFS_VALIDATE_BLOCKMAP_AND_REREPLICATE",
+              "family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+              "text": "Historical incident snippet\nPrimary signal: 081111 072523 30 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.27.63:50010 is added to blk_-7794786562417612249 size 67108864"
+            }
+          ],
+          "graph_evidence": {
+            "summary_lines": [
+              "Historical causal cue: block packet-responder terminating -> block updated added size block-map-update block-map (relation=symbolic_prior).",
+              "Historical causal cue: transfer got -> block size block-map-update request received but (relation=temporally_causes)."
+            ],
+            "matched_edges": [
+              {
+                "source_template": "[*]PacketResponder[*]for block[*]terminating[*]",
+                "target_template": "[*]BLOCK* NameSystem[*]addStoredBlock: blockMap updated:[*]is added to[*]size[*]",
+                "relation": "symbolic_prior",
+                "weight": 0.55,
+                "score": 19.8825,
+                "query_source_overlap": 1,
+                "query_target_overlap": 7,
+                "reference_source_overlap": 1,
+                "reference_target_overlap": 7
+              },
+              {
+                "source_template": "[*]:Failed to transfer[*]to[*]got[*]",
+                "target_template": "[*]BLOCK* NameSystem[*]addStoredBlock: addStoredBlock request received for[*]on[*]size[*]But it does not belong to any file[*]",
+                "relation": "temporally_causes",
+                "weight": 0.5532,
+                "score": 10.483,
+                "query_source_overlap": 0,
+                "query_target_overlap": 4,
+                "reference_source_overlap": 0,
+                "reference_target_overlap": 4
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

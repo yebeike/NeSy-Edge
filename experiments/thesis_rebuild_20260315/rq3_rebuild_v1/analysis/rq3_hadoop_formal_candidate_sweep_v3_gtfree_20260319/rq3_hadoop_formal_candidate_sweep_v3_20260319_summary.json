@@ -1,0 +1,28 @@
+{
+  "benchmark_id": "rq3_hadoop_formal_candidate_sweep_v3_20260319",
+  "benchmark_kind": "hadoop_formal_candidate_sweep",
+  "dataset_case_counts": {
+    "Hadoop": 6
+  },
+  "family_counts": {
+    "Hadoop": {
+      "HADOOP_CONTROL_LINK_DISRUPTION": 2,
+      "HADOOP_WORKER_NODE_FAILURE": 2,
+      "HADOOP_STORAGE_PRESSURE": 2
+    }
+  },
+  "action_counts": {
+    "Hadoop": {
+      "HADOOP_RESTORE_WORKER_RPC_AND_RETRY": 1,
+      "HADOOP_RESTORE_RM_CHANNEL_AND_RETRY": 1,
+      "HADOOP_CLEAN_OUTPUT_PATH_AND_RESCHEDULE": 2,
+      "HADOOP_REDUCE_SHUFFLE_PRESSURE_AND_RETRY": 2
+    }
+  },
+  "case_count": 6,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "package_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/rq3_hadoop_formal_candidate_sweep_v3_gtfree_20260319/rq3_hadoop_formal_candidate_sweep_v3_20260319_package.json"
+}

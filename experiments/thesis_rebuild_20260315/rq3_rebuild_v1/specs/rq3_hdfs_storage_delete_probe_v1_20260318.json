@@ -1,0 +1,20 @@
+{
+  "benchmark_id": "rq3_hdfs_storage_delete_probe_v1_20260318",
+  "benchmark_kind": "single_case_local_probe",
+  "purpose": "Probe a storage-family HDFS replacement candidate that uses a weak delete-block alert with direct stale-block failure evidence moved into context.",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "datasets": {
+    "HDFS": [
+      {
+        "case_id": "hdfs_blk_blk_-3544583377289625738",
+        "source": "benchmark_v2",
+        "gt_family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+        "gt_action_id": "HDFS_CHECK_STORAGE_AND_DELETE_STALE_BLOCK",
+        "alert_match": "081109 213811 19 INFO dfs.FSDataset: Deleting block blk_-3544583377289625738 file /mnt/hadoop/dfs/data/current/blk_-3544583377289625738",
+        "eligibility_note": "Weak delete-block anchor immediately preceding the direct stale-block deletion failure."
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "run_tag": "rq3_local_probe_heuristics_allnoise_20260318",
+  "model": "qwen3.5:9b",
+  "rows": 324,
+  "llm_calls": 0,
+  "budget_exhausted": false,
+  "by_mode": {
+    "desc_overlap_alert": {
+      "rows": 81,
+      "family_accuracy": 0.716,
+      "action_accuracy": 0.6049,
+      "action_text_success_rate": 0.0
+    },
+    "desc_overlap_context": {
+      "rows": 81,
+      "family_accuracy": 0.716,
+      "action_accuracy": 0.6173,
+      "action_text_success_rate": 0.0
+    },
+    "heuristic_alert": {
+      "rows": 81,
+      "family_accuracy": 0.8025,
+      "action_accuracy": 0.7531,
+      "action_text_success_rate": 0.0
+    },
+    "heuristic_context": {
+      "rows": 81,
+      "family_accuracy": 0.8765,
+      "action_accuracy": 0.8272,
+      "action_text_success_rate": 0.0
+    }
+  },
+  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/analysis/rq3_local_probe_20260318/rq3_local_probe_heuristics_allnoise_20260318_progress.jsonl"
+}

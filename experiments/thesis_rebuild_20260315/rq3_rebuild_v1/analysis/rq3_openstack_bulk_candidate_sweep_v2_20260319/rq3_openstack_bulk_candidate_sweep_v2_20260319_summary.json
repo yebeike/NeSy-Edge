@@ -1,0 +1,27 @@
+{
+  "benchmark_id": "rq3_openstack_bulk_candidate_sweep_v2_20260319",
+  "benchmark_kind": "openstack_bulk_candidate_sweep",
+  "dataset_case_counts": {
+    "OpenStack": 7
+  },
+  "family_counts": {
+    "OpenStack": {
+      "OPENSTACK_IMAGE_CHAIN_FAILURE": 2,
+      "OPENSTACK_INSTANCE_STATE_DRIFT": 5
+    }
+  },
+  "action_counts": {
+    "OpenStack": {
+      "OPENSTACK_REPAIR_BASE_IMAGE_CHAIN": 2,
+      "OPENSTACK_RESYNC_INSTANCE_INVENTORY": 2,
+      "OPENSTACK_RESYNC_POWER_STATE_AND_REBUILD": 2,
+      "OPENSTACK_VERIFY_TERMINATION_AND_RESTORE": 1
+    }
+  },
+  "case_count": 7,
+  "noise_levels": [
+    0.0,
+    1.0
+  ],
+  "package_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/rq3_openstack_bulk_candidate_sweep_v2_20260319/rq3_openstack_bulk_candidate_sweep_v2_20260319_package.json"
+}

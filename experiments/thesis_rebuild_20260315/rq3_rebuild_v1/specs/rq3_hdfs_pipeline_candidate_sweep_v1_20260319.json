@@ -1,0 +1,52 @@
+{
+  "benchmark_id": "rq3_hdfs_pipeline_candidate_sweep_v1_20260319",
+  "benchmark_kind": "hdfs_pipeline_candidate_sweep",
+  "purpose": "Local qwen3.5 sweep over alternative HDFS pipeline cases to replace the shortcut-heavy hdfs_37 slot under the rebuild-write action definition.",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "datasets": {
+    "HDFS": [
+      {
+        "case_id": "hdfs_11",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "HDFS_PIPELINE_FAILURE",
+        "gt_action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+        "alert_match": "081109 212029 1814 INFO dfs.DataNode$PacketResponder: Received block blk_-2452477352812192142 of size 67108864 from /10.250.7.244",
+        "eligibility_note": "Pipeline replacement candidate anchored on a received-block line."
+      },
+      {
+        "case_id": "hdfs_12",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "HDFS_PIPELINE_FAILURE",
+        "gt_action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+        "alert_match": "081109 211453 1623 INFO dfs.DataNode$PacketResponder: Received block blk_1064470652608359218 of size 67108864 from /10.251.39.242",
+        "eligibility_note": "Pipeline replacement candidate anchored on a second received-block line."
+      },
+      {
+        "case_id": "hdfs_42",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "HDFS_PIPELINE_FAILURE",
+        "gt_action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+        "alert_match": "081111 085429 25314 INFO dfs.DataNode$PacketResponder: Received block blk_-6719337521981113643 of size 3538321 from /10.250.15.198",
+        "eligibility_note": "Short-block pipeline replacement candidate."
+      },
+      {
+        "case_id": "hdfs_45",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "HDFS_PIPELINE_FAILURE",
+        "gt_action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+        "alert_match": "081111 083143 24261 INFO dfs.DataNode$PacketResponder: Received block blk_-5970165518655489569 of size 67108864 from /10.250.14.196",
+        "eligibility_note": "Pipeline replacement candidate with received-block anchor and mixed nearby activity."
+      },
+      {
+        "case_id": "hdfs_46",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "HDFS_PIPELINE_FAILURE",
+        "gt_action_id": "HDFS_REBUILD_WRITE_PIPELINE",
+        "alert_match": "081111 071713 23240 INFO dfs.DataNode$PacketResponder: Received block blk_-1236077201457689973 of size 67108864 from /10.251.35.1",
+        "eligibility_note": "Pipeline replacement candidate drawn from a different activity window."
+      }
+    ]
+  }
+}

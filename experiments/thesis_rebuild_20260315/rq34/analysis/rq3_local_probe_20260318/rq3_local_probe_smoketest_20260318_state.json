@@ -1,0 +1,8 @@
+{
+  "run_tag": "rq3_local_probe_smoketest_20260318",
+  "completed_steps": 14,
+  "total_steps": 36,
+  "llm_calls": 6,
+  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/analysis/rq3_local_probe_20260318/rq3_local_probe_smoketest_20260318_progress.jsonl",
+  "summary_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq34/analysis/rq3_local_probe_20260318/rq3_local_probe_smoketest_20260318_summary.json"
+}

@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.env
+venv/
+.venv/
+
+# Docker
+.docker/
+
+# OS
+.DS_Store
+
+
+# --- NuSy-Edge Specific ---
+# 忽略 ChromaDB 的本地存储文件
+**/chroma_db/
+chroma_db/
+
+# 忽略日志文件
+*.log
+**/logs/
+
+# 忽略实验生成的数据文件
+data/
+loghub/
+raw/
+processed/
+knowledge_base/
+knowledge/
+synthetic/
+
+# 忽略文档文件
+doc/
+
+
+shared/
+
+tmp/
+
+thesis/
+
+reports/
+
+results/
+
+figures/
+docs/
+
+manifests/
+
+
+# 忽略模型文件
+models/
+results/
+
+# 忽略临时测试数据
+sample_logs.txt

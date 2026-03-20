@@ -1,0 +1,11 @@
+{
+  "run_tag": "rq3_hadoop_keepdirect_bulk_v6_highnoise_open_20260319",
+  "completed_steps": 168,
+  "total_steps": 168,
+  "llm_calls": 112,
+  "elapsed_seconds": 4944.7,
+  "estimated_remaining_seconds": 0.0,
+  "steps_per_second": 0.034,
+  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_hadoop_keepdirect_bulk_v6_highnoise_20260319/rq3_hadoop_keepdirect_bulk_v6_highnoise_open_20260319_progress.jsonl",
+  "summary_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_hadoop_keepdirect_bulk_v6_highnoise_20260319/rq3_hadoop_keepdirect_bulk_v6_highnoise_open_20260319_summary.json"
+}

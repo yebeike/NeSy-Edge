@@ -1,0 +1,11 @@
+{
+  "run_tag": "rq3_mid_seed_v1_filtered_from_graphfix_open_20260319",
+  "completed_steps": 84,
+  "total_steps": 84,
+  "llm_calls": 56,
+  "elapsed_seconds": 3603.91,
+  "estimated_remaining_seconds": 0.0,
+  "steps_per_second": 0.0233,
+  "progress_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_mid_seed_v1_filtered_from_graphfix_20260319/rq3_mid_seed_v1_filtered_from_graphfix_open_20260319_progress.jsonl",
+  "summary_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/analysis/local_probe_mid_seed_v1_filtered_from_graphfix_20260319/rq3_mid_seed_v1_filtered_from_graphfix_open_20260319_summary.json"
+}

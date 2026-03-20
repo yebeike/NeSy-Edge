@@ -1,0 +1,20 @@
+{
+  "benchmark_id": "rq3_hdfs_capacity_probe_v1_20260319",
+  "benchmark_kind": "single_case_local_probe",
+  "purpose": "Probe whether the allocateBlock/capacity-style HDFS storage slot becomes thesis-grade once it is evaluated under the newer capacity-check action instead of the old blockmap-repair action.",
+  "formal_small_ready": false,
+  "paid_api_allowed": false,
+  "contract_path": "/Users/peihanye/Desktop/Projects/NuSy-Edge/experiments/thesis_rebuild_20260315/rq3_rebuild_v1/configs/contract_v1_20260318.json",
+  "datasets": {
+    "HDFS": [
+      {
+        "case_id": "hdfs_22",
+        "source": "rq3_test_set_enriched",
+        "gt_family_id": "HDFS_STORAGE_METADATA_PRESSURE",
+        "gt_action_id": "HDFS_RETRY_ALLOCATION_AFTER_CAPACITY_CHECK",
+        "alert_match": "081111 082527 31 INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: /user/root/rand7/_temporary/_task_200811101024_0014_m_001049_0/part-01049. blk_-1533191386601391937",
+        "eligibility_note": "Capacity-check redesign candidate. The slot used to be forced into blockmap validation even though the underlying signal is repeated NameNode allocation pressure."
+      }
+    ]
+  }
+}
